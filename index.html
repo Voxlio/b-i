@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blessing & Inemesit - Wedding Celebration</title>
     
-    <!-- External Fonts & Scripts -->
+    <!-- External Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Tailwind CSS for modern responsive utility design -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -32,7 +33,7 @@
         }
     </script>
     
-    <!-- Custom styling for transitions and special frames -->
+    <!-- Custom styling for transitions, lightbox, and double frames -->
     <style>
         /* Custom scrollbar matching color theme */
         ::-webkit-scrollbar {
@@ -60,25 +61,46 @@
             opacity: 0;
             transform: translateY(10px);
         }
+
+        .modal-enter {
+            animation: modalFadeIn 0.3s ease-out forwards;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
     </style>
 </head>
 <body class="bg-cream font-montserrat text-charcoal flex flex-col min-h-screen selection:bg-gold selection:text-white">
 
     <!-- NAVIGATION BAR -->
-    <header class="sticky top-0 z-50 bg-charcoal text-white shadow-lg border-b border-gold/30">
+    <header class="sticky top-0 z-40 bg-charcoal text-white shadow-lg border-b border-gold/30">
         <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
             <a href="#" onclick="switchTab('story')" class="font-cinzel text-2xl font-bold tracking-[3px] text-white hover:text-gold transition-colors duration-300">
                 B <span class="text-gold">&</span> I
             </a>
-            <nav class="flex gap-1 sm:gap-4 md:gap-6 text-xs sm:text-sm tracking-wider uppercase font-medium">
+            <nav class="flex gap-1 sm:gap-4 md:gap-6 text-xs sm:text-sm tracking-wider uppercase font-medium flex-wrap justify-center">
                 <button onclick="switchTab('story')" id="nav-story" class="nav-btn py-2 px-3 text-gold border-b-2 border-gold transition-all duration-300">
                     Our Story
+                </button>
+                <button onclick="switchTab('party')" id="nav-party" class="nav-btn py-2 px-3 text-gray-300 hover:text-gold border-b-2 border-transparent hover:border-gold transition-all duration-300">
+                    Wedding Party
                 </button>
                 <button onclick="switchTab('gallery')" id="nav-gallery" class="nav-btn py-2 px-3 text-gray-300 hover:text-gold border-b-2 border-transparent hover:border-gold transition-all duration-300">
                     Photo Album
                 </button>
                 <button onclick="switchTab('guestbook')" id="nav-guestbook" class="nav-btn py-2 px-3 text-gray-300 hover:text-gold border-b-2 border-transparent hover:border-gold transition-all duration-300">
                     Guestbook
+                </button>
+                <button onclick="switchTab('gifting')" id="nav-gifting" class="nav-btn py-2 px-3 text-gray-300 hover:text-gold border-b-2 border-transparent hover:border-gold transition-all duration-300">
+                    Gifting
                 </button>
                 <button onclick="switchTab('rsvp')" id="nav-rsvp" class="nav-btn py-2 px-3 text-gray-300 hover:text-gold border-b-2 border-transparent hover:border-gold transition-all duration-300">
                     RSVP
@@ -95,8 +117,7 @@
         <div id="view-story" class="page-view">
             <!-- HERO BLOCK -->
             <section class="relative h-[80vh] min-h-[500px] flex flex-col justify-center items-center text-center px-4 bg-gradient-to-b from-charcoal/80 to-charcoal/95 overflow-hidden">
-                <!-- Fallback Background Image behind overlays -->
-                <div class="absolute inset-0 z-[-1] bg-cover bg-center opacity-40 transform scale-105 transition-transform duration-10000" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1920');"></div>
+                <div class="absolute inset-0 z-[-1] bg-cover bg-center opacity-40 transform scale-105 transition-transform duration-10000" style="background-image: url('https://i.ibb.co/BVNLQsfw/IMG-3271.jpg');"></div>
                 
                 <span class="text-gold font-cinzel text-sm sm:text-base tracking-[5px] uppercase mb-4 block">Save The Date</span>
                 <h1 class="font-cinzel text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-[4px] text-white mb-3">
@@ -106,7 +127,7 @@
                     Are Getting Married
                 </p>
 
-                <!-- Elegant Countdown (Matches demo3.jpg alignment) -->
+                <!-- Elegant Countdown -->
                 <div class="flex gap-4 sm:gap-8 bg-charcoal/60 p-6 sm:p-8 rounded-lg border border-gold/40 backdrop-blur-sm shadow-2xl">
                     <div class="flex flex-col items-center">
                         <span id="days" class="font-cinzel text-3xl sm:text-5xl font-bold text-white">00</span>
@@ -151,9 +172,12 @@
                         <p class="text-gray-700 leading-relaxed text-sm sm:text-base">
                             From student assignments to real-world dreams, our mutual support has been the anchor of our connection. We've laughed through the tough times, celebrated every milestone, and realized that our hearts speak the exact same language of endless love and support.
                         </p>
-                        <div class="pt-4">
-                            <button onclick="switchTab('rsvp')" class="inline-block bg-charcoal hover:bg-gold text-white hover:text-charcoal font-cinzel text-sm px-8 py-3 tracking-widest uppercase transition-all duration-300 border border-gold">
-                                Celebrate With Us
+                        <div class="pt-4 flex flex-wrap gap-4">
+                            <button onclick="switchTab('bride-story')" class="inline-block bg-charcoal hover:bg-gold text-white hover:text-charcoal font-cinzel text-xs sm:text-sm px-6 py-3 tracking-widest uppercase transition-all duration-300 border border-gold shadow-md">
+                                Bride's Story
+                            </button>
+                            <button onclick="switchTab('groom-story')" class="inline-block bg-white hover:bg-gold text-charcoal font-cinzel text-xs sm:text-sm px-6 py-3 tracking-widest uppercase transition-all duration-300 border border-gold shadow-md">
+                                Groom's Story
                             </button>
                         </div>
                     </div>
@@ -175,22 +199,18 @@
                 <div class="max-w-3xl mx-auto text-center">
                     <h3 class="font-cinzel text-gold text-xs sm:text-sm tracking-[6px] uppercase mb-6">Our Official Invitation</h3>
                     
-                    <!-- Framed Card mimicking the gorgeous Demo layout -->
                     <div class="double-gold-frame p-8 sm:p-12 bg-[#252525]/80 backdrop-blur-md rounded-sm relative overflow-hidden">
-                        <!-- Decorative SVG corner scrolls -->
                         <div class="absolute top-2 left-2 text-gold/30 w-8 h-8 border-t border-l border-gold/40"></div>
                         <div class="absolute top-2 right-2 text-gold/30 w-8 h-8 border-t border-r border-gold/40"></div>
                         <div class="absolute bottom-2 left-2 text-gold/30 w-8 h-8 border-b border-l border-gold/40"></div>
                         <div class="absolute bottom-2 right-2 text-gold/30 w-8 h-8 border-b border-r border-gold/40"></div>
 
                         <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-                            <!-- Left Date Accent -->
                             <div class="md:col-span-4 border-b md:border-b-0 md:border-r border-gold/30 pb-6 md:pb-0 md:pr-6">
                                 <div class="font-cinzel text-4xl sm:text-5xl font-bold text-gold tracking-tighter leading-tight">
                                     SAVE<br>THE<br>DATE
                                 </div>
                             </div>
-                            <!-- Right Invitation Content -->
                             <div class="md:col-span-8 text-left md:pl-6 space-y-4">
                                 <h4 class="font-cinzel text-xl sm:text-2xl font-bold text-white tracking-wide">Blessing Joshua Udoh</h4>
                                 <span class="font-cinzel text-gold text-sm italic block my-1">&</span>
@@ -211,18 +231,302 @@
             </section>
         </div>
 
+        <!-- VIEW 1B: BRIDE'S STORY PAGE -->
+        <div id="view-bride-story" class="page-view hidden">
+            <section class="py-16 px-6 max-w-5xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-gold font-cinzel text-xs sm:text-sm tracking-[5px] uppercase block mb-2">Her Perspective</span>
+                    <h2 class="font-cinzel text-3xl sm:text-4xl font-bold tracking-wide">Blessing's Love Story</h2>
+                    <div class="h-1 w-12 bg-gold mx-auto mt-4"></div>
+                </div>
 
-        <!-- ============================================== -->
-        <!-- VIEW 2: PHOTO GALLERY -->
-        <div id="view-gallery" class="page-view hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start bg-white p-8 sm:p-12 double-gold-frame shadow-xl">
+                    <div class="lg:col-span-5">
+                        <div class="p-3 bg-cream border border-gold/40 shadow-md">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800" alt="Blessing Joshua Udoh" class="w-full h-auto object-cover rounded-sm">
+                            <div class="text-center mt-3">
+                                <h3 class="font-cinzel text-sm font-bold text-charcoal">Blessing Joshua Udoh</h3>
+                                <p class="text-[11px] text-gold font-medium uppercase tracking-widest mt-0.5">The Bride</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 space-y-5 text-gray-700 text-sm sm:text-base leading-relaxed">
+                        <p class="italic text-gold font-cinzel text-base border-l-2 border-gold pl-4 py-1">
+                            "I didn't just find love in Communication Arts; I found my soulmate, my calm, and my biggest cheerleader."
+                        </p>
+                        <p>
+                            When I walked into the Department of Communication Arts at UNIUYO for our lectures, I was completely focused on my studies. I remember noticing Inemesit during one of our group presentations—he spoke with such confidence, clarity, and genuine warmth that naturally captured the entire room.
+                        </p>
+                        <p>
+                            Over time, what started as shared notes and library research transformed into long walks across campus and late-evening phone calls. Inemesit became my safest space. He listened with patience, encouraged every dream I shared, and always brought a smile to my face even on the stressful exam days.
+                        </p>
+                        <p>
+                            When he asked me to spend forever with him, my heart knew the answer before my lips could even utter the words. I am overjoyed to begin this beautiful lifelong adventure with the love of my life!
+                        </p>
+
+                        <div class="pt-6 flex flex-wrap gap-4 border-t border-gold/20">
+                            <button onclick="switchTab('story')" class="bg-charcoal hover:bg-gold text-white hover:text-charcoal font-cinzel text-xs px-6 py-3 tracking-widest uppercase transition-all duration-300 border border-gold">
+                                ← Main Story
+                            </button>
+                            <button onclick="switchTab('groom-story')" class="bg-white hover:bg-gold text-charcoal font-cinzel text-xs px-6 py-3 tracking-widest uppercase transition-all duration-300 border border-gold">
+                                Groom's Story →
+                            </button>
+                            <button onclick="switchTab('rsvp')" class="bg-gold hover:bg-charcoal text-white font-cinzel text-xs px-6 py-3 tracking-widest uppercase transition-all duration-300 border border-gold">
+                                RSVP Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- VIEW 1C: GROOM'S STORY PAGE -->
+        <div id="view-groom-story" class="page-view hidden">
+            <section class="py-16 px-6 max-w-5xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-gold font-cinzel text-xs sm:text-sm tracking-[5px] uppercase block mb-2">His Perspective</span>
+                    <h2 class="font-cinzel text-3xl sm:text-4xl font-bold tracking-wide">Inemesit's Love Story</h2>
+                    <div class="h-1 w-12 bg-gold mx-auto mt-4"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start bg-white p-8 sm:p-12 double-gold-frame shadow-xl">
+                    <div class="lg:col-span-5">
+                        <div class="p-3 bg-cream border border-gold/40 shadow-md">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" alt="Inemesit Asuquo Eyo" class="w-full h-auto object-cover rounded-sm">
+                            <div class="text-center mt-3">
+                                <h3 class="font-cinzel text-sm font-bold text-charcoal">Inemesit Asuquo Eyo</h3>
+                                <p class="text-[11px] text-gold font-medium uppercase tracking-widest mt-0.5">The Groom</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 space-y-5 text-gray-700 text-sm sm:text-base leading-relaxed">
+                        <p class="italic text-gold font-cinzel text-base border-l-2 border-gold pl-4 py-1">
+                            "From the first day I saw her in lecture hall, I knew there was something uniquely special about Blessing."
+                        </p>
+                        <p>
+                            Meeting Blessing at UNIUYO remains the greatest blessing of my university years. She walked into the Communication Arts department with an air of elegance, intellect, and kindness that instantly grabbed my attention.
+                        </p>
+                        <p>
+                            I seized every chance to sit near her during lectures and volunteer for the same course projects. As I got to know her deeper, I discovered her kind heart, incredible intelligence, and unwavering faith. Blessing didn't just become my partner—she became my best friend and my standard of joy.
+                        </p>
+                        <p>
+                            Proposing to her was the easiest decision of my life. Seeing her say yes under the golden sunset made me the happiest man alive. I cannot wait to stand at the altar and pledge my forever commitment to my queen.
+                        </p>
+
+                        <div class="pt-6 flex flex-wrap gap-4 border-t border-gold/20">
+                            <button onclick="switchTab('story')" class="bg-charcoal hover:bg-gold text-white hover:text-charcoal font-cinzel text-xs px-6 py-3 tracking-widest uppercase transition-all duration-300 border border-gold">
+                                ← Main Story
+                            </button>
+                            <button onclick="switchTab('bride-story')" class="bg-white hover:bg-gold text-charcoal font-cinzel text-xs px-6 py-3 tracking-widest uppercase transition-all duration-300 border border-gold">
+                                Bride's Story →
+                            </button>
+                            <button onclick="switchTab('rsvp')" class="bg-gold hover:bg-charcoal text-white font-cinzel text-xs px-6 py-3 tracking-widest uppercase transition-all duration-300 border border-gold">
+                                RSVP Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- VIEW 1D: WEDDING PARTY (BRIDESMAIDS & GROOMSMEN) -->
+        <div id="view-party" class="page-view hidden">
             <section class="py-16 px-6 max-w-6xl mx-auto">
                 <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-gold font-cinzel text-xs sm:text-sm tracking-[5px] uppercase">Standing By Our Side</span>
+                    <h2 class="font-cinzel text-3xl sm:text-4xl font-bold tracking-wide mt-2">The Wedding Party</h2>
+                    <div class="h-1 w-12 bg-gold mx-auto mt-4"></div>
+                    <p class="text-gray-600 text-xs sm:text-sm mt-4 font-light">
+                        Meet the cherished friends and family standing with us as we step into our forever.
+                    </p>
+                </div>
+
+                <!-- BRIDESMAIDS SECTION -->
+                <div class="mb-20">
+                    <div class="flex items-center gap-4 mb-10">
+                        <h3 class="font-cinzel text-xl font-bold text-gold tracking-wider">The Bridesmaids</h3>
+                        <div class="flex-grow h-px bg-gold/30"></div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Maid of Honor -->
+                        <div class="bg-white p-6 double-gold-frame shadow-lg text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-gold p-1 bg-cream">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400" alt="Emem Udoh" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <span class="text-[10px] font-bold text-gold uppercase tracking-[3px] mb-1">Maid of Honor</span>
+                            <h4 class="font-cinzel text-lg font-bold text-charcoal">Emem Udoh</h4>
+                            <p class="text-xs text-gray-500 italic mt-2 leading-relaxed">
+                                "Sister and confidante to Blessing. Sisterhood and unconditional support from childhood to the altar."
+                            </p>
+                        </div>
+
+                        <!-- Bridesmaid 1 -->
+                        <div class="bg-white p-6 border border-gold/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-gold/40 p-1 bg-cream">
+                                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=400" alt="Victoria Effiong" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <span class="text-[10px] font-bold text-gold uppercase tracking-[3px] mb-1">Bridesmaid</span>
+                            <h4 class="font-cinzel text-lg font-bold text-charcoal">Victoria Effiong</h4>
+                            <p class="text-xs text-gray-500 italic mt-2 leading-relaxed">
+                                "Uniuyo Comm Arts classmate & closest study buddy. Shared every exam stress and joyful win together."
+                            </p>
+                        </div>
+
+                        <!-- Bridesmaid 2 -->
+                        <div class="bg-white p-6 border border-gold/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-gold/40 p-1 bg-cream">
+                                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&q=80&w=400" alt="Aniebiet Okon" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <span class="text-[10px] font-bold text-gold uppercase tracking-[3px] mb-1">Bridesmaid</span>
+                            <h4 class="font-cinzel text-lg font-bold text-charcoal">Aniebiet Okon</h4>
+                            <p class="text-xs text-gray-500 italic mt-2 leading-relaxed">
+                                "Blessing's lifelong friend and prayer partner, always bringing light and joy into every room."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GROOMSMEN SECTION -->
+                <div>
+                    <div class="flex items-center gap-4 mb-10">
+                        <h3 class="font-cinzel text-xl font-bold text-gold tracking-wider">The Groomsmen</h3>
+                        <div class="flex-grow h-px bg-gold/30"></div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Best Man -->
+                        <div class="bg-white p-6 double-gold-frame shadow-lg text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-gold p-1 bg-cream">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400" alt="Utibe Eyo" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <span class="text-[10px] font-bold text-gold uppercase tracking-[3px] mb-1">Best Man</span>
+                            <h4 class="font-cinzel text-lg font-bold text-charcoal">Utibe Eyo</h4>
+                            <p class="text-xs text-gray-500 italic mt-2 leading-relaxed">
+                                "Brother and best friend to Inemesit. The steady anchor and wise counselor through every season."
+                            </p>
+                        </div>
+
+                        <!-- Groomsman 1 -->
+                        <div class="bg-white p-6 border border-gold/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-gold/40 p-1 bg-cream">
+                                <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&q=80&w=400" alt="Kufre Akpan" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <span class="text-[10px] font-bold text-gold uppercase tracking-[3px] mb-1">Groomsman</span>
+                            <h4 class="font-cinzel text-lg font-bold text-charcoal">Kufre Akpan</h4>
+                            <p class="text-xs text-gray-500 italic mt-2 leading-relaxed">
+                                "Comm Arts departmental colleague and Inemesit's wingman since day one at UNIUYO."
+                            </p>
+                        </div>
+
+                        <!-- Groomsman 2 -->
+                        <div class="bg-white p-6 border border-gold/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-gold/40 p-1 bg-cream">
+                                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400" alt="Edidiong Bassey" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <span class="text-[10px] font-bold text-gold uppercase tracking-[3px] mb-1">Groomsman</span>
+                            <h4 class="font-cinzel text-lg font-bold text-charcoal">Edidiong Bassey</h4>
+                            <p class="text-xs text-gray-500 italic mt-2 leading-relaxed">
+                                "Longtime friend and brother, always ready to celebrate milestones with endless energy."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- PHOTO GALLERY VIEW WITH IMGBB UPLOAD -->
+        <div id="view-gallery" class="page-view hidden">
+            <section class="py-16 px-6 max-w-6xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-12">
                     <span class="text-gold font-cinzel text-xs sm:text-sm tracking-[5px] uppercase">A Visual Story</span>
                     <h2 class="font-cinzel text-3xl sm:text-4xl font-bold tracking-wide mt-2">Captured Memories</h2>
                     <div class="h-1 w-12 bg-gold mx-auto mt-4"></div>
                     <p class="text-gray-600 text-xs sm:text-sm mt-4 font-light">
-                        Browse through our memorable timeline—from our cozy university moments to our spectacular new beginnings.
+                        Upload your favorite photos or browse through our memorable timeline—from our UniUyo days to our wedding celebration.
                     </p>
+                </div>
+
+                <!-- AUTHORIZED UPLOAD CONTAINER & LOGIN TRIGGER -->
+                <div class="max-w-3xl mx-auto mb-16">
+                    <!-- Shown when NOT authorized -->
+                    <div id="uploadLockedBox" class="bg-white p-8 double-gold-frame shadow-xl text-center rounded-sm space-y-4">
+                        <div class="w-14 h-14 mx-auto bg-cream border border-gold/40 rounded-full flex items-center justify-center text-gold text-2xl mb-2">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <h3 class="font-cinzel text-lg font-bold text-charcoal tracking-wide">Protected Photo Uploads</h3>
+                        <p class="text-xs text-gray-600 max-w-md mx-auto leading-relaxed">
+                            Only authorized administrators and couple members can upload photos directly to the wedding album.
+                        </p>
+                        <button onclick="openAuthModal()" class="inline-flex items-center gap-2 bg-charcoal hover:bg-gold text-white hover:text-charcoal font-cinzel text-xs px-8 py-3 tracking-widest uppercase transition-all duration-300 border border-gold shadow-md">
+                            <i class="fa-solid fa-key text-gold"></i>
+                            <span>Upload Photo to Album (Login Required)</span>
+                        </button>
+                    </div>
+
+                    <!-- Shown when AUTHORIZED -->
+                    <div id="uploadFormBox" class="hidden bg-white p-6 sm:p-8 double-gold-frame shadow-xl rounded-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-gold/20">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-cloud-arrow-up text-gold text-2xl"></i>
+                                <div>
+                                    <h3 class="font-cinzel text-lg font-bold text-charcoal tracking-wide">Upload Photo to Album</h3>
+                                    <p class="text-xs text-gray-500">Authorized Session Active</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span id="userAccountBadge" class="text-[11px] font-mono text-gold bg-charcoal px-3 py-1 border border-gold/30 rounded-sm"></span>
+                                <button onclick="handleLogout()" class="text-xs text-red-600 hover:text-red-800 font-cinzel underline uppercase tracking-wider">
+                                    Logout
+                                </button>
+                            </div>
+                        </div>
+
+                        <form id="uploadForm" class="space-y-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <!-- Photo Title -->
+                                <div>
+                                    <label for="photoTitle" class="block text-xs uppercase tracking-widest text-charcoal font-semibold mb-2">Photo Title *</label>
+                                    <input type="text" id="photoTitle" required placeholder="e.g., Comm Arts Lecture Hall" 
+                                           class="w-full bg-cream/50 border border-gold/30 px-4 py-2.5 text-sm focus:outline-none focus:border-gold focus:bg-white transition-all">
+                                </div>
+
+                                <!-- Photo Category -->
+                                <div>
+                                    <label for="photoCategory" class="block text-xs uppercase tracking-widest text-charcoal font-semibold mb-2">Album Section *</label>
+                                    <select id="photoCategory" class="w-full bg-cream/50 border border-gold/30 px-4 py-2.5 text-sm focus:outline-none focus:border-gold focus:bg-white transition-all">
+                                        <option value="before">Before The Wedding</option>
+                                        <option value="after">After The Wedding</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Caption / Description -->
+                            <div>
+                                <label for="photoDescription" class="block text-xs uppercase tracking-widest text-charcoal font-semibold mb-2">Details & Memories *</label>
+                                <textarea id="photoDescription" required rows="2" placeholder="Write a short story or memory about this picture..." 
+                                          class="w-full bg-cream/50 border border-gold/30 px-4 py-2.5 text-sm focus:outline-none focus:border-gold focus:bg-white transition-all resize-none"></textarea>
+                            </div>
+
+                            <!-- File Input -->
+                            <div>
+                                <label for="photoFile" class="block text-xs uppercase tracking-widest text-charcoal font-semibold mb-2">Select Image File *</label>
+                                <input type="file" id="photoFile" accept="image/*" required 
+                                       class="w-full text-xs text-gray-600 file:mr-4 file:py-2.5 file:px-4 file:border-0 file:text-xs file:font-cinzel file:uppercase file:tracking-wider file:bg-charcoal file:text-gold hover:file:bg-gold hover:file:text-charcoal cursor-pointer bg-cream/30 border border-gold/30 rounded-sm">
+                            </div>
+
+                            <!-- Upload Submit Button -->
+                            <div>
+                                <button type="submit" id="uploadBtn" class="w-full bg-charcoal hover:bg-gold text-white hover:text-charcoal font-cinzel text-sm px-8 py-3 tracking-widest uppercase transition-all duration-300 border border-gold flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-upload" id="uploadIcon"></i>
+                                    <span id="uploadBtnText">Upload to ImgBB & Add to Album</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
 
                 <!-- BEFORE THE WEDDING SECTION -->
@@ -232,37 +536,8 @@
                         <div class="flex-grow h-px bg-gold/30"></div>
                     </div>
                     
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <!-- Photo Card 1 -->
-                        <div class="group relative bg-white p-3 border border-gold/20 shadow-md hover:shadow-xl transition-all duration-300">
-                            <div class="overflow-hidden aspect-video bg-charcoal">
-                                <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&q=80&w=600" alt="UNIUYO Days Walk" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            </div>
-                            <div class="mt-3">
-                                <h4 class="font-cinzel text-xs font-semibold tracking-wider text-charcoal">Uniuyo Campus Days</h4>
-                                <p class="text-[11px] text-gray-500 italic mt-0.5">Where our paths first crossed in Comm Arts</p>
-                            </div>
-                        </div>
-                        <!-- Photo Card 2 -->
-                        <div class="group relative bg-white p-3 border border-gold/20 shadow-md hover:shadow-xl transition-all duration-300">
-                            <div class="overflow-hidden aspect-video bg-charcoal">
-                                <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&q=80&w=600" alt="The Beautiful Proposal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            </div>
-                            <div class="mt-3">
-                                <h4 class="font-cinzel text-xs font-semibold tracking-wider text-charcoal">The Proposal Night</h4>
-                                <p class="text-[11px] text-gray-500 italic mt-0.5">A beautiful sunset promise for forever</p>
-                            </div>
-                        </div>
-                        <!-- Photo Card 3 -->
-                        <div class="group relative bg-white p-3 border border-gold/20 shadow-md hover:shadow-xl transition-all duration-300">
-                            <div class="overflow-hidden aspect-video bg-charcoal">
-                                <img src="https://images.unsplash.com/photo-1494774157365-9e04c6722e47?auto=format&fit=crop&q=80&w=600" alt="Pre-wedding Shoot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            </div>
-                            <div class="mt-3">
-                                <h4 class="font-cinzel text-xs font-semibold tracking-wider text-charcoal">Pre-Wedding Warmth</h4>
-                                <p class="text-[11px] text-gray-500 italic mt-0.5">Under the golden tropical skies</p>
-                            </div>
-                        </div>
+                    <div id="beforeGallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Dynamic photo cards injected here -->
                     </div>
                 </div>
 
@@ -273,42 +548,12 @@
                         <div class="flex-grow h-px bg-gold/30"></div>
                     </div>
                     
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <!-- Photo Card 4 -->
-                        <div class="group relative bg-white p-3 border border-gold/20 shadow-md hover:shadow-xl transition-all duration-300">
-                            <div class="overflow-hidden aspect-video bg-charcoal">
-                                <img src="https://images.unsplash.com/photo-1519225495810-7512c696505a?auto=format&fit=crop&q=80&w=600" alt="The First Dance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            </div>
-                            <div class="mt-3">
-                                <h4 class="font-cinzel text-xs font-semibold tracking-wider text-charcoal">The First Dance</h4>
-                                <p class="text-[11px] text-gray-500 italic mt-0.5">Our very first moment as husband & wife</p>
-                            </div>
-                        </div>
-                        <!-- Photo Card 5 -->
-                        <div class="group relative bg-white p-3 border border-gold/20 shadow-md hover:shadow-xl transition-all duration-300">
-                            <div class="overflow-hidden aspect-video bg-charcoal">
-                                <img src="https://images.unsplash.com/photo-1546193430-c2d20e1babaa?auto=format&fit=crop&q=80&w=600" alt="The Banquet Celebration" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            </div>
-                            <div class="mt-3">
-                                <h4 class="font-cinzel text-xs font-semibold tracking-wider text-charcoal">Reception Bliss</h4>
-                                <p class="text-[11px] text-gray-500 italic mt-0.5">Laughter shared with family & friends</p>
-                            </div>
-                        </div>
-                        <!-- Photo Card 6 -->
-                        <div class="group relative bg-white p-3 border border-gold/20 shadow-md hover:shadow-xl transition-all duration-300">
-                            <div class="overflow-hidden aspect-video bg-charcoal">
-                                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=600" alt="Honeymoon Getaway" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            </div>
-                            <div class="mt-3">
-                                <h4 class="font-cinzel text-xs font-semibold tracking-wider text-charcoal">The Honeymoon Escape</h4>
-                                <p class="text-[11px] text-gray-500 italic mt-0.5">Venturing together into our new forever</p>
-                            </div>
-                        </div>
+                    <div id="afterGallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Dynamic photo cards injected here -->
                     </div>
                 </div>
             </section>
         </div>
-
 
         <!-- ============================================== -->
         <!-- VIEW 3: GUESTBOOK -->
@@ -365,6 +610,146 @@
             </section>
         </div>
 
+        <!-- ============================================== -->
+        <!-- VIEW 5: GIFTING & REGISTRY (NEW PAGE) -->
+        <div id="view-gifting" class="page-view hidden">
+            <section class="py-16 px-6 max-w-5xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-gold font-cinzel text-xs sm:text-sm tracking-[5px] uppercase">Registry & Blessings</span>
+                    <h2 class="font-cinzel text-3xl sm:text-4xl font-bold tracking-wide mt-2">Gifting & Well Wishes</h2>
+                    <div class="h-1 w-12 bg-gold mx-auto mt-4"></div>
+                    <p class="text-gray-600 text-xs sm:text-sm mt-4 font-light leading-relaxed">
+                        Your presence, prayers, and loving thoughts on our special day are the greatest gifts we could ever ask for. However, if you wish to honor us with a financial blessing or physical gift as we build our new home together, please find our registry and account details below.
+                    </p>
+                </div>
+
+                <!-- BANK ACCOUNT / CASH GIFT CARDS -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                    <!-- Joint / Groom Account Card -->
+                    <div class="bg-white p-8 double-gold-frame shadow-xl rounded-sm flex flex-col justify-between relative overflow-hidden group">
+                        <div class="absolute -right-6 -bottom-6 text-gold/10 text-8xl group-hover:scale-110 transition-transform duration-500">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 bg-cream border border-gold/40 rounded-full flex items-center justify-center text-gold">
+                                    <i class="fa-solid fa-gift"></i>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-gold font-bold uppercase tracking-widest block">Bank Transfer (Naira)</span>
+                                    <h3 class="font-cinzel text-lg font-bold text-charcoal">Joint Couple Account</h3>
+                                </div>
+                            </div>
+                            <div class="h-px bg-gold/20 w-full my-4"></div>
+                            
+                            <div class="space-y-3 text-sm text-gray-700 font-montserrat">
+                                <div class="flex justify-between items-center py-1 border-b border-cream">
+                                    <span class="text-xs uppercase text-gray-400 tracking-wider">Bank Name</span>
+                                    <span class="font-semibold text-charcoal">Guaranty Trust Bank (GTBank)</span>
+                                </div>
+                                <div class="flex justify-between items-center py-1 border-b border-cream">
+                                    <span class="text-xs uppercase text-gray-400 tracking-wider">Account Name</span>
+                                    <span class="font-semibold text-charcoal">Inemesit Asuquo Eyo</span>
+                                </div>
+                                <div class="flex justify-between items-center py-1">
+                                    <span class="text-xs uppercase text-gray-400 tracking-wider">Account Number</span>
+                                    <span class="font-mono font-bold text-lg text-gold tracking-widest" id="accNumberGroom">0123456789</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-gold/20">
+                            <button onclick="copyAccount('0123456789', 'GTBank Account Number')" class="w-full bg-charcoal hover:bg-gold text-white hover:text-charcoal font-cinzel text-xs py-3 px-4 uppercase tracking-widest border border-gold transition-all duration-300 flex items-center justify-center gap-2">
+                                <i class="fa-regular fa-copy"></i>
+                                <span>Copy Account Number</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Bride Account Card -->
+                    <div class="bg-white p-8 double-gold-frame shadow-xl rounded-sm flex flex-col justify-between relative overflow-hidden group">
+                        <div class="absolute -right-6 -bottom-6 text-gold/10 text-8xl group-hover:scale-110 transition-transform duration-500">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 bg-cream border border-gold/40 rounded-full flex items-center justify-center text-gold">
+                                    <i class="fa-solid fa-hand-holding-heart"></i>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-gold font-bold uppercase tracking-widest block">Bank Transfer (Naira)</span>
+                                    <h3 class="font-cinzel text-lg font-bold text-charcoal">Bride's Account</h3>
+                                </div>
+                            </div>
+                            <div class="h-px bg-gold/20 w-full my-4"></div>
+
+                            <div class="space-y-3 text-sm text-gray-700 font-montserrat">
+                                <div class="flex justify-between items-center py-1 border-b border-cream">
+                                    <span class="text-xs uppercase text-gray-400 tracking-wider">Bank Name</span>
+                                    <span class="font-semibold text-charcoal">Access Bank</span>
+                                </div>
+                                <div class="flex justify-between items-center py-1 border-b border-cream">
+                                    <span class="text-xs uppercase text-gray-400 tracking-wider">Account Name</span>
+                                    <span class="font-semibold text-charcoal">Blessing Joshua Udoh</span>
+                                </div>
+                                <div class="flex justify-between items-center py-1">
+                                    <span class="text-xs uppercase text-gray-400 tracking-wider">Account Number</span>
+                                    <span class="font-mono font-bold text-lg text-gold tracking-widest" id="accNumberBride">0987654321</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-gold/20">
+                            <button onclick="copyAccount('0987654321', 'Access Bank Account Number')" class="w-full bg-charcoal hover:bg-gold text-white hover:text-charcoal font-cinzel text-xs py-3 px-4 uppercase tracking-widest border border-gold transition-all duration-300 flex items-center justify-center gap-2">
+                                <i class="fa-regular fa-copy"></i>
+                                <span>Copy Account Number</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GIFT NOTIFICATION FORM -->
+                <div class="bg-white p-6 sm:p-10 double-gold-frame max-w-2xl mx-auto shadow-xl rounded-sm">
+                    <div class="text-center mb-6">
+                        <span class="text-[10px] text-gold font-bold uppercase tracking-[3px] block">Acknowledgement</span>
+                        <h3 class="font-cinzel text-xl font-bold text-charcoal">Send Us A Gift Note</h3>
+                        <p class="text-xs text-gray-500 mt-1">If you have sent a cash blessing or physical gift, kindly leave us a message so we can personally thank you!</p>
+                    </div>
+
+                    <form id="giftNotificationForm" class="space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label for="giftGiverName" class="block text-xs uppercase tracking-widest text-charcoal font-semibold mb-2">Your Name *</label>
+                                <input type="text" id="giftGiverName" required placeholder="e.g., Dr. Aniefiok Effiong" 
+                                       class="w-full bg-cream/50 border border-gold/30 px-4 py-2.5 text-sm focus:outline-none focus:border-gold focus:bg-white transition-all">
+                            </div>
+                            <div>
+                                <label for="giftType" class="block text-xs uppercase tracking-widest text-charcoal font-semibold mb-2">Type of Gift</label>
+                                <select id="giftType" class="w-full bg-cream/50 border border-gold/30 px-4 py-2.5 text-sm focus:outline-none focus:border-gold focus:bg-white transition-all">
+                                    <option value="Cash Blessing">Bank Transfer / Cash Blessing</option>
+                                    <option value="Physical Gift">Physical / Household Gift</option>
+                                    <option value="Honeymoon Support">Honeymoon Contribution</option>
+                                    <option value="Other">Special Blessing</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="giftMessage" class="block text-xs uppercase tracking-widest text-charcoal font-semibold mb-2">Message or Note to Couple</label>
+                            <textarea id="giftMessage" rows="3" placeholder="Write a brief note or mention your gift details..." 
+                                      class="w-full bg-cream/50 border border-gold/30 px-4 py-2.5 text-sm focus:outline-none focus:border-gold focus:bg-white transition-all resize-none"></textarea>
+                        </div>
+
+                        <div>
+                            <button type="submit" class="w-full bg-charcoal hover:bg-gold text-white hover:text-charcoal font-cinzel text-xs px-8 py-3.5 tracking-widest uppercase transition-all duration-300 border border-gold flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Send Gift Notification</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
 
         <!-- ============================================== -->
         <!-- VIEW 4: RSVP -->
@@ -424,6 +809,81 @@
 
     </main>
 
+    <!-- ENLARGED PHOTO LIGHTBOX MODAL -->
+    <div id="photoModal" class="fixed inset-0 z-50 bg-black/90 hidden flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="relative max-w-4xl w-full bg-white double-gold-frame p-4 sm:p-6 shadow-2xl modal-enter overflow-hidden my-auto max-h-[90vh] flex flex-col">
+            <!-- Close button -->
+            <button onclick="closeModal()" class="absolute top-3 right-3 text-charcoal hover:text-gold text-2xl z-20 w-10 h-10 flex items-center justify-center bg-cream/80 rounded-full border border-gold/30 transition-all">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center overflow-y-auto max-h-[80vh] p-2">
+                <!-- Large Image Container -->
+                <div class="md:col-span-7 flex justify-center bg-charcoal/90 rounded border border-gold/20 p-2">
+                    <img id="modalImg" src="" alt="" class="max-h-[60vh] w-auto object-contain rounded">
+                </div>
+
+                <!-- Photo Metadata Side Panel -->
+                <div class="md:col-span-5 space-y-4">
+                    <span id="modalCategory" class="inline-block bg-charcoal text-gold font-cinzel text-[10px] uppercase tracking-[2px] px-3 py-1 border border-gold/40 rounded-sm">
+                        Category
+                    </span>
+                    <h3 id="modalTitle" class="font-cinzel text-xl sm:text-2xl font-bold text-charcoal tracking-wide">
+                        Title
+                    </h3>
+                    <div class="h-px bg-gold/30 w-16 my-2"></div>
+                    <p id="modalDescription" class="text-gray-700 text-xs sm:text-sm leading-relaxed italic">
+                        Description details...
+                    </p>
+                    <p id="modalDate" class="text-[10px] text-gray-400 font-mono pt-2 border-t border-cream">
+                        Uploaded on date
+                    </p>
+
+                    <div class="pt-4 flex gap-3">
+                        <button id="deletePhotoBtn" onclick="" class="bg-red-900/10 hover:bg-red-600 text-red-700 hover:text-white font-cinzel text-xs px-4 py-2 uppercase tracking-wider transition-all border border-red-300 rounded-sm flex items-center gap-1.5">
+                            <i class="fa-solid fa-trash-can text-xs"></i> Delete Photo
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AUTHORIZATION LOGIN MODAL -->
+    <div id="authModal" class="fixed inset-0 z-50 bg-black/90 hidden flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="relative max-w-md w-full bg-white double-gold-frame p-6 sm:p-8 shadow-2xl modal-enter my-auto">
+            <button onclick="closeAuthModal()" class="absolute top-3 right-3 text-charcoal hover:text-gold text-2xl z-20 w-8 h-8 flex items-center justify-center bg-cream/80 rounded-full border border-gold/30 transition-all">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 mx-auto bg-charcoal border border-gold rounded-full flex items-center justify-center text-gold text-xl mb-3">
+                    <i class="fa-solid fa-user-lock"></i>
+                </div>
+                <h3 class="font-cinzel text-xl font-bold text-charcoal tracking-wide">Authorized Login</h3>
+                <p class="text-xs text-gray-500 mt-1">Sign in with your email and password to upload photos to the album.</p>
+            </div>
+
+            <form id="authLoginForm" class="space-y-4">
+                <div>
+                    <label for="authEmail" class="block text-xs uppercase tracking-widest text-charcoal font-semibold mb-1.5">Email Address *</label>
+                    <input type="email" id="authEmail" required placeholder="admin@domain.com" 
+                           class="w-full bg-cream/50 border border-gold/30 px-4 py-2.5 text-sm focus:outline-none focus:border-gold focus:bg-white transition-all">
+                </div>
+                <div>
+                    <label for="authPassword" class="block text-xs uppercase tracking-widest text-charcoal font-semibold mb-1.5">Password *</label>
+                    <input type="password" id="authPassword" required placeholder="••••••••" 
+                           class="w-full bg-cream/50 border border-gold/30 px-4 py-2.5 text-sm focus:outline-none focus:border-gold focus:bg-white transition-all">
+                </div>
+                <div id="authErrorMsg" class="hidden text-xs text-red-600 bg-red-50 p-2.5 border border-red-200 rounded text-center"></div>
+                <button type="submit" id="loginBtn" class="w-full bg-charcoal hover:bg-gold text-white hover:text-charcoal font-cinzel text-xs px-6 py-3 tracking-widest uppercase transition-all duration-300 border border-gold flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <span>Login & Access Uploads</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
     <!-- CUSTOM NOTIFICATION POPUP (No native alerts) -->
     <div id="toastMessage" class="fixed bottom-6 right-6 z-50 transform translate-y-12 opacity-0 transition-all duration-500 bg-charcoal text-white border-l-4 border-gold p-4 shadow-2xl max-w-sm rounded flex flex-col gap-1">
         <span class="font-cinzel text-xs text-gold font-bold tracking-widest uppercase">System Note</span>
@@ -444,7 +904,6 @@
         </div>
     </footer>
 
-
     <!-- ============================================== -->
     <script>
         /* --- COUNTDOWN LOGIC --- */
@@ -459,7 +918,6 @@
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            // Display checks to prevent script errors if view isn't active
             const daysEl = document.getElementById("days");
             if (daysEl) {
                 daysEl.innerHTML = days < 10 ? "0" + days : days;
@@ -475,24 +933,19 @@
             }
         }, 1000);
 
-
         /* --- SPA VIEW-SWITCHER LOGIC --- */
         function switchTab(tabId) {
-            // Hide all views
             const views = document.querySelectorAll('.page-view');
             views.forEach(view => {
                 view.classList.add('hidden');
             });
 
-            // Show selected view
             const activeView = document.getElementById('view-' + tabId);
             if (activeView) {
                 activeView.classList.remove('hidden');
-                // Scroll to top of the header area smoothly on change
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
 
-            // Update navbar highlighted tab styling
             const buttons = document.querySelectorAll('.nav-btn');
             buttons.forEach(btn => {
                 btn.className = "nav-btn py-2 px-3 text-gray-300 hover:text-gold border-b-2 border-transparent hover:border-gold transition-all duration-300";
@@ -504,9 +957,54 @@
             }
         }
 
+        /* --- CUSTOM NOTIFICATION HANDLER --- */
+        function showToast(text) {
+            const toast = document.getElementById('toastMessage');
+            const toastText = document.getElementById('toastText');
+
+            toastText.textContent = text;
+            toast.classList.remove('translate-y-12', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(function() {
+                toast.classList.add('translate-y-12', 'opacity-0');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 5000);
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        /* --- COPY ACCOUNT NUMBER HELPER --- */
+        function copyAccount(accNum, label) {
+            const tempInput = document.createElement('input');
+            tempInput.style.position = 'absolute';
+            tempInput.style.left = '-9999px';
+            tempInput.value = accNum;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            showToast(label + " (" + accNum + ") copied to clipboard!");
+        }
+
+        /* --- GIFT NOTIFICATION FORM HANDLER --- */
+        document.getElementById('giftNotificationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('giftGiverName').value.trim();
+            const type = document.getElementById('giftType').value;
+            showToast(`Thank you ${name}! We have received your gift notification (${type}). We deeply appreciate your love!`);
+            this.reset();
+        });
 
         /* --- PERSISTENT GUESTBOOK SYSTEM --- */
-        // Default seed memories to fill board
         const seedMessages = [
             {
                 name: "Udeme Akpan",
@@ -525,7 +1023,6 @@
             }
         ];
 
-        // Load & display entries
         function loadGuestbook() {
             let messages = JSON.parse(localStorage.getItem('wedding_messages'));
             if (!messages) {
@@ -534,25 +1031,25 @@
             }
 
             const board = document.getElementById('notesBoard');
-            board.innerHTML = ''; // clear first
+            if (!board) return;
+            board.innerHTML = '';
 
             messages.forEach(msg => {
                 const card = document.createElement('div');
                 card.className = "bg-white p-6 border-l-4 border-gold shadow-md hover:shadow-lg transition-all rounded-sm flex flex-col justify-between";
                 
                 card.innerHTML = `
-                    <p class="text-sm italic text-gray-700 leading-relaxed mb-4">"${msg.message}"</p>
+                    <p class="text-sm italic text-gray-700 leading-relaxed mb-4">"${escapeHtml(msg.message)}"</p>
                     <div>
                         <div class="h-px bg-gold/20 w-12 my-2"></div>
-                        <h4 class="font-cinzel text-xs font-bold text-charcoal tracking-widest uppercase">${msg.name}</h4>
-                        <span class="text-[10px] text-gold font-medium tracking-wider uppercase">${msg.relation}</span>
+                        <h4 class="font-cinzel text-xs font-bold text-charcoal tracking-widest uppercase">${escapeHtml(msg.name)}</h4>
+                        <span class="text-[10px] text-gold font-medium tracking-wider uppercase">${escapeHtml(msg.relation)}</span>
                     </div>
                 `;
                 board.appendChild(card);
             });
         }
 
-        // Form submission
         document.getElementById('guestbookForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const nameInput = document.getElementById('authorName');
@@ -566,18 +1063,15 @@
             };
 
             let messages = JSON.parse(localStorage.getItem('wedding_messages')) || [];
-            messages.unshift(newEntry); // Put new message on top
+            messages.unshift(newEntry);
             localStorage.setItem('wedding_messages', JSON.stringify(messages));
 
-            // Reset Form Fields
             nameInput.value = '';
             messageInput.value = '';
 
-            // Refresh layout and notify
             loadGuestbook();
             showToast("Your love note has been added to the public Guestbook!");
         });
-
 
         /* --- RSVP SUBMISSION HANDLER --- */
         document.getElementById('rsvpForm').addEventListener('submit', function(e) {
@@ -593,14 +1087,12 @@
                 responseText += " We are sad you cannot attend, but cherish your warm thoughts.";
             }
 
-            // Clear inputs
             document.getElementById('rsvpName').value = '';
             document.getElementById('rsvpEmail').value = '';
 
             showToast(responseText);
         });
 
-        // Hide guest selection if guest declines attendance
         const attendanceRadios = document.querySelectorAll('input[name="attendance"]');
         const guestBlock = document.getElementById('guestSelectBlock');
         attendanceRadios.forEach(radio => {
@@ -613,28 +1105,373 @@
             });
         });
 
-
-        /* --- CUSTOM NOTIFICATION HANDLER --- */
-        function showToast(text) {
-            const toast = document.getElementById('toastMessage');
-            const toastText = document.getElementById('toastText');
-
-            toastText.textContent = text;
-            
-            // Slide in & Fade in
-            toast.classList.remove('translate-y-12', 'opacity-0');
-            toast.classList.add('translate-y-0', 'opacity-100');
-
-            // Slide out after 5 seconds
-            setTimeout(function() {
-                toast.classList.add('translate-y-12', 'opacity-0');
-                toast.classList.remove('translate-y-0', 'opacity-100');
-            }, 5500);
-        }
-
-        // Initialize board content on page load
         window.onload = function() {
             loadGuestbook();
+        };
+    </script>
+
+    <!-- FIREBASE MODULE FOR IMGBB UPLOAD & SHARED CLOUD ALBUM -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, collection, addDoc, deleteDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        const IMGBB_API_KEY = "23e8da576e21e4b42f00618856f4285c";
+
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'blessing-inemesit-wedding';
+        
+        // YOUR LIVE FIREBASE CONFIGURATION
+        const firebaseConfig = {
+            apiKey: "AIzaSyBJAxJmKVHpA74ESIsLg8hkH6iBRMhPy7w",
+            authDomain: "blejoe.firebaseapp.com",
+            projectId: "blejoe",
+            storageBucket: "blejoe.firebasestorage.app",
+            messagingSenderId: "149786822931",
+            appId: "1:149786822931:web:11cd3b3f419bcc1b2032e6",
+            measurementId: "G-F7VN613PM2"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        let currentUser = null;
+        let isAuthorized = false;
+
+        // Registered Admin UIDs (including your admin UID from Firebase)
+        const ADMIN_UIDS = ['G7haCStAndOTG9VfWeZ0heb5aKX2'];
+
+        function getPhotosCollection() {
+            return collection(db, 'artifacts', appId, 'public', 'data', 'wedding_photos');
+        }
+
+        // Seed photos array as fallback
+        const defaultPhotos = [
+            {
+                id: 'sample-1',
+                url: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&q=80&w=600',
+                title: 'Uniuyo Campus Days',
+                category: 'before',
+                description: 'Where our paths first crossed in Comm Arts',
+                date: 'May 14, 2024'
+            },
+            {
+                id: 'sample-2',
+                url: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&q=80&w=600',
+                title: 'The Proposal Night',
+                category: 'before',
+                description: 'A beautiful sunset promise for forever',
+                date: 'Jun 20, 2025'
+            },
+            {
+                id: 'sample-3',
+                url: 'https://images.unsplash.com/photo-1494774157365-9e04c6722e47?auto=format&fit=crop&q=80&w=600',
+                title: 'Pre-Wedding Warmth',
+                category: 'before',
+                description: 'Under the golden tropical skies',
+                date: 'Jan 10, 2026'
+            },
+            {
+                id: 'sample-4',
+                url: 'https://images.unsplash.com/photo-1519225495810-7512c696505a?auto=format&fit=crop&q=80&w=600',
+                title: 'The First Dance',
+                category: 'after',
+                description: 'Our very first moment as husband & wife',
+                date: 'Dec 12, 2026'
+            },
+            {
+                id: 'sample-5',
+                url: 'https://images.unsplash.com/photo-1546193430-c2d20e1babaa?auto=format&fit=crop&q=80&w=600',
+                title: 'Reception Bliss',
+                category: 'after',
+                description: 'Laughter shared with family & friends',
+                date: 'Dec 12, 2026'
+            },
+            {
+                id: 'sample-6',
+                url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=600',
+                title: 'The Honeymoon Escape',
+                category: 'after',
+                description: 'Venturing together into our new forever',
+                date: 'Dec 15, 2026'
+            }
+        ];
+
+        // Toggle Upload Form vs Locked Box
+        function updateUploadUI() {
+            const lockedBox = document.getElementById('uploadLockedBox');
+            const formBox = document.getElementById('uploadFormBox');
+            const userBadge = document.getElementById('userAccountBadge');
+
+            if (isAuthorized && currentUser) {
+                if (lockedBox) lockedBox.classList.add('hidden');
+                if (formBox) formBox.classList.remove('hidden');
+                if (userBadge) userBadge.textContent = currentUser.email || 'Authorized User';
+            } else {
+                if (lockedBox) lockedBox.classList.remove('hidden');
+                if (formBox) formBox.classList.add('hidden');
+            }
+        }
+
+        /* --- AUTH MODAL SYSTEM --- */
+        window.openAuthModal = function() {
+            const errDiv = document.getElementById('authErrorMsg');
+            if (errDiv) errDiv.classList.add('hidden');
+            document.getElementById('authModal').classList.remove('hidden');
+        };
+
+        window.closeAuthModal = function() {
+            document.getElementById('authModal').classList.add('hidden');
+        };
+
+        window.handleLogout = async function() {
+            try {
+                await signOut(auth);
+                await signInAnonymously(auth);
+                isAuthorized = false;
+                updateUploadUI();
+                showToast("Logged out of admin upload session.");
+            } catch (err) {
+                console.error("Logout error:", err);
+            }
+        };
+
+        // Form submit for authentication (Option 1: Direct Email/Password Login)
+        document.getElementById('authLoginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const emailInput = document.getElementById('authEmail').value.trim();
+            const passInput = document.getElementById('authPassword').value;
+            const errDiv = document.getElementById('authErrorMsg');
+            const loginBtn = document.getElementById('loginBtn');
+
+            errDiv.classList.add('hidden');
+            loginBtn.disabled = true;
+
+            try {
+                // Direct Email & Password Sign-In
+                await signInWithEmailAndPassword(auth, emailInput, passInput);
+                isAuthorized = true;
+                window.closeAuthModal();
+                updateUploadUI();
+                showToast("Successfully logged in as authorized uploader!");
+            } catch (err) {
+                console.error("Sign in error:", err);
+                let message = "Invalid email or password. Please check your credentials.";
+                if (err.code === 'auth/invalid-credential' || err.code === 'auth/wrong-password' || err.code === 'auth/user-not-found') {
+                    message = "Invalid email or password. Please verify your credentials.";
+                } else if (err.code === 'auth/too-many-requests') {
+                    message = "Access temporarily disabled due to multiple failed attempts. Please try again later.";
+                } else if (err.message) {
+                    message = err.message;
+                }
+                errDiv.textContent = message;
+                errDiv.classList.remove('hidden');
+            } finally {
+                loginBtn.disabled = false;
+            }
+        });
+
+        // Render photo cards into Before/After sections
+        function renderGallery(photos) {
+            const beforeContainer = document.getElementById('beforeGallery');
+            const afterContainer = document.getElementById('afterGallery');
+
+            if (!beforeContainer || !afterContainer) return;
+
+            beforeContainer.innerHTML = '';
+            afterContainer.innerHTML = '';
+
+            let beforeCount = 0;
+            let afterCount = 0;
+
+            photos.forEach(photo => {
+                const card = document.createElement('div');
+                card.className = "group relative bg-white p-3 border border-gold/20 shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer rounded-sm flex flex-col justify-between";
+                card.onclick = () => window.openModal(photo);
+
+                card.innerHTML = `
+                    <div class="overflow-hidden aspect-video bg-charcoal relative">
+                        <img src="${photo.url}" alt="${escapeHtml(photo.title)}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="text-white bg-charcoal/80 border border-gold/50 text-[10px] uppercase font-cinzel px-3 py-1 tracking-widest rounded-sm">
+                                View Details
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <h4 class="font-cinzel text-xs font-semibold tracking-wider text-charcoal truncate">${escapeHtml(photo.title)}</h4>
+                        <p class="text-[11px] text-gray-500 italic mt-0.5 line-clamp-1">${escapeHtml(photo.description)}</p>
+                    </div>
+                `;
+
+                if (photo.category === 'after') {
+                    afterContainer.appendChild(card);
+                    afterCount++;
+                } else {
+                    beforeContainer.appendChild(card);
+                    beforeCount++;
+                }
+            });
+
+            if (beforeCount === 0) {
+                beforeContainer.innerHTML = `<div class="col-span-full text-center py-8 text-gray-400 text-xs italic bg-white/50 border border-dashed border-gold/30">No photos uploaded in this section yet. Use the upload box above!</div>`;
+            }
+            if (afterCount === 0) {
+                afterContainer.innerHTML = `<div class="col-span-full text-center py-8 text-gray-400 text-xs italic bg-white/50 border border-dashed border-gold/30">No photos uploaded in this section yet. Use the upload box above!</div>`;
+            }
+        }
+
+        // Initialize Auth and Firestore Snapshot Listener
+        async function initAuthAndGallery() {
+            try {
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else {
+                    await signInAnonymously(auth);
+                }
+            } catch (err) {
+                console.warn("Auth initialization error:", err);
+            }
+
+            onAuthStateChanged(auth, (user) => {
+                currentUser = user;
+                // Grant authorization if user is logged in with email/password or matches Admin UID
+                isAuthorized = user && (!user.isAnonymous || ADMIN_UIDS.includes(user.uid));
+                updateUploadUI();
+
+                if (user) {
+                    onSnapshot(getPhotosCollection(), (snapshot) => {
+                        if (snapshot.empty) {
+                            renderGallery(defaultPhotos);
+                        } else {
+                            const cloudPhotos = [];
+                            snapshot.forEach(docSnap => {
+                                cloudPhotos.push({ id: docSnap.id, ...docSnap.data() });
+                            });
+                            // Sort newest first
+                            cloudPhotos.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+                            renderGallery(cloudPhotos);
+                        }
+                    }, (error) => {
+                        console.error("Firestore listener error:", error);
+                        renderGallery(defaultPhotos);
+                    });
+                } else {
+                    renderGallery(defaultPhotos);
+                }
+            });
+        }
+
+        initAuthAndGallery();
+
+        // Form Submission to ImgBB + Cloud Firestore
+        document.getElementById('uploadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            if (!currentUser || !isAuthorized) {
+                showToast("You must be logged in as an authorized uploader to post photos.");
+                window.openAuthModal();
+                return;
+            }
+
+            const fileInput = document.getElementById('photoFile');
+            const titleInput = document.getElementById('photoTitle');
+            const categorySelect = document.getElementById('photoCategory');
+            const descInput = document.getElementById('photoDescription');
+
+            const file = fileInput.files[0];
+            if (!file) {
+                showToast("Please select an image file to upload.");
+                return;
+            }
+
+            const uploadBtn = document.getElementById('uploadBtn');
+            const uploadIcon = document.getElementById('uploadIcon');
+            const uploadBtnText = document.getElementById('uploadBtnText');
+
+            uploadBtn.disabled = true;
+            uploadIcon.className = "fa-solid fa-spinner fa-spin";
+            uploadBtnText.textContent = "Uploading to ImgBB & Firebase...";
+
+            try {
+                const formData = new FormData();
+                formData.append('image', file);
+
+                // Upload image file directly to ImgBB API
+                const res = await fetch(`https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}`, {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await res.json();
+
+                if (data && data.success) {
+                    const imageUrl = data.data.display_url || data.data.url;
+
+                    // Save ImgBB URL & metadata to shared Firebase collection
+                    await addDoc(getPhotosCollection(), {
+                        url: imageUrl,
+                        title: titleInput.value.trim(),
+                        category: categorySelect.value,
+                        description: descInput.value.trim(),
+                        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+                        createdAt: Date.now(),
+                        uploadedBy: currentUser.uid,
+                        uploaderEmail: currentUser.email || 'Admin'
+                    });
+
+                    document.getElementById('uploadForm').reset();
+                    showToast("Photo uploaded to ImgBB & published to shared cloud album!");
+                } else {
+                    showToast("ImgBB upload failed: " + (data.error ? data.error.message : "Unknown error"));
+                }
+            } catch (err) {
+                console.error("Upload error:", err);
+                showToast("Error saving photo. Please try again.");
+            } finally {
+                uploadBtn.disabled = false;
+                uploadIcon.className = "fa-solid fa-upload";
+                uploadBtnText.textContent = "Upload to ImgBB & Add to Album";
+            }
+        });
+
+        /* --- MODAL LIGHTBOX SYSTEM --- */
+        window.openModal = function(photo) {
+            const modal = document.getElementById('photoModal');
+            document.getElementById('modalImg').src = photo.url;
+            document.getElementById('modalImg').alt = photo.title;
+            document.getElementById('modalTitle').textContent = photo.title;
+            document.getElementById('modalCategory').textContent = photo.category === 'after' ? 'After The Wedding' : 'Before The Wedding';
+            document.getElementById('modalDescription').textContent = photo.description;
+            document.getElementById('modalDate').textContent = "Uploaded: " + (photo.date || "N/A");
+
+            const deleteBtn = document.getElementById('deletePhotoBtn');
+            deleteBtn.onclick = () => window.deletePhoto(photo.id);
+
+            modal.classList.remove('hidden');
+        };
+
+        window.closeModal = function() {
+            document.getElementById('photoModal').classList.add('hidden');
+        };
+
+        window.deletePhoto = async function(photoId) {
+            if (!currentUser) return;
+            if (!isAuthorized) {
+                showToast("Only authorized administrators can delete photos.");
+                return;
+            }
+            try {
+                if (photoId.startsWith('sample-')) {
+                    showToast("Sample photo hidden.");
+                    window.closeModal();
+                    return;
+                }
+                await deleteDoc(doc(db, 'artifacts', appId, 'public', 'data', 'wedding_photos', photoId));
+                window.closeModal();
+                showToast("Photo removed from shared album.");
+            } catch (err) {
+                console.error("Error deleting photo:", err);
+                showToast("Could not delete photo.");
+            }
         };
     </script>
 </body>
