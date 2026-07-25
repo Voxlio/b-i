@@ -19,10 +19,11 @@
             theme: {
                 extend: {
                     colors: {
-                        cream: '#f4f1ea',      /* Matches Coffee Sign Cream */
-                        charcoal: '#1c1c1c',   /* Matches Sign Text & Mount */
-                        gold: '#c39b62',       /* Muted Gold Accent Color */
-                        goldDark: '#a37b42',
+                        cream: '#F9F6F0',      /* Soft Warm Cream Background */
+                        burgundy: '#6B1D2F',   /* Main Luxury Theme Color */
+                        olive: '#556B2F',      /* Secondary Earthy Accent */
+                        onions: '#8A3324',     /* Deep Warm Purple/Burgundy Accent */
+                        charcoal: '#211B1C',   /* Deep Rich Text Tone */
                     },
                     fontFamily: {
                         cinzel: ['Cinzel', 'serif'],
@@ -40,16 +41,16 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #f4f1ea;
+            background: #F9F6F0;
         }
         ::-webkit-scrollbar-thumb {
-            background: #c39b62;
+            background: #6B1D2F;
             border-radius: 4px;
         }
         
-        /* Gold Double-Border Frame styled after demo3.jpg */
+        /* Custom Double-Border Frame styled after wedding palette */
         .double-gold-frame {
-            border: 4px double #c39b62;
+            border: 4px double #6B1D2F;
         }
         
         /* Smooth tab fade-in animation */
@@ -78,31 +79,31 @@
         }
     </style>
 </head>
-<body class="bg-cream font-montserrat text-charcoal flex flex-col min-h-screen selection:bg-gold selection:text-white">
+<body class="bg-cream font-montserrat text-charcoal flex flex-col min-h-screen selection:bg-burgundy selection:text-white">
 
     <!-- NAVIGATION BAR -->
-    <header class="sticky top-0 z-40 bg-charcoal text-white shadow-lg border-b border-gold/30">
+    <header class="sticky top-0 z-40 bg-burgundy text-white shadow-lg border-b border-olive/30">
         <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
-            <a href="#" onclick="switchTab('story')" class="font-cinzel text-2xl font-bold tracking-[3px] text-white hover:text-gold transition-colors duration-300">
-                B <span class="text-gold">&</span> I
+            <a href="#" onclick="switchTab('story')" class="font-cinzel text-2xl font-bold tracking-[3px] text-white hover:text-cream transition-colors duration-300">
+                B <span class="text-olive">&</span> I
             </a>
             <nav class="flex gap-1 sm:gap-4 md:gap-6 text-xs sm:text-sm tracking-wider uppercase font-medium flex-wrap justify-center">
-                <button onclick="switchTab('story')" id="nav-story" class="nav-btn py-2 px-3 text-gold border-b-2 border-gold transition-all duration-300">
+                <button onclick="switchTab('story')" id="nav-story" class="nav-btn py-2 px-3 text-cream border-b-2 border-cream transition-all duration-300">
                     Our Story
                 </button>
-                <button onclick="switchTab('party')" id="nav-party" class="nav-btn py-2 px-3 text-gray-300 hover:text-gold border-b-2 border-transparent hover:border-gold transition-all duration-300">
+                <button onclick="switchTab('party')" id="nav-party" class="nav-btn py-2 px-3 text-gray-200 hover:text-cream border-b-2 border-transparent hover:border-cream transition-all duration-300">
                     Wedding Party
                 </button>
-                <button onclick="switchTab('gallery')" id="nav-gallery" class="nav-btn py-2 px-3 text-gray-300 hover:text-gold border-b-2 border-transparent hover:border-gold transition-all duration-300">
+                <button onclick="switchTab('gallery')" id="nav-gallery" class="nav-btn py-2 px-3 text-gray-200 hover:text-cream border-b-2 border-transparent hover:border-cream transition-all duration-300">
                     Photo Album
                 </button>
-                <button onclick="switchTab('guestbook')" id="nav-guestbook" class="nav-btn py-2 px-3 text-gray-300 hover:text-gold border-b-2 border-transparent hover:border-gold transition-all duration-300">
+                <button onclick="switchTab('guestbook')" id="nav-guestbook" class="nav-btn py-2 px-3 text-gray-200 hover:text-cream border-b-2 border-transparent hover:border-cream transition-all duration-300">
                     Guestbook
                 </button>
-                <button onclick="switchTab('gifting')" id="nav-gifting" class="nav-btn py-2 px-3 text-gray-300 hover:text-gold border-b-2 border-transparent hover:border-gold transition-all duration-300">
+                <button onclick="switchTab('gifting')" id="nav-gifting" class="nav-btn py-2 px-3 text-gray-200 hover:text-cream border-b-2 border-transparent hover:border-cream transition-all duration-300">
                     Gifting
                 </button>
-                <button onclick="switchTab('rsvp')" id="nav-rsvp" class="nav-btn py-2 px-3 text-gray-300 hover:text-gold border-b-2 border-transparent hover:border-gold transition-all duration-300">
+                <button onclick="switchTab('rsvp')" id="nav-rsvp" class="nav-btn py-2 px-3 text-gray-200 hover:text-cream border-b-2 border-transparent hover:border-cream transition-all duration-300">
                     RSVP
                 </button>
             </nav>
@@ -116,37 +117,37 @@
         <!-- VIEW 1: HOME & STORY -->
         <div id="view-story" class="page-view">
             <!-- HERO BLOCK -->
-            <section class="relative h-[80vh] min-h-[500px] flex flex-col justify-center items-center text-center px-4 bg-gradient-to-b from-charcoal/80 to-charcoal/95 overflow-hidden">
-                <div class="absolute inset-0 z-[-1] bg-cover bg-center opacity-40 transform scale-105 transition-transform duration-10000" style="background-image: url('https://i.ibb.co/BVNLQsfw/IMG-3271.jpg');"></div>
+            <section class="relative h-[80vh] min-h-[500px] flex flex-col justify-center items-center text-center px-4 bg-gradient-to-b from-burgundy/65 to-burgundy/70 overflow-hidden">
+                <div class="absolute inset-0 z-[-1] bg-cover bg-center opacity-300 transform scale-105 transition-transform duration-10000" style="background-image: url('https://i.ibb.co/BVNLQsfw/IMG-3271.jpg');"></div>
                 
-                <span class="text-gold font-cinzel text-sm sm:text-base tracking-[5px] uppercase mb-4 block">Save The Date</span>
+                <span class="text-cream font-cinzel text-sm sm:text-base tracking-[5px] uppercase mb-4 block">Save The Date</span>
                 <h1 class="font-cinzel text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-[4px] text-white mb-3">
                     Blessing & Inemesit
                 </h1>
-                <p class="font-cinzel text-gold text-lg sm:text-xl tracking-[3px] mb-8 font-light italic">
+                <p class="font-cinzel text-cream text-lg sm:text-xl tracking-[3px] mb-8 font-light italic">
                     Are Getting Married
                 </p>
 
                 <!-- Elegant Countdown -->
-                <div class="flex gap-4 sm:gap-8 bg-charcoal/60 p-6 sm:p-8 rounded-lg border border-gold/40 backdrop-blur-sm shadow-2xl">
+                <div class="flex gap-4 sm:gap-8 bg-burgundy/70 p-6 sm:p-8 rounded-lg border border-olive/50 backdrop-blur-sm shadow-2xl">
                     <div class="flex flex-col items-center">
                         <span id="days" class="font-cinzel text-3xl sm:text-5xl font-bold text-white">00</span>
-                        <span class="text-[10px] sm:text-xs tracking-widest text-gold uppercase mt-1">Days</span>
+                        <span class="text-[10px] sm:text-xs tracking-widest text-cream uppercase mt-1">Days</span>
                     </div>
-                    <div class="w-px h-12 bg-gold/30 self-center"></div>
+                    <div class="w-px h-12 bg-cream/30 self-center"></div>
                     <div class="flex flex-col items-center">
                         <span id="hours" class="font-cinzel text-3xl sm:text-5xl font-bold text-white">00</span>
-                        <span class="text-[10px] sm:text-xs tracking-widest text-gold uppercase mt-1">Hours</span>
+                        <span class="text-[10px] sm:text-xs tracking-widest text-cream uppercase mt-1">Hours</span>
                     </div>
-                    <div class="w-px h-12 bg-gold/30 self-center"></div>
+                    <div class="w-px h-12 bg-cream/30 self-center"></div>
                     <div class="flex flex-col items-center">
                         <span id="mins" class="font-cinzel text-3xl sm:text-5xl font-bold text-white">00</span>
-                        <span class="text-[10px] sm:text-xs tracking-widest text-gold uppercase mt-1">Mins</span>
+                        <span class="text-[10px] sm:text-xs tracking-widest text-cream uppercase mt-1">Mins</span>
                     </div>
-                    <div class="w-px h-12 bg-gold/30 self-center"></div>
+                    <div class="w-px h-12 bg-cream/30 self-center"></div>
                     <div class="flex flex-col items-center">
                         <span id="secs" class="font-cinzel text-3xl sm:text-5xl font-bold text-white">00</span>
-                        <span class="text-[10px] sm:text-xs tracking-widest text-gold uppercase mt-1">Secs</span>
+                        <span class="text-[10px] sm:text-xs tracking-widest text-cream uppercase mt-1">Secs</span>
                     </div>
                 </div>
             </section>
@@ -160,23 +161,20 @@
                     <!-- Text Block -->
                     <div class="lg:col-span-7 space-y-6">
                         <div class="inline-flex items-center gap-2">
-                            <span class="h-px w-12 bg-gold"></span>
-                            <span class="text-gold font-cinzel text-xs sm:text-sm uppercase tracking-widest">He Asked, She Said Yes!</span>
+                            <span class="h-px w-12 bg-olive"></span>
+                            <span class="text-olive font-cinzel text-xs sm:text-sm uppercase tracking-widest font-semibold">He Asked, She Said Yes!</span>
                         </div>
-                        <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-charcoal tracking-wide">
+                        <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-burgundy tracking-wide">
                             How It All Began
                         </h2>
                         <p class="text-gray-700 leading-relaxed text-sm sm:text-base">
-                            Our beautiful journey started in the vibrant halls of the <strong class="text-charcoal font-semibold">University of Uyo (UNIUYO)</strong>, within the creative, academic spaces of the <strong class="text-charcoal font-semibold">Department of Communication Arts</strong>. What initially sparked as shared lecture benches, group presentations, and simple discussions about media and speech slowly transformed into a deep, unwavering partnership.
-                        </p>
-                        <p class="text-gray-700 leading-relaxed text-sm sm:text-base">
-                            From student assignments to real-world dreams, our mutual support has been the anchor of our connection. We've laughed through the tough times, celebrated every milestone, and realized that our hearts speak the exact same language of endless love and support.
+                            A university event in 2016. One WhatsApp message the next day. A first date We couldn't wait for. A breakup we never expected. And years later, a second chance that changed everything. Looking back now, every part of the journey led us here.
                         </p>
                         <div class="pt-4 flex flex-wrap gap-4">
-                            <button onclick="switchTab('bride-story')" class="inline-block bg-charcoal hover:bg-gold text-white hover:text-charcoal font-cinzel text-xs sm:text-sm px-6 py-3 tracking-widest uppercase transition-all duration-300 border border-gold shadow-md">
+                            <button onclick="switchTab('bride-story')" class="inline-block bg-burgundy hover:bg-olive text-white font-cinzel text-xs sm:text-sm px-6 py-3 tracking-widest uppercase transition-all duration-300 border border-burgundy shadow-md">
                                 Bride's Story
                             </button>
-                            <button onclick="switchTab('groom-story')" class="inline-block bg-white hover:bg-gold text-charcoal font-cinzel text-xs sm:text-sm px-6 py-3 tracking-widest uppercase transition-all duration-300 border border-gold shadow-md">
+                            <button onclick="switchTab('groom-story')" class="inline-block bg-white hover:bg-olive text-burgundy hover:text-white font-cinzel text-xs sm:text-sm px-6 py-3 tracking-widest uppercase transition-all duration-300 border border-burgundy shadow-md">
                                 Groom's Story
                             </button>
                         </div>
@@ -186,7 +184,7 @@
                     <div class="lg:col-span-5 flex justify-center">
                         <div class="p-4 bg-white double-gold-frame shadow-xl max-w-sm w-full">
                             <img src="https://i.ibb.co/KjdBcKKd/IMG-3280.jpg?auto=format&fit=crop&q=80&w=800" alt="Blessing and Inemesit Portrait" class="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700 object-cover rounded-sm">
-                            <p class="font-cinzel text-center text-xs text-gold tracking-widest uppercase mt-4">
+                            <p class="font-cinzel text-center text-xs text-burgundy font-semibold tracking-widest uppercase mt-4">
                                 #SWEETBLESSING26
                             </p>
                         </div>
@@ -195,42 +193,42 @@
             </section>
 
             <!-- SAVED DATE INVITATION BLOCK -->
-            <section class="bg-charcoal text-white py-20 px-6 border-y-2 border-gold/40">
+            <section class="bg-burgundy text-white py-20 px-6 border-y-2 border-olive/40">
                 <div class="max-w-3xl mx-auto text-center">
-                    <h3 class="font-cinzel text-gold text-xs sm:text-sm tracking-[6px] uppercase mb-6">Our Official Invitation</h3>
+                    <h3 class="font-cinzel text-cream text-xs sm:text-sm tracking-[6px] uppercase mb-6">Our Official Invitation</h3>
                     
-                    <div class="double-gold-frame p-8 sm:p-12 bg-[#252525]/80 backdrop-blur-md rounded-sm relative overflow-hidden">
-                        <div class="absolute top-2 left-2 text-gold/30 w-8 h-8 border-t border-l border-gold/40"></div>
-                        <div class="absolute top-2 right-2 text-gold/30 w-8 h-8 border-t border-r border-gold/40"></div>
-                        <div class="absolute bottom-2 left-2 text-gold/30 w-8 h-8 border-b border-l border-gold/40"></div>
-                        <div class="absolute bottom-2 right-2 text-gold/30 w-8 h-8 border-b border-r border-gold/40"></div>
+                    <div class="double-gold-frame p-8 sm:p-12 bg-burgundy/90 backdrop-blur-md rounded-sm relative overflow-hidden">
+                        <div class="absolute top-2 left-2 text-cream/30 w-8 h-8 border-t border-l border-cream/40"></div>
+                        <div class="absolute top-2 right-2 text-cream/30 w-8 h-8 border-t border-r border-cream/40"></div>
+                        <div class="absolute bottom-2 left-2 text-cream/30 w-8 h-8 border-b border-l border-cream/40"></div>
+                        <div class="absolute bottom-2 right-2 text-cream/30 w-8 h-8 border-b border-r border-cream/40"></div>
 
                         <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-                            <div class="md:col-span-4 border-b md:border-b-0 md:border-r border-gold/30 pb-6 md:pb-0 md:pr-6">
-                                <div class="font-cinzel text-4xl sm:text-5xl font-bold text-gold tracking-tighter leading-tight">
+                            <div class="md:col-span-4 border-b md:border-b-0 md:border-r border-cream/30 pb-6 md:pb-0 md:pr-6">
+                                <div class="font-cinzel text-4xl sm:text-5xl font-bold text-cream tracking-tighter leading-tight">
                                     SAVE<br>THE<br>DATE
                                 </div>
                             </div>
                             <div class="md:col-span-8 text-left md:pl-6 space-y-4">
                                 <h4 class="font-cinzel text-xl sm:text-2xl font-bold text-white tracking-wide">Blessing Joshua Udoh</h4>
-                                <span class="font-cinzel text-gold text-sm italic block my-1">&</span>
+                                <span class="font-cinzel text-cream text-sm italic block my-1">&</span>
                                 <h4 class="font-cinzel text-xl sm:text-2xl font-bold text-white tracking-wide">Inemesit Asuquo Eyo</h4>
-                                <p class="text-xs sm:text-sm text-gray-300 leading-relaxed font-light">
+                                <p class="text-xs sm:text-sm text-gray-200 leading-relaxed font-light">
                                     Cordially request the distinct honour of your presence to celebrate their union on their beautiful wedding day.
                                 </p>
-                                <div class="h-px bg-gold/30 w-24 my-4"></div>
+                                <div class="h-px bg-cream/30 w-24 my-4"></div>
                                 <div class="space-y-1">
-                                    <p class="text-gold font-cinzel text-sm font-semibold tracking-wider">Traditonal Marriage</p>
-                                    <p class="text-gray-400 text-xs uppercase tracking-widest">Date: 13 August 2026</p>
-                                    <p class="text-gray-300 text-xs">Venue: Ikot Ntuen Oku Primary School, Ikot Ekpene Road by Iboko, Uyo, Akwa Ibom State</p>
+                                    <p class="text-cream font-cinzel text-sm font-semibold tracking-wider">Traditional Marriage</p>
+                                    <p class="text-gray-300 text-xs uppercase tracking-widest">Date: 13 August 2026</p>
+                                    <p class="text-gray-200 text-xs">Venue: Ikot Ntuen Oku Primary School, Ikot Ekpene Road by Iboko, Uyo, Akwa Ibom State</p>
                                 </div>
-                                <div class="h-px bg-gold/30 w-24 my-4"></div>
+                                <div class="h-px bg-cream/30 w-24 my-4"></div>
                                 <div class="space-y-1">
-                                    <p class="text-gold font-cinzel text-sm font-semibold tracking-wider">White Wedding</p>
-                                    <p class="text-gray-400 text-xs uppercase tracking-widest">Date: 15 August 2026</p>
-                                    <p class="text-gray-300 text-xs">Church: The Apostolic Church, Oku Assembly. No. 18 Oku Street, Uyo, Akwa Ibom State</p>
-                                    <p class="text-gray-300 text-xs">Time: 10:00 AM</p>
-                                    <p class="text-gray-300 text-xs">Reception: Hangers Event Hall, 91 Abak Road, Uyo, Akwa Ibom State</p>
+                                    <p class="text-cream font-cinzel text-sm font-semibold tracking-wider">White Wedding</p>
+                                    <p class="text-gray-300 text-xs uppercase tracking-widest">Date: 15 August 2026</p>
+                                    <p class="text-gray-200 text-xs">Church: The Apostolic Church, Oku Assembly. No. 18 Oku Street, Uyo, Akwa Ibom State</p>
+                                    <p class="text-gray-200 text-xs">Time: 10:00 AM</p>
+                                    <p class="text-gray-200 text-xs">Reception: Hangers Event Hall, 91 Abak Road, Uyo, Akwa Ibom State</p>
                                 </div>
                             </div>
                         </div>
@@ -243,24 +241,24 @@
         <div id="view-bride-story" class="page-view hidden">
             <section class="py-16 px-6 max-w-5xl mx-auto">
                 <div class="text-center max-w-2xl mx-auto mb-12">
-                    <span class="text-gold font-cinzel text-xs sm:text-sm tracking-[5px] uppercase block mb-2">Her Perspective</span>
-                    <h2 class="font-cinzel text-3xl sm:text-4xl font-bold tracking-wide">Blessing's Love Story</h2>
-                    <div class="h-1 w-12 bg-gold mx-auto mt-4"></div>
+                    <span class="text-olive font-cinzel text-xs sm:text-sm tracking-[5px] uppercase font-semibold block mb-2">Her Perspective</span>
+                    <h2 class="font-cinzel text-3xl sm:text-4xl font-bold tracking-wide text-burgundy">Blessing's Love Story</h2>
+                    <div class="h-1 w-12 bg-olive mx-auto mt-4"></div>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start bg-white p-8 sm:p-12 double-gold-frame shadow-xl">
                     <div class="lg:col-span-5">
-                        <div class="p-3 bg-cream border border-gold/40 shadow-md">
+                        <div class="p-3 bg-cream border border-burgundy/40 shadow-md">
                             <img src="https://i.ibb.co/Pv9MsYFc/DF9-A2515-Original.jpg?auto=format&fit=crop&q=80&w=800" alt="Blessing Joshua Udoh" class="w-full h-auto object-cover rounded-sm">
                             <div class="text-center mt-3">
-                                <h3 class="font-cinzel text-sm font-bold text-charcoal">Blessing Joshua Udoh</h3>
-                                <p class="text-[11px] text-gold font-medium uppercase tracking-widest mt-0.5">The Bride</p>
+                                <h3 class="font-cinzel text-sm font-bold text-burgundy">Blessing Joshua Udoh</h3>
+                                <p class="text-[11px] text-olive font-semibold uppercase tracking-widest mt-0.5">The Bride</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="lg:col-span-7 space-y-5 text-gray-700 text-sm sm:text-base leading-relaxed">
-                        <p class="italic text-gold font-cinzel text-base border-l-2 border-gold pl-4 py-1">
+                        <p class="italic text-burgundy font-cinzel text-base border-l-2 border-burgundy pl-4 py-1">
                             "I didn't just find love in Communication Arts; I found my soulmate, my calm, and my biggest cheerleader."
                         </p>
                         <p>
@@ -270,18 +268,23 @@
                             Well... my prayers must have worked because the next day, he took my number from a group chat we were both in and sent me a message on WhatsApp. We started talking, and it felt so easy, like we'd known each other for years. There was just something about him that gave me peace. Deep down, I honestly felt like I'd met my person.
                         </p>
                         <p>
-                            We planned our first date, and I counted down to it like there was no tommorow. The date went so well that our relationship pretty much started immediately. Saying "yes" wasn't even hard. It just felt right.
+                            We planned our first date, and I counted down to it like there was no tomorrow. The date went so well that our relationship pretty much started immediately. Saying "yes" wasn't even hard. It just felt right.
                         </p>
                         <p>Life, however, had other plans. In about 2 years later, we went our separate ways. It wasn't the ending either of us had imagined, so we picked ourselves up and continued with our lives. I was broken, won’t lie because I still wanted Us, but I realised I had to let go.
                         </p>
-                        <p>Around that time, a friend (Saviour Matthew AKA Prof 😂) who knew about our relationship casually asked about him during a visit. I replied, "We're not together anymore." He laughed and said something I'll never forget: <p class="italic text-gold font-cinzel text-base border-l-2 border-gold pl-4 py-1">"You two will be back together. What I see is two people starting a journey on different paths, but they'll still meet at the destination."</p>
-                        </p>
+                        <div>
+                            <p>Around that time, a friend (Saviour Matthew AKA Prof 😂) who knew about our relationship casually asked about him during a visit. I replied, "We're not together anymore." He laughed and said something I'll never forget:</p>
+                            <p class="italic text-burgundy font-cinzel text-base border-l-2 border-burgundy pl-4 py-1 my-2">"You two will be back together. What I see is two people starting a journey on different paths, but they'll still meet at the destination."</p>
+                        </div>
                         <p>I laughed so hard and asked him when he became a prophet. Then I quickly changed the subject because, honestly, I wasn't trying to hear any of that.
                         </p>
                         <p>That conversation happened in 2018.</p>
                         <p>Fast forward to 2022, just a few months before I completed my NYSC, guess who showed up in my DM again? Yep... him.</p>
                         <p>At the time, I wasn't in a serious relationship, so we started talking again. The conversations felt familiar, comfortable... almost like no time had passed. After I returned to Uyo, we met up, and before long, he asked if we could give us another chance.</p>
-                        <p>I won't lie, I wrestled with that question so much. <p class="italic text-gold font-cinzel text-base border-l-2 border-gold pl-4 py-1">Should I really do this again? Shouldn't I just move on?There are a 1001 men in the world. Why would I go back to my ex?</p></p>
+                        <div>
+                            <p>I won't lie, I wrestled with that question so much.</p>
+                            <p class="italic text-burgundy font-cinzel text-base border-l-2 border-burgundy pl-4 py-1 my-2">Should I really do this again? Shouldn't I just move on? There are a 1001 men in the world. Why would I go back to my ex?</p>
+                        </div>
                         <p>Those thoughts stayed in my head for a while. But when I looked back, I realised our breakup wasn’t so messy. We had simply gone our separate ways. So I decided to take a chance on us one more time.</p>
                         <p>Looking back now, it was one of the best decisions I've ever made.</p>
                         <p>The last three years have been full of growth, answered prayers, adventures, and a love that's become stronger with every season. We've grown together, supported each other, and built a friendship that's just as beautiful as our relationship.</p>
@@ -291,14 +294,14 @@
                         <p>But God clearly knew better.</p>
                         <p>In few days, with a grateful heart and happy tears, I’ll get to say "I do" to my forever person. And I honestly can't wait to see what the rest of our story looks like.</p>
 
-                        <div class="pt-6 flex flex-wrap gap-4 border-t border-gold/20">
-                            <button onclick="switchTab('story')" class="bg-charcoal hover:bg-gold text-white hover:text-charcoal font-cinzel text-xs px-6 py-3 tracking-widest uppercase transition-all duration-300 border border-gold">
+                        <div class="pt-6 flex flex-wrap gap-4 border-t border-burgundy/20">
+                            <button onclick="switchTab('story')" class="bg-burgundy hover:bg-olive text-white font-cinzel text-xs px-6 py-3 tracking-widest uppercase transition-all duration-300 border border-burgundy">
                                 ← Main Story
                             </button>
-                            <button onclick="switchTab('groom-story')" class="bg-white hover:bg-gold text-charcoal font-cinzel text-xs px-6 py-3 tracking-widest uppercase transition-all duration-300 border border-gold">
+                            <button onclick="switchTab('groom-story')" class="bg-white hover:bg-olive text-burgundy hover:text-white font-cinzel text-xs px-6 py-3 tracking-widest uppercase transition-all duration-300 border border-burgundy">
                                 Groom's Story →
                             </button>
-                            <button onclick="switchTab('rsvp')" class="bg-gold hover:bg-charcoal text-white font-cinzel text-xs px-6 py-3 tracking-widest uppercase transition-all duration-300 border border-gold">
+                            <button onclick="switchTab('rsvp')" class="bg-olive hover:bg-burgundy text-white font-cinzel text-xs px-6 py-3 tracking-widest uppercase transition-all duration-300 border border-olive">
                                 RSVP Now
                             </button>
                         </div>
@@ -311,25 +314,25 @@
         <div id="view-groom-story" class="page-view hidden">
             <section class="py-16 px-6 max-w-5xl mx-auto">
                 <div class="text-center max-w-2xl mx-auto mb-12">
-                    <span class="text-gold font-cinzel text-xs sm:text-sm tracking-[5px] uppercase block mb-2">His Perspective</span>
-                    <h2 class="font-cinzel text-3xl sm:text-4xl font-bold tracking-wide">Inemesit's Love Story</h2>
-                    <div class="h-1 w-12 bg-gold mx-auto mt-4"></div>
+                    <span class="text-olive font-cinzel text-xs sm:text-sm tracking-[5px] uppercase font-semibold block mb-2">His Perspective</span>
+                    <h2 class="font-cinzel text-3xl sm:text-4xl font-bold tracking-wide text-burgundy">Inemesit's Love Story</h2>
+                    <div class="h-1 w-12 bg-olive mx-auto mt-4"></div>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start bg-white p-8 sm:p-12 double-gold-frame shadow-xl">
                     <div class="lg:col-span-5">
-                        <div class="p-3 bg-cream border border-gold/40 shadow-md">
+                        <div class="p-3 bg-cream border border-burgundy/40 shadow-md">
                             <img src="https://i.ibb.co/nGskr51/IMG-3273.jpg?auto=format&fit=crop&q=80&w=800" alt="Inemesit Asuquo Eyo" class="w-full h-auto object-cover rounded-sm">
                             <div class="text-center mt-3">
-                                <h3 class="font-cinzel text-sm font-bold text-charcoal">Inemesit Asuquo Eyo</h3>
-                                <p class="text-[11px] text-gold font-medium uppercase tracking-widest mt-0.5">The Groom</p>
+                                <h3 class="font-cinzel text-sm font-bold text-burgundy">Inemesit Asuquo Eyo</h3>
+                                <p class="text-[11px] text-olive font-semibold uppercase tracking-widest mt-0.5">The Groom</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="lg:col-span-7 space-y-5 text-gray-700 text-sm sm:text-base leading-relaxed">
-                        <p class="italic text-gold font-cinzel text-base border-l-2 border-gold pl-4 py-1">
-                            "Any treasured possession isn't easy to come by, from the strenuous process of refining gold, to the rigorous sojourn of extracting diamonds' ... Inemesit Eyo"
+                        <p class="italic text-burgundy font-cinzel text-base border-l-2 border-burgundy pl-4 py-1">
+                            "Any treasured possession isn't easy to come by, from the strenuous process of refining gold, to the rigorous sojourn of extracting diamonds" ... Inemesit Eyo
                         </p>
                         <p>
                             All thanks to Zuckerberg's green app that engineered our first hi's. Ten years ago, we were just two students trying to find our way through university. You were in your second year, and I was in my third. I could never imagined that the simple task of coordinating the social hub of the then ACAS April/May Gbedu; a birthday thrill initiated by myself as the director of socials could have culminated in the greatest story of our lives.
@@ -341,19 +344,20 @@
                             It was in April and May edition that during the bubblings and runnings my eyes locked with yours, since I was diligently organising the event, I couldn't walk up to you then as I was the fibre of that very event. As fate will have it, I messaged everyone who played active roles in ensuring that the event was successful, then here I was in your DM. Obviously, the conversation didn't end at 'thank you for showing up and showing well' rather it extended to 'please can we continue this conversation over lunch' and the reply didn't come with all those clichés of; lemme think about it, I'll get back to you tomorrow, rather it was an instant YES!
                         </p>
                         <p>The relationship got rolling instantaneous after the lunch, I made sure I was at my best, the conversation was like we've known for ages, although I did all the talking and you did all the laughing and eating. Very reserved, yet illuminated your intelligence, very demure and very hot. Then came the pause, the breakup, a pill very difficult to serve. 'Inem, aren't you going too fast' I queried within myself. Tears flowed like a river, we went our different paths.</p>
-                        <p class="italic text-gold font-cinzel text-base border-l-2 border-gold pl-4 py-1">'If e no be panadol, then e no fit do like panadol'...</p> <p>as one inclined to advertorials, other friendship I built towards the years, something felt missing. With heavy legs and my pride in the way, 'why should I go back to my ex, there are lots of fishes in the river, just move on and maintain your steeze, you no be dog o, you're an EYO, a true sun from the south' these and many more were the inner rumblings I contended with.</p>
-                        <p>Where's that remote, please press fast-forward... I appeared on your DM with immediate alacrity, wasn't expecting an outright yes, c'mon I made you cry! That response didn't come, the reply implied "I've got my eyes on you, walk before me and be ye perfect". So, it wasn't a yes and it wasn't a no too. And in all of this, I made an ernest prayer, "God, if she is the one, please don't let it come easy." You should know that the life of a man is hovered on chasing after, the moment we stop chasing, e no sweet again.</p>
+                        <p class="italic text-burgundy font-cinzel text-base border-l-2 border-burgundy pl-4 py-1">'If e no be panadol, then e no fit do like panadol'...</p> 
+                        <p>as one inclined to advertorials, other friendship I built towards the years, something felt missing. With heavy legs and my pride in the way, 'why should I go back to my ex, there are lots of fishes in the river, just move on and maintain your steeze, you no be dog o, you're an EYO, a true sun from the south' these and many more were the inner rumblings I contended with.</p>
+                        <p>Where's that remote, please press fast-forward... I appeared on your DM with immediate alacrity, wasn't expecting an outright yes, c'mon I made you cry! That response didn't come, the reply implied "I've got my eyes on you, walk before me and be ye perfect". So, it wasn't a yes and it wasn't a no too. And in all of this, I made an earnest prayer, "God, if she is the one, please don't let it come easy." You should know that the life of a man is hovered on chasing after, the moment we stop chasing, e no sweet again.</p>
                         <p>Bambie, over the years we've watched each other grow. There's no battle we haven't fought. We've celebrated victories, endured disappointments, laughed over things only we understand, and held on to each other through seasons that tested our patience and our faith. Looking back, I realize that love did not rush into our lives, we built it through heartbreaks, disagreements, and hardwork then it quietly built a home between us, led more conversations, grew into one prayer, then one shared dream.</p>
                         <p>Here we are today, holding hands, smiling from ear to ear with pacing hearts. I love you my CuttieBams.</p>
 
-                        <div class="pt-6 flex flex-wrap gap-4 border-t border-gold/20">
-                            <button onclick="switchTab('story')" class="bg-charcoal hover:bg-gold text-white hover:text-charcoal font-cinzel text-xs px-6 py-3 tracking-widest uppercase transition-all duration-300 border border-gold">
+                        <div class="pt-6 flex flex-wrap gap-4 border-t border-burgundy/20">
+                            <button onclick="switchTab('story')" class="bg-burgundy hover:bg-olive text-white font-cinzel text-xs px-6 py-3 tracking-widest uppercase transition-all duration-300 border border-burgundy">
                                 ← Main Story
                             </button>
-                            <button onclick="switchTab('bride-story')" class="bg-white hover:bg-gold text-charcoal font-cinzel text-xs px-6 py-3 tracking-widest uppercase transition-all duration-300 border border-gold">
+                            <button onclick="switchTab('bride-story')" class="bg-white hover:bg-olive text-burgundy hover:text-white font-cinzel text-xs px-6 py-3 tracking-widest uppercase transition-all duration-300 border border-burgundy">
                                 Bride's Story →
                             </button>
-                            <button onclick="switchTab('rsvp')" class="bg-gold hover:bg-charcoal text-white font-cinzel text-xs px-6 py-3 tracking-widest uppercase transition-all duration-300 border border-gold">
+                            <button onclick="switchTab('rsvp')" class="bg-olive hover:bg-burgundy text-white font-cinzel text-xs px-6 py-3 tracking-widest uppercase transition-all duration-300 border border-olive">
                                 RSVP Now
                             </button>
                         </div>
@@ -366,9 +370,9 @@
         <div id="view-party" class="page-view hidden">
             <section class="py-16 px-6 max-w-6xl mx-auto">
                 <div class="text-center max-w-2xl mx-auto mb-16">
-                    <span class="text-gold font-cinzel text-xs sm:text-sm tracking-[5px] uppercase">Standing By Our Side</span>
-                    <h2 class="font-cinzel text-3xl sm:text-4xl font-bold tracking-wide mt-2">The Wedding Party</h2>
-                    <div class="h-1 w-12 bg-gold mx-auto mt-4"></div>
+                    <span class="text-olive font-cinzel text-xs sm:text-sm tracking-[5px] uppercase font-semibold">Standing By Our Side</span>
+                    <h2 class="font-cinzel text-3xl sm:text-4xl font-bold tracking-wide text-burgundy mt-2">The Wedding Party</h2>
+                    <div class="h-1 w-12 bg-olive mx-auto mt-4"></div>
                     <p class="text-gray-600 text-xs sm:text-sm mt-4 font-light">
                         Meet the cherished friends and family standing with us as we step into our forever.
                     </p>
@@ -377,45 +381,207 @@
                 <!-- BRIDESMAIDS SECTION -->
                 <div class="mb-20">
                     <div class="flex items-center gap-4 mb-10">
-                        <h3 class="font-cinzel text-xl font-bold text-gold tracking-wider">The Bridesmaids</h3>
-                        <div class="flex-grow h-px bg-gold/30"></div>
+                        <h3 class="font-cinzel text-xl font-bold text-burgundy tracking-wider">Brides Squad</h3>
+                        <div class="flex-grow h-px bg-burgundy/30"></div>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <!-- Maid of Honor -->
                         <div class="bg-white p-6 double-gold-frame shadow-lg text-center flex flex-col items-center">
-                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-gold p-1 bg-cream">
-                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400" alt="Emem Udoh" class="w-full h-full object-cover rounded-full">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy p-1 bg-cream">
+                                <img src="https://i.ibb.co/1tTxqHVv/35788af1-4fa2-4676-b049-68432417a5da.jpg?auto=format&fit=crop&q=80&w=400" alt="Unwana Etetim Etim" class="w-full h-full object-cover rounded-full">
                             </div>
-                            <span class="text-[10px] font-bold text-gold uppercase tracking-[3px] mb-1">Maid of Honor</span>
-                            <h4 class="font-cinzel text-lg font-bold text-charcoal">Emem Udoh</h4>
-                            <p class="text-xs text-gray-500 italic mt-2 leading-relaxed">
-                                "Sister and confidante to Blessing. Sisterhood and unconditional support from childhood to the altar."
-                            </p>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Unwana Etetim Etim</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Student</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Bright Etim</span>
                         </div>
 
                         <!-- Bridesmaid 1 -->
-                        <div class="bg-white p-6 border border-gold/30 shadow-md text-center flex flex-col items-center">
-                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-gold/40 p-1 bg-cream">
-                                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=400" alt="Victoria Effiong" class="w-full h-full object-cover rounded-full">
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/0yzP4FTs/dc0c4091-28a0-49af-ab9a-5e9b76025e1b.jpg?auto=format&fit=crop&q=80&w=400" alt="Chiamaka Ezeh" class="w-full h-full object-cover rounded-full">
                             </div>
-                            <span class="text-[10px] font-bold text-gold uppercase tracking-[3px] mb-1">Bridesmaid</span>
-                            <h4 class="font-cinzel text-lg font-bold text-charcoal">Victoria Effiong</h4>
-                            <p class="text-xs text-gray-500 italic mt-2 leading-relaxed">
-                                "Uniuyo Comm Arts classmate & closest study buddy. Shared every exam stress and joyful win together."
-                            </p>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Chiamaka Ezeh</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Fashion Designer</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Queenable Ezeh</span>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Tiktok: Hadassah</span>
                         </div>
 
                         <!-- Bridesmaid 2 -->
-                        <div class="bg-white p-6 border border-gold/30 shadow-md text-center flex flex-col items-center">
-                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-gold/40 p-1 bg-cream">
-                                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&q=80&w=400" alt="Aniebiet Okon" class="w-full h-full object-cover rounded-full">
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/r2jKPZ0N/IMG-3341.jpg?auto=format&fit=crop&q=80&w=400" alt="Abigail Saint" class="w-full h-full object-cover rounded-full">
                             </div>
-                            <span class="text-[10px] font-bold text-gold uppercase tracking-[3px] mb-1">Bridesmaid</span>
-                            <h4 class="font-cinzel text-lg font-bold text-charcoal">Aniebiet Okon</h4>
-                            <p class="text-xs text-gray-500 italic mt-2 leading-relaxed">
-                                "Blessing's lifelong friend and prayer partner, always bringing light and joy into every room."
-                            </p>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Abigail Saint</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>CEO OF ELEGANCE BY ABBY'S</span>
+                            </div>  
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Abigail Saint</span>
+                        </div>
+
+                        <!-- Bridesmaid 3 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/xtZ6Rg0H/e417a125-5f00-4d63-80e2-0111ca3b8dd9.jpg?auto=format&fit=crop&q=80&w=400" alt="Jessica Victor Anderson" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Jessica Victor Anderson</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>RCO, Reliance Health</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Instagram: @Jessie_nicholas</span>
+                        </div>
+
+                        <!-- Bridesmaid 4 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/BH110Hjt/493550d1-9e4b-4192-9efd-cdfbb11b0cf2.jpg?auto=format&fit=crop&q=80&w=400" alt="Mfonabasi Umoren" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Mfonabasi Umoren</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Ghostwriter/Meta Ads Specialist</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Mfonabasi Umoren</span>
+                        </div>
+
+                        <!-- Bridesmaid 5 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/M5kRW7gK/33c2edf2-6217-44ac-8f1a-f4c25ff4b7db.jpg?auto=format&fit=crop&q=80&w=400" alt="Uyioata Adam" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Uyioata Adam</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Writer and Singer</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Yiota EbonyB</span>
+                        </div>
+
+                        <!-- Bridesmaid 6 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/Q7J2YyWk/4160f816-7c11-40f3-a2d4-1473a23f75da.jpg?auto=format&fit=crop&q=80&w=400" alt="Elfreda Ben Friday" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Elfreda Ben Friday</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Banker/Financial Analyst</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Elfreda B Friday</span>
+                        </div>
+                            
+                        <!-- Bridesmaid 7 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/tPCk3RsS/5d596180-efce-4140-ae54-72db6332a2b0.jpg?auto=format&fit=crop&q=80&w=400" alt="Queeneth Williams" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Queeneth Williams</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Merchandiser</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Queeneth Williams</span>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Tiktok: Queen Zuko</span>
+                        </div>
+
+                        <!-- Bridesmaid 8 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/sJsr1PYX/b5b2a769-8f04-4dba-8bbf-f7396bb79fed.jpg?auto=format&fit=crop&q=80&w=400" alt="Sifon Etim" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Sifon Etim</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Makeup Artist</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Sifon Etim</span>
+                        </div>
+                     
+                        <!-- Bridesmaid 9 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/d0jfBK2v/56e23872-aba4-407f-8f22-2671495cb8ad.jpg?auto=format&fit=crop&q=80&w=400" alt="Gift Ezeh" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Gift Ezeh</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Hair Vendor</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Gift Ezeh</span>
+                        </div>
+
+                        <!--Bridesmaid 10-->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/PsrQXpT2/53c33f57-3660-4891-bb5d-a88a2f6160fe.jpg?auto=format&fit=crop&q=80&w=400" alt="Imaobong Sunday" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Daramfon Monday Akpan</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Fashion Designer</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Daramfon Akpan</span>
+                        </div>
+
+                        <!--Bridesmaid 11-->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/wZ26vxgK/63f21249-f00f-4e1b-8e34-a8182b851b30.jpg?auto=format&fit=crop&q=80&w=400" alt="Gift Ezeh" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Favour Peter</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Student</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Tiktok: Bambee</span>
+                        </div>
+
+                        <!-- Bridesmaid 12 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/Y7pVpr2n/3e472a1e-8bdf-4d5b-afc1-de2a3173777c.jpg?auto=format&fit=crop&q=80&w=400" alt="Chiamaka Ezeh" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Mariamo Sadiku</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Fashion Designer</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Instagram: @mimijcuts</span>
+                        </div>
+
+                        <!-- Bridesmaid 13 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/sLFB1Fk/d7a13436-846d-4fac-bb57-36df30e0fcd7.jpg?auto=format&fit=crop&q=80&w=400" alt="Chiamaka Ezeh" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Abigail Edidiong</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Fashion Designer</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Abigail Dan</span>
+                        </div>
+
+                        <!-- Bridesmaid 14 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/ch88pTD3/17b18d95-f71e-4df1-a029-9902cc0ee870.jpg?auto=format&fit=crop&q=80&w=400" alt="Imaobong Sunday" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Imaobong Sunday</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Makeup Artist and Bridal Accessories Vendor</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Tiktok: @vinasglowatelier</span>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Instagram: @vinaspretty21</span>
                         </div>
                     </div>
                 </div>
@@ -423,42 +589,42 @@
                 <!-- GROOMSMEN SECTION -->
                 <div>
                     <div class="flex items-center gap-4 mb-10">
-                        <h3 class="font-cinzel text-xl font-bold text-gold tracking-wider">The Groomsmen</h3>
-                        <div class="flex-grow h-px bg-gold/30"></div>
+                        <h3 class="font-cinzel text-xl font-bold text-burgundy tracking-wider">The Grooms Squad</h3>
+                        <div class="flex-grow h-px bg-burgundy/30"></div>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <!-- Best Man -->
                         <div class="bg-white p-6 double-gold-frame shadow-lg text-center flex flex-col items-center">
-                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-gold p-1 bg-cream">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy p-1 bg-cream">
                                 <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400" alt="Utibe Eyo" class="w-full h-full object-cover rounded-full">
                             </div>
-                            <span class="text-[10px] font-bold text-gold uppercase tracking-[3px] mb-1">Best Man</span>
-                            <h4 class="font-cinzel text-lg font-bold text-charcoal">Utibe Eyo</h4>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Best Man</span>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Utibe Eyo</h4>
                             <p class="text-xs text-gray-500 italic mt-2 leading-relaxed">
                                 "Brother and best friend to Inemesit. The steady anchor and wise counselor through every season."
                             </p>
                         </div>
 
                         <!-- Groomsman 1 -->
-                        <div class="bg-white p-6 border border-gold/30 shadow-md text-center flex flex-col items-center">
-                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-gold/40 p-1 bg-cream">
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
                                 <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&q=80&w=400" alt="Kufre Akpan" class="w-full h-full object-cover rounded-full">
                             </div>
-                            <span class="text-[10px] font-bold text-gold uppercase tracking-[3px] mb-1">Groomsman</span>
-                            <h4 class="font-cinzel text-lg font-bold text-charcoal">Kufre Akpan</h4>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Groomsman</span>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Kufre Akpan</h4>
                             <p class="text-xs text-gray-500 italic mt-2 leading-relaxed">
                                 "Comm Arts departmental colleague and Inemesit's wingman since day one at UNIUYO."
                             </p>
                         </div>
 
                         <!-- Groomsman 2 -->
-                        <div class="bg-white p-6 border border-gold/30 shadow-md text-center flex flex-col items-center">
-                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-gold/40 p-1 bg-cream">
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
                                 <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400" alt="Edidiong Bassey" class="w-full h-full object-cover rounded-full">
                             </div>
-                            <span class="text-[10px] font-bold text-gold uppercase tracking-[3px] mb-1">Groomsman</span>
-                            <h4 class="font-cinzel text-lg font-bold text-charcoal">Edidiong Bassey</h4>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Groomsman</span>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Edidiong Bassey</h4>
                             <p class="text-xs text-gray-500 italic mt-2 leading-relaxed">
                                 "Longtime friend and brother, always ready to celebrate milestones with endless energy."
                             </p>
@@ -473,9 +639,9 @@
         <div id="view-gallery" class="page-view hidden">
             <section class="py-16 px-6 max-w-6xl mx-auto">
                 <div class="text-center max-w-2xl mx-auto mb-12">
-                    <span class="text-gold font-cinzel text-xs sm:text-sm tracking-[5px] uppercase">A Visual Story</span>
-                    <h2 class="font-cinzel text-3xl sm:text-4xl font-bold tracking-wide mt-2">Captured Memories</h2>
-                    <div class="h-1 w-12 bg-gold mx-auto mt-4"></div>
+                    <span class="text-olive font-cinzel text-xs sm:text-sm tracking-[5px] uppercase font-semibold">A Visual Story</span>
+                    <h2 class="font-cinzel text-3xl sm:text-4xl font-bold tracking-wide text-burgundy mt-2">Captured Memories</h2>
+                    <div class="h-1 w-12 bg-olive mx-auto mt-4"></div>
                     <p class="text-gray-600 text-xs sm:text-sm mt-4 font-light">
                         Upload your favorite photos or browse through our memorable timeline—from our UniUyo days to our wedding celebration.
                     </p>
@@ -485,31 +651,31 @@
                 <div class="max-w-3xl mx-auto mb-16">
                     <!-- Shown when NOT authorized -->
                     <div id="uploadLockedBox" class="bg-white p-8 double-gold-frame shadow-xl text-center rounded-sm space-y-4">
-                        <div class="w-14 h-14 mx-auto bg-cream border border-gold/40 rounded-full flex items-center justify-center text-gold text-2xl mb-2">
+                        <div class="w-14 h-14 mx-auto bg-cream border border-burgundy/40 rounded-full flex items-center justify-center text-burgundy text-2xl mb-2">
                             <i class="fa-solid fa-lock"></i>
                         </div>
-                        <h3 class="font-cinzel text-lg font-bold text-charcoal tracking-wide">Protected Photo Uploads</h3>
+                        <h3 class="font-cinzel text-lg font-bold text-burgundy tracking-wide">Protected Photo Uploads</h3>
                         <p class="text-xs text-gray-600 max-w-md mx-auto leading-relaxed">
                             Only authorized administrators and couple members can upload photos directly to the wedding album.
                         </p>
-                        <button onclick="openAuthModal()" class="inline-flex items-center gap-2 bg-charcoal hover:bg-gold text-white hover:text-charcoal font-cinzel text-xs px-8 py-3 tracking-widest uppercase transition-all duration-300 border border-gold shadow-md">
-                            <i class="fa-solid fa-key text-gold"></i>
+                        <button onclick="openAuthModal()" class="inline-flex items-center gap-2 bg-burgundy hover:bg-olive text-white font-cinzel text-xs px-8 py-3 tracking-widest uppercase transition-all duration-300 border border-burgundy shadow-md">
+                            <i class="fa-solid fa-key text-cream"></i>
                             <span>Upload Photo to Album (Login Required)</span>
                         </button>
                     </div>
 
                     <!-- Shown when AUTHORIZED -->
                     <div id="uploadFormBox" class="hidden bg-white p-6 sm:p-8 double-gold-frame shadow-xl rounded-sm">
-                        <div class="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-gold/20">
+                        <div class="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-burgundy/20">
                             <div class="flex items-center gap-3">
-                                <i class="fa-solid fa-cloud-arrow-up text-gold text-2xl"></i>
+                                <i class="fa-solid fa-cloud-arrow-up text-burgundy text-2xl"></i>
                                 <div>
-                                    <h3 class="font-cinzel text-lg font-bold text-charcoal tracking-wide">Upload Photo to Album</h3>
+                                    <h3 class="font-cinzel text-lg font-bold text-burgundy tracking-wide">Upload Photo to Album</h3>
                                     <p class="text-xs text-gray-500">Authorized Session Active</p>
                                 </div>
                             </div>
                             <div class="flex items-center gap-3">
-                                <span id="userAccountBadge" class="text-[11px] font-mono text-gold bg-charcoal px-3 py-1 border border-gold/30 rounded-sm"></span>
+                                <span id="userAccountBadge" class="text-[11px] font-mono text-cream bg-burgundy px-3 py-1 border border-burgundy/30 rounded-sm"></span>
                                 <button onclick="handleLogout()" class="text-xs text-red-600 hover:text-red-800 font-cinzel underline uppercase tracking-wider">
                                     Logout
                                 </button>
@@ -520,15 +686,15 @@
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                 <!-- Photo Title -->
                                 <div>
-                                    <label for="photoTitle" class="block text-xs uppercase tracking-widest text-charcoal font-semibold mb-2">Photo Title *</label>
+                                    <label for="photoTitle" class="block text-xs uppercase tracking-widest text-burgundy font-semibold mb-2">Photo Title *</label>
                                     <input type="text" id="photoTitle" required placeholder="e.g., Comm Arts Lecture Hall" 
-                                           class="w-full bg-cream/50 border border-gold/30 px-4 py-2.5 text-sm focus:outline-none focus:border-gold focus:bg-white transition-all">
+                                           class="w-full bg-cream border border-burgundy/30 px-4 py-2.5 text-sm focus:outline-none focus:border-burgundy focus:bg-white transition-all">
                                 </div>
 
                                 <!-- Photo Category -->
                                 <div>
-                                    <label for="photoCategory" class="block text-xs uppercase tracking-widest text-charcoal font-semibold mb-2">Album Section *</label>
-                                    <select id="photoCategory" class="w-full bg-cream/50 border border-gold/30 px-4 py-2.5 text-sm focus:outline-none focus:border-gold focus:bg-white transition-all">
+                                    <label for="photoCategory" class="block text-xs uppercase tracking-widest text-burgundy font-semibold mb-2">Album Section *</label>
+                                    <select id="photoCategory" class="w-full bg-cream border border-burgundy/30 px-4 py-2.5 text-sm focus:outline-none focus:border-burgundy focus:bg-white transition-all">
                                         <option value="before">Before The Wedding</option>
                                         <option value="after">After The Wedding</option>
                                     </select>
@@ -537,21 +703,21 @@
 
                             <!-- Caption / Description -->
                             <div>
-                                <label for="photoDescription" class="block text-xs uppercase tracking-widest text-charcoal font-semibold mb-2">Details & Memories *</label>
+                                <label for="photoDescription" class="block text-xs uppercase tracking-widest text-burgundy font-semibold mb-2">Details & Memories *</label>
                                 <textarea id="photoDescription" required rows="2" placeholder="Write a short story or memory about this picture..." 
-                                          class="w-full bg-cream/50 border border-gold/30 px-4 py-2.5 text-sm focus:outline-none focus:border-gold focus:bg-white transition-all resize-none"></textarea>
+                                          class="w-full bg-cream border border-burgundy/30 px-4 py-2.5 text-sm focus:outline-none focus:border-burgundy focus:bg-white transition-all resize-none"></textarea>
                             </div>
 
                             <!-- File Input -->
                             <div>
-                                <label for="photoFile" class="block text-xs uppercase tracking-widest text-charcoal font-semibold mb-2">Select Image File *</label>
+                                <label for="photoFile" class="block text-xs uppercase tracking-widest text-burgundy font-semibold mb-2">Select Image File *</label>
                                 <input type="file" id="photoFile" accept="image/*" required 
-                                       class="w-full text-xs text-gray-600 file:mr-4 file:py-2.5 file:px-4 file:border-0 file:text-xs file:font-cinzel file:uppercase file:tracking-wider file:bg-charcoal file:text-gold hover:file:bg-gold hover:file:text-charcoal cursor-pointer bg-cream/30 border border-gold/30 rounded-sm">
+                                       class="w-full text-xs text-gray-600 file:mr-4 file:py-2.5 file:px-4 file:border-0 file:text-xs file:font-cinzel file:uppercase file:tracking-wider file:bg-burgundy file:text-cream hover:file:bg-olive hover:file:text-white cursor-pointer bg-cream border border-burgundy/30 rounded-sm">
                             </div>
 
                             <!-- Upload Submit Button -->
                             <div>
-                                <button type="submit" id="uploadBtn" class="w-full bg-charcoal hover:bg-gold text-white hover:text-charcoal font-cinzel text-sm px-8 py-3 tracking-widest uppercase transition-all duration-300 border border-gold flex items-center justify-center gap-2">
+                                <button type="submit" id="uploadBtn" class="w-full bg-burgundy hover:bg-olive text-white font-cinzel text-sm px-8 py-3 tracking-widest uppercase transition-all duration-300 border border-burgundy flex items-center justify-center gap-2">
                                     <i class="fa-solid fa-upload" id="uploadIcon"></i>
                                     <span id="uploadBtnText">Upload to ImgBB & Add to Album</span>
                                 </button>
@@ -563,8 +729,8 @@
                 <!-- BEFORE THE WEDDING SECTION -->
                 <div class="mb-16">
                     <div class="flex items-center gap-4 mb-8">
-                        <h3 class="font-cinzel text-lg sm:text-xl font-bold text-gold tracking-wider">Before The Wedding</h3>
-                        <div class="flex-grow h-px bg-gold/30"></div>
+                        <h3 class="font-cinzel text-lg sm:text-xl font-bold text-burgundy tracking-wider">Before The Wedding</h3>
+                        <div class="flex-grow h-px bg-burgundy/30"></div>
                     </div>
                     
                     <div id="beforeGallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -575,8 +741,8 @@
                 <!-- AFTER THE WEDDING SECTION -->
                 <div>
                     <div class="flex items-center gap-4 mb-8">
-                        <h3 class="font-cinzel text-lg sm:text-xl font-bold text-gold tracking-wider">After The Wedding</h3>
-                        <div class="flex-grow h-px bg-gold/30"></div>
+                        <h3 class="font-cinzel text-lg sm:text-xl font-bold text-burgundy tracking-wider">After The Wedding</h3>
+                        <div class="flex-grow h-px bg-burgundy/30"></div>
                     </div>
                     
                     <div id="afterGallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -591,9 +757,9 @@
         <div id="view-guestbook" class="page-view hidden">
             <section class="py-16 px-6 max-w-5xl mx-auto">
                 <div class="text-center max-w-2xl mx-auto mb-12">
-                    <span class="text-gold font-cinzel text-xs sm:text-sm tracking-[5px] uppercase">The Guestbook</span>
-                    <h2 class="font-cinzel text-3xl sm:text-4xl font-bold tracking-wide mt-2">Publish a Love Note</h2>
-                    <div class="h-1 w-12 bg-gold mx-auto mt-4"></div>
+                    <span class="text-olive font-cinzel text-xs sm:text-sm tracking-[5px] uppercase font-semibold">The Guestbook</span>
+                    <h2 class="font-cinzel text-3xl sm:text-4xl font-bold tracking-wide text-burgundy mt-2">Publish a Love Note</h2>
+                    <div class="h-1 w-12 bg-olive mx-auto mt-4"></div>
                     <p class="text-gray-600 text-xs sm:text-sm mt-4 font-light">
                         Leave your best wishes, beautiful memories from our university days, or loving blessings for our future together.
                     </p>
@@ -604,13 +770,13 @@
                     <form id="guestbookForm" class="space-y-6">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div>
-                                <label for="authorName" class="block text-xs uppercase tracking-widest text-charcoal font-semibold mb-2">Your Name *</label>
+                                <label for="authorName" class="block text-xs uppercase tracking-widest text-burgundy font-semibold mb-2">Your Name *</label>
                                 <input type="text" id="authorName" required placeholder="e.g., Udeme Akpan" 
-                                       class="w-full bg-cream/50 border border-gold/30 px-4 py-3 text-sm focus:outline-none focus:border-gold focus:bg-white transition-all">
+                                       class="w-full bg-cream border border-burgundy/30 px-4 py-3 text-sm focus:outline-none focus:border-burgundy focus:bg-white transition-all">
                             </div>
                             <div>
-                                <label for="relation" class="block text-xs uppercase tracking-widest text-charcoal font-semibold mb-2">How do you know us?</label>
-                                <select id="relation" class="w-full bg-cream/50 border border-gold/30 px-4 py-3 text-sm focus:outline-none focus:border-gold focus:bg-white transition-all">
+                                <label for="relation" class="block text-xs uppercase tracking-widest text-burgundy font-semibold mb-2">How do you know us?</label>
+                                <select id="relation" class="w-full bg-cream border border-burgundy/30 px-4 py-3 text-sm focus:outline-none focus:border-burgundy focus:bg-white transition-all">
                                     <option value="Friend">Friend / Course mate</option>
                                     <option value="Family">Family Member</option>
                                     <option value="Uniuyo Alum">Uniuyo Colleague</option>
@@ -619,12 +785,12 @@
                             </div>
                         </div>
                         <div>
-                            <label for="loveNote" class="block text-xs uppercase tracking-widest text-charcoal font-semibold mb-2">Your Beautiful Message *</label>
+                            <label for="loveNote" class="block text-xs uppercase tracking-widest text-burgundy font-semibold mb-2">Your Beautiful Message *</label>
                             <textarea id="loveNote" required rows="4" placeholder="Write your heartfelt congratulations, memories from Comm Arts, or blessings..." 
-                                      class="w-full bg-cream/50 border border-gold/30 px-4 py-3 text-sm focus:outline-none focus:border-gold focus:bg-white transition-all"></textarea>
+                                      class="w-full bg-cream border border-burgundy/30 px-4 py-3 text-sm focus:outline-none focus:border-burgundy focus:bg-white transition-all"></textarea>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="w-full bg-charcoal hover:bg-gold text-white hover:text-charcoal font-cinzel text-sm px-8 py-3 tracking-widest uppercase transition-all duration-300 border border-gold">
+                            <button type="submit" class="w-full bg-burgundy hover:bg-olive text-white font-cinzel text-sm px-8 py-3 tracking-widest uppercase transition-all duration-300 border border-burgundy">
                                 Post to Guestbook Wall
                             </button>
                         </div>
@@ -633,7 +799,7 @@
 
                 <!-- Published Dynamic Notes Wall -->
                 <div>
-                    <h3 class="font-cinzel text-xl font-bold tracking-wider text-center text-charcoal mb-8">Published Wishes</h3>
+                    <h3 class="font-cinzel text-xl font-bold tracking-wider text-center text-burgundy mb-8">Published Wishes</h3>
                     <div id="notesBoard" class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <!-- Dynamic note cards will append here -->
                     </div>
@@ -646,9 +812,9 @@
         <div id="view-gifting" class="page-view hidden">
             <section class="py-16 px-6 max-w-5xl mx-auto">
                 <div class="text-center max-w-2xl mx-auto mb-12">
-                    <span class="text-gold font-cinzel text-xs sm:text-sm tracking-[5px] uppercase">Registry & Blessings</span>
-                    <h2 class="font-cinzel text-3xl sm:text-4xl font-bold tracking-wide mt-2">Gifting & Well Wishes</h2>
-                    <div class="h-1 w-12 bg-gold mx-auto mt-4"></div>
+                    <span class="text-olive font-cinzel text-xs sm:text-sm tracking-[5px] uppercase font-semibold">Registry & Blessings</span>
+                    <h2 class="font-cinzel text-3xl sm:text-4xl font-bold tracking-wide text-burgundy mt-2">Gifting & Well Wishes</h2>
+                    <div class="h-1 w-12 bg-olive mx-auto mt-4"></div>
                     <p class="text-gray-600 text-xs sm:text-sm mt-4 font-light leading-relaxed">
                         Your presence, prayers, and loving thoughts on our special day are the greatest gifts we could ever ask for. However, if you wish to honor us with a financial blessing or physical gift as we build our new home together, please find our registry and account details below.
                     </p>
@@ -658,39 +824,39 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                     <!-- Joint / Groom Account Card -->
                     <div class="bg-white p-8 double-gold-frame shadow-xl rounded-sm flex flex-col justify-between relative overflow-hidden group">
-                        <div class="absolute -right-6 -bottom-6 text-gold/10 text-8xl group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute -right-6 -bottom-6 text-burgundy/10 text-8xl group-hover:scale-110 transition-transform duration-500">
                             <i class="fa-solid fa-building-columns"></i>
                         </div>
                         <div>
                             <div class="flex items-center gap-3 mb-4">
-                                <div class="w-10 h-10 bg-cream border border-gold/40 rounded-full flex items-center justify-center text-gold">
+                                <div class="w-10 h-10 bg-cream border border-burgundy/40 rounded-full flex items-center justify-center text-burgundy">
                                     <i class="fa-solid fa-gift"></i>
                                 </div>
                                 <div>
-                                    <span class="text-[10px] text-gold font-bold uppercase tracking-widest block">Bank Transfer (Naira)</span>
-                                    <h3 class="font-cinzel text-lg font-bold text-charcoal">Joint Couple Account</h3>
+                                    <span class="text-[10px] text-olive font-bold uppercase tracking-widest block">Bank Transfer (Naira)</span>
+                                    <h3 class="font-cinzel text-lg font-bold text-burgundy">Joint Couple Account</h3>
                                 </div>
                             </div>
-                            <div class="h-px bg-gold/20 w-full my-4"></div>
+                            <div class="h-px bg-burgundy/20 w-full my-4"></div>
                             
                             <div class="space-y-3 text-sm text-gray-700 font-montserrat">
                                 <div class="flex justify-between items-center py-1 border-b border-cream">
                                     <span class="text-xs uppercase text-gray-400 tracking-wider">Bank Name</span>
-                                    <span class="font-semibold text-charcoal">Guaranty Trust Bank (GTBank)</span>
+                                    <span class="font-semibold text-burgundy">Guaranty Trust Bank (GTBank)</span>
                                 </div>
                                 <div class="flex justify-between items-center py-1 border-b border-cream">
                                     <span class="text-xs uppercase text-gray-400 tracking-wider">Account Name</span>
-                                    <span class="font-semibold text-charcoal">Inemesit Asuquo Eyo</span>
+                                    <span class="font-semibold text-burgundy">Inemesit Asuquo Eyo</span>
                                 </div>
                                 <div class="flex justify-between items-center py-1">
                                     <span class="text-xs uppercase text-gray-400 tracking-wider">Account Number</span>
-                                    <span class="font-mono font-bold text-lg text-gold tracking-widest" id="accNumberGroom">0123456789</span>
+                                    <span class="font-mono font-bold text-lg text-burgundy tracking-widest" id="accNumberGroom">0123456789</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="mt-6 pt-4 border-t border-gold/20">
-                            <button onclick="copyAccount('0123456789', 'GTBank Account Number')" class="w-full bg-charcoal hover:bg-gold text-white hover:text-charcoal font-cinzel text-xs py-3 px-4 uppercase tracking-widest border border-gold transition-all duration-300 flex items-center justify-center gap-2">
+                        <div class="mt-6 pt-4 border-t border-burgundy/20">
+                            <button onclick="copyAccount('0123456789', 'GTBank Account Number')" class="w-full bg-burgundy hover:bg-olive text-white font-cinzel text-xs py-3 px-4 uppercase tracking-widest border border-burgundy transition-all duration-300 flex items-center justify-center gap-2">
                                 <i class="fa-regular fa-copy"></i>
                                 <span>Copy Account Number</span>
                             </button>
@@ -699,39 +865,39 @@
 
                     <!-- Bride Account Card -->
                     <div class="bg-white p-8 double-gold-frame shadow-xl rounded-sm flex flex-col justify-between relative overflow-hidden group">
-                        <div class="absolute -right-6 -bottom-6 text-gold/10 text-8xl group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute -right-6 -bottom-6 text-burgundy/10 text-8xl group-hover:scale-110 transition-transform duration-500">
                             <i class="fa-solid fa-heart"></i>
                         </div>
                         <div>
                             <div class="flex items-center gap-3 mb-4">
-                                <div class="w-10 h-10 bg-cream border border-gold/40 rounded-full flex items-center justify-center text-gold">
+                                <div class="w-10 h-10 bg-cream border border-burgundy/40 rounded-full flex items-center justify-center text-burgundy">
                                     <i class="fa-solid fa-hand-holding-heart"></i>
                                 </div>
                                 <div>
-                                    <span class="text-[10px] text-gold font-bold uppercase tracking-widest block">Bank Transfer (Naira)</span>
-                                    <h3 class="font-cinzel text-lg font-bold text-charcoal">Bride's Account</h3>
+                                    <span class="text-[10px] text-olive font-bold uppercase tracking-widest block">Bank Transfer (Naira)</span>
+                                    <h3 class="font-cinzel text-lg font-bold text-burgundy">Bride's Account</h3>
                                 </div>
                             </div>
-                            <div class="h-px bg-gold/20 w-full my-4"></div>
+                            <div class="h-px bg-burgundy/20 w-full my-4"></div>
 
                             <div class="space-y-3 text-sm text-gray-700 font-montserrat">
                                 <div class="flex justify-between items-center py-1 border-b border-cream">
                                     <span class="text-xs uppercase text-gray-400 tracking-wider">Bank Name</span>
-                                    <span class="font-semibold text-charcoal">Access Bank</span>
+                                    <span class="font-semibold text-burgundy">Access Bank</span>
                                 </div>
                                 <div class="flex justify-between items-center py-1 border-b border-cream">
                                     <span class="text-xs uppercase text-gray-400 tracking-wider">Account Name</span>
-                                    <span class="font-semibold text-charcoal">Blessing Joshua Udoh</span>
+                                    <span class="font-semibold text-burgundy">Blessing Joshua Udoh</span>
                                 </div>
                                 <div class="flex justify-between items-center py-1">
                                     <span class="text-xs uppercase text-gray-400 tracking-wider">Account Number</span>
-                                    <span class="font-mono font-bold text-lg text-gold tracking-widest" id="accNumberBride">0987654321</span>
+                                    <span class="font-mono font-bold text-lg text-burgundy tracking-widest" id="accNumberBride">0987654321</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="mt-6 pt-4 border-t border-gold/20">
-                            <button onclick="copyAccount('0987654321', 'Access Bank Account Number')" class="w-full bg-charcoal hover:bg-gold text-white hover:text-charcoal font-cinzel text-xs py-3 px-4 uppercase tracking-widest border border-gold transition-all duration-300 flex items-center justify-center gap-2">
+                        <div class="mt-6 pt-4 border-t border-burgundy/20">
+                            <button onclick="copyAccount('0987654321', 'Access Bank Account Number')" class="w-full bg-burgundy hover:bg-olive text-white font-cinzel text-xs py-3 px-4 uppercase tracking-widest border border-burgundy transition-all duration-300 flex items-center justify-center gap-2">
                                 <i class="fa-regular fa-copy"></i>
                                 <span>Copy Account Number</span>
                             </button>
@@ -742,21 +908,21 @@
                 <!-- GIFT NOTIFICATION FORM -->
                 <div class="bg-white p-6 sm:p-10 double-gold-frame max-w-2xl mx-auto shadow-xl rounded-sm">
                     <div class="text-center mb-6">
-                        <span class="text-[10px] text-gold font-bold uppercase tracking-[3px] block">Acknowledgement</span>
-                        <h3 class="font-cinzel text-xl font-bold text-charcoal">Send Us A Gift Note</h3>
+                        <span class="text-[10px] text-olive font-bold uppercase tracking-[3px] block">Acknowledgement</span>
+                        <h3 class="font-cinzel text-xl font-bold text-burgundy">Send Us A Gift Note</h3>
                         <p class="text-xs text-gray-500 mt-1">If you have sent a cash blessing or physical gift, kindly leave us a message so we can personally thank you!</p>
                     </div>
 
                     <form id="giftNotificationForm" class="space-y-5">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div>
-                                <label for="giftGiverName" class="block text-xs uppercase tracking-widest text-charcoal font-semibold mb-2">Your Name *</label>
+                                <label for="giftGiverName" class="block text-xs uppercase tracking-widest text-burgundy font-semibold mb-2">Your Name *</label>
                                 <input type="text" id="giftGiverName" required placeholder="e.g., Dr. Aniefiok Effiong" 
-                                       class="w-full bg-cream/50 border border-gold/30 px-4 py-2.5 text-sm focus:outline-none focus:border-gold focus:bg-white transition-all">
+                                       class="w-full bg-cream border border-burgundy/30 px-4 py-2.5 text-sm focus:outline-none focus:border-burgundy focus:bg-white transition-all">
                             </div>
                             <div>
-                                <label for="giftType" class="block text-xs uppercase tracking-widest text-charcoal font-semibold mb-2">Type of Gift</label>
-                                <select id="giftType" class="w-full bg-cream/50 border border-gold/30 px-4 py-2.5 text-sm focus:outline-none focus:border-gold focus:bg-white transition-all">
+                                <label for="giftType" class="block text-xs uppercase tracking-widest text-burgundy font-semibold mb-2">Type of Gift</label>
+                                <select id="giftType" class="w-full bg-cream border border-burgundy/30 px-4 py-2.5 text-sm focus:outline-none focus:border-burgundy focus:bg-white transition-all">
                                     <option value="Cash Blessing">Bank Transfer / Cash Blessing</option>
                                     <option value="Physical Gift">Physical / Household Gift</option>
                                     <option value="Honeymoon Support">Honeymoon Contribution</option>
@@ -766,13 +932,13 @@
                         </div>
 
                         <div>
-                            <label for="giftMessage" class="block text-xs uppercase tracking-widest text-charcoal font-semibold mb-2">Message or Note to Couple</label>
+                            <label for="giftMessage" class="block text-xs uppercase tracking-widest text-burgundy font-semibold mb-2">Message or Note to Couple</label>
                             <textarea id="giftMessage" rows="3" placeholder="Write a brief note or mention your gift details..." 
-                                      class="w-full bg-cream/50 border border-gold/30 px-4 py-2.5 text-sm focus:outline-none focus:border-gold focus:bg-white transition-all resize-none"></textarea>
+                                      class="w-full bg-cream border border-burgundy/30 px-4 py-2.5 text-sm focus:outline-none focus:border-burgundy focus:bg-white transition-all resize-none"></textarea>
                         </div>
 
                         <div>
-                            <button type="submit" class="w-full bg-charcoal hover:bg-gold text-white hover:text-charcoal font-cinzel text-xs px-8 py-3.5 tracking-widest uppercase transition-all duration-300 border border-gold flex items-center justify-center gap-2">
+                            <button type="submit" class="w-full bg-burgundy hover:bg-olive text-white font-cinzel text-xs px-8 py-3.5 tracking-widest uppercase transition-all duration-300 border border-burgundy flex items-center justify-center gap-2">
                                 <i class="fa-solid fa-paper-plane"></i>
                                 <span>Send Gift Notification</span>
                             </button>
@@ -787,9 +953,9 @@
         <div id="view-rsvp" class="page-view hidden">
             <section class="py-16 px-6 max-w-4xl mx-auto">
                 <div class="text-center max-w-2xl mx-auto mb-12">
-                    <span class="text-gold font-cinzel text-xs sm:text-sm tracking-[5px] uppercase">Kindly Respond</span>
-                    <h2 class="font-cinzel text-3xl sm:text-4xl font-bold tracking-wide mt-2">Will You Attend?</h2>
-                    <div class="h-1 w-12 bg-gold mx-auto mt-4"></div>
+                    <span class="text-olive font-cinzel text-xs sm:text-sm tracking-[5px] uppercase font-semibold">Kindly Respond</span>
+                    <h2 class="font-cinzel text-3xl sm:text-4xl font-bold tracking-wide text-burgundy mt-2">Will You Attend?</h2>
+                    <div class="h-1 w-12 bg-olive mx-auto mt-4"></div>
                     <p class="text-gray-600 text-xs sm:text-sm mt-4 font-light">
                         Please RSVP before 30th October 2026 to help us make smooth preparations.
                     </p>
@@ -798,38 +964,38 @@
                 <div class="bg-white p-6 sm:p-10 double-gold-frame max-w-lg mx-auto shadow-xl rounded-sm">
                     <form id="rsvpForm" class="space-y-6">
                         <div>
-                            <label for="rsvpName" class="block text-xs uppercase tracking-widest text-charcoal font-semibold mb-2">Your Full Name *</label>
+                            <label for="rsvpName" class="block text-xs uppercase tracking-widest text-burgundy font-semibold mb-2">Your Full Name *</label>
                             <input type="text" id="rsvpName" required placeholder="e.g., Dr. Aniefiok Effiong" 
-                                   class="w-full bg-cream/50 border border-gold/30 px-4 py-3 text-sm focus:outline-none focus:border-gold focus:bg-white transition-all">
+                                   class="w-full bg-cream border border-burgundy/30 px-4 py-3 text-sm focus:outline-none focus:border-burgundy focus:bg-white transition-all">
                         </div>
                         <div>
-                            <label for="rsvpEmail" class="block text-xs uppercase tracking-widest text-charcoal font-semibold mb-2">Email Address *</label>
+                            <label for="rsvpEmail" class="block text-xs uppercase tracking-widest text-burgundy font-semibold mb-2">Email Address *</label>
                             <input type="email" id="rsvpEmail" required placeholder="name@domain.com" 
-                                   class="w-full bg-cream/50 border border-gold/30 px-4 py-3 text-sm focus:outline-none focus:border-gold focus:bg-white transition-all">
+                                   class="w-full bg-cream border border-burgundy/30 px-4 py-3 text-sm focus:outline-none focus:border-burgundy focus:bg-white transition-all">
                         </div>
                         <div>
-                            <span class="block text-xs uppercase tracking-widest text-charcoal font-semibold mb-3">Attendance Status *</span>
+                            <span class="block text-xs uppercase tracking-widest text-burgundy font-semibold mb-3">Attendance Status *</span>
                             <div class="grid grid-cols-2 gap-4">
-                                <label class="flex items-center gap-3 p-3 border border-gold/20 bg-cream/20 cursor-pointer hover:bg-cream/40 rounded">
-                                    <input type="radio" name="attendance" value="attending" checked class="accent-gold h-4 w-4">
+                                <label class="flex items-center gap-3 p-3 border border-burgundy/20 bg-cream/50 cursor-pointer hover:bg-cream rounded">
+                                    <input type="radio" name="attendance" value="attending" checked class="accent-burgundy h-4 w-4">
                                     <span class="text-xs sm:text-sm">Joyfully Attending</span>
                                 </label>
-                                <label class="flex items-center gap-3 p-3 border border-gold/20 bg-cream/20 cursor-pointer hover:bg-cream/40 rounded">
-                                    <input type="radio" name="attendance" value="declined" class="accent-gold h-4 w-4">
+                                <label class="flex items-center gap-3 p-3 border border-burgundy/20 bg-cream/50 cursor-pointer hover:bg-cream rounded">
+                                    <input type="radio" name="attendance" value="declined" class="accent-burgundy h-4 w-4">
                                     <span class="text-xs sm:text-sm">Regretfully Decline</span>
                                 </label>
                             </div>
                         </div>
                         <div id="guestSelectBlock">
-                            <label for="rsvpGuests" class="block text-xs uppercase tracking-widest text-charcoal font-semibold mb-2">Number of Additional Guests</label>
-                            <select id="rsvpGuests" class="w-full bg-cream/50 border border-gold/30 px-4 py-3 text-sm focus:outline-none focus:border-gold focus:bg-white transition-all">
+                            <label for="rsvpGuests" class="block text-xs uppercase tracking-widest text-burgundy font-semibold mb-2">Number of Additional Guests</label>
+                            <select id="rsvpGuests" class="w-full bg-cream border border-burgundy/30 px-4 py-3 text-sm focus:outline-none focus:border-burgundy focus:bg-white transition-all">
                                 <option value="0">Bringing No Guests (Just Me)</option>
                                 <option value="1">1 Additional Guest</option>
                                 <option value="2">2 Additional Guests</option>
                             </select>
                         </div>
                         <div>
-                            <button type="submit" class="w-full bg-charcoal hover:bg-gold text-white hover:text-charcoal font-cinzel text-sm px-8 py-3 tracking-widest uppercase transition-all duration-300 border border-gold">
+                            <button type="submit" class="w-full bg-burgundy hover:bg-olive text-white font-cinzel text-sm px-8 py-3 tracking-widest uppercase transition-all duration-300 border border-burgundy">
                                 Submit Response
                             </button>
                         </div>
@@ -844,25 +1010,25 @@
     <div id="photoModal" class="fixed inset-0 z-50 bg-black/90 hidden flex items-center justify-center p-4 backdrop-blur-sm">
         <div class="relative max-w-4xl w-full bg-white double-gold-frame p-4 sm:p-6 shadow-2xl modal-enter overflow-hidden my-auto max-h-[90vh] flex flex-col">
             <!-- Close button -->
-            <button onclick="closeModal()" class="absolute top-3 right-3 text-charcoal hover:text-gold text-2xl z-20 w-10 h-10 flex items-center justify-center bg-cream/80 rounded-full border border-gold/30 transition-all">
+            <button onclick="closeModal()" class="absolute top-3 right-3 text-burgundy hover:text-olive text-2xl z-20 w-10 h-10 flex items-center justify-center bg-cream rounded-full border border-burgundy/30 transition-all">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
             <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center overflow-y-auto max-h-[80vh] p-2">
                 <!-- Large Image Container -->
-                <div class="md:col-span-7 flex justify-center bg-charcoal/90 rounded border border-gold/20 p-2">
+                <div class="md:col-span-7 flex justify-center bg-burgundy/90 rounded border border-olive/30 p-2">
                     <img id="modalImg" src="" alt="" class="max-h-[60vh] w-auto object-contain rounded">
                 </div>
 
                 <!-- Photo Metadata Side Panel -->
                 <div class="md:col-span-5 space-y-4">
-                    <span id="modalCategory" class="inline-block bg-charcoal text-gold font-cinzel text-[10px] uppercase tracking-[2px] px-3 py-1 border border-gold/40 rounded-sm">
+                    <span id="modalCategory" class="inline-block bg-burgundy text-cream font-cinzel text-[10px] uppercase tracking-[2px] px-3 py-1 border border-olive/40 rounded-sm">
                         Category
                     </span>
-                    <h3 id="modalTitle" class="font-cinzel text-xl sm:text-2xl font-bold text-charcoal tracking-wide">
+                    <h3 id="modalTitle" class="font-cinzel text-xl sm:text-2xl font-bold text-burgundy tracking-wide">
                         Title
                     </h3>
-                    <div class="h-px bg-gold/30 w-16 my-2"></div>
+                    <div class="h-px bg-burgundy/30 w-16 my-2"></div>
                     <p id="modalDescription" class="text-gray-700 text-xs sm:text-sm leading-relaxed italic">
                         Description details...
                     </p>
@@ -871,7 +1037,7 @@
                     </p>
 
                     <div class="pt-4 flex gap-3">
-                        <button id="deletePhotoBtn" onclick="" class="bg-red-900/10 hover:bg-red-600 text-red-700 hover:text-white font-cinzel text-xs px-4 py-2 uppercase tracking-wider transition-all border border-red-300 rounded-sm flex items-center gap-1.5">
+                        <button id="deletePhotoBtn" class="bg-red-900/10 hover:bg-red-600 text-red-700 hover:text-white font-cinzel text-xs px-4 py-2 uppercase tracking-wider transition-all border border-red-300 rounded-sm flex items-center gap-1.5">
                             <i class="fa-solid fa-trash-can text-xs"></i> Delete Photo
                         </button>
                     </div>
@@ -883,31 +1049,31 @@
     <!-- AUTHORIZATION LOGIN MODAL -->
     <div id="authModal" class="fixed inset-0 z-50 bg-black/90 hidden flex items-center justify-center p-4 backdrop-blur-sm">
         <div class="relative max-w-md w-full bg-white double-gold-frame p-6 sm:p-8 shadow-2xl modal-enter my-auto">
-            <button onclick="closeAuthModal()" class="absolute top-3 right-3 text-charcoal hover:text-gold text-2xl z-20 w-8 h-8 flex items-center justify-center bg-cream/80 rounded-full border border-gold/30 transition-all">
+            <button onclick="closeAuthModal()" class="absolute top-3 right-3 text-burgundy hover:text-olive text-2xl z-20 w-8 h-8 flex items-center justify-center bg-cream rounded-full border border-burgundy/30 transition-all">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
             <div class="text-center mb-6">
-                <div class="w-12 h-12 mx-auto bg-charcoal border border-gold rounded-full flex items-center justify-center text-gold text-xl mb-3">
+                <div class="w-12 h-12 mx-auto bg-burgundy border border-cream rounded-full flex items-center justify-center text-cream text-xl mb-3">
                     <i class="fa-solid fa-user-lock"></i>
                 </div>
-                <h3 class="font-cinzel text-xl font-bold text-charcoal tracking-wide">Authorized Login</h3>
+                <h3 class="font-cinzel text-xl font-bold text-burgundy tracking-wide">Authorized Login</h3>
                 <p class="text-xs text-gray-500 mt-1">Sign in with your email and password to upload photos to the album.</p>
             </div>
 
             <form id="authLoginForm" class="space-y-4">
                 <div>
-                    <label for="authEmail" class="block text-xs uppercase tracking-widest text-charcoal font-semibold mb-1.5">Email Address *</label>
+                    <label for="authEmail" class="block text-xs uppercase tracking-widest text-burgundy font-semibold mb-1.5">Email Address *</label>
                     <input type="email" id="authEmail" required placeholder="admin@domain.com" 
-                           class="w-full bg-cream/50 border border-gold/30 px-4 py-2.5 text-sm focus:outline-none focus:border-gold focus:bg-white transition-all">
+                           class="w-full bg-cream border border-burgundy/30 px-4 py-2.5 text-sm focus:outline-none focus:border-burgundy focus:bg-white transition-all">
                 </div>
                 <div>
-                    <label for="authPassword" class="block text-xs uppercase tracking-widest text-charcoal font-semibold mb-1.5">Password *</label>
+                    <label for="authPassword" class="block text-xs uppercase tracking-widest text-burgundy font-semibold mb-1.5">Password *</label>
                     <input type="password" id="authPassword" required placeholder="••••••••" 
-                           class="w-full bg-cream/50 border border-gold/30 px-4 py-2.5 text-sm focus:outline-none focus:border-gold focus:bg-white transition-all">
+                           class="w-full bg-cream border border-burgundy/30 px-4 py-2.5 text-sm focus:outline-none focus:border-burgundy focus:bg-white transition-all">
                 </div>
                 <div id="authErrorMsg" class="hidden text-xs text-red-600 bg-red-50 p-2.5 border border-red-200 rounded text-center"></div>
-                <button type="submit" id="loginBtn" class="w-full bg-charcoal hover:bg-gold text-white hover:text-charcoal font-cinzel text-xs px-6 py-3 tracking-widest uppercase transition-all duration-300 border border-gold flex items-center justify-center gap-2">
+                <button type="submit" id="loginBtn" class="w-full bg-burgundy hover:bg-olive text-white font-cinzel text-xs px-6 py-3 tracking-widest uppercase transition-all duration-300 border border-burgundy flex items-center justify-center gap-2">
                     <i class="fa-solid fa-right-to-bracket"></i>
                     <span>Login & Access Uploads</span>
                 </button>
@@ -916,21 +1082,49 @@
     </div>
 
     <!-- CUSTOM NOTIFICATION POPUP (No native alerts) -->
-    <div id="toastMessage" class="fixed bottom-6 right-6 z-50 transform translate-y-12 opacity-0 transition-all duration-500 bg-charcoal text-white border-l-4 border-gold p-4 shadow-2xl max-w-sm rounded flex flex-col gap-1">
-        <span class="font-cinzel text-xs text-gold font-bold tracking-widest uppercase">System Note</span>
-        <p id="toastText" class="text-xs sm:text-sm text-gray-300 font-light"></p>
+    <div id="toastMessage" class="fixed bottom-6 right-6 z-50 transform translate-y-12 opacity-0 transition-all duration-500 bg-burgundy text-white border-l-4 border-olive p-4 shadow-2xl max-w-sm rounded flex flex-col gap-1">
+        <span class="font-cinzel text-xs text-cream font-bold tracking-widest uppercase">System Note</span>
+        <p id="toastText" class="text-xs sm:text-sm text-gray-200 font-light"></p>
     </div>
 
-    <!-- FOOTER -->
-    <footer class="bg-charcoal text-white py-12 px-6 border-t border-gold/30 text-center">
+    <!-- FOOTER WITH VISUAL WEDDING COLOUR PALETTE -->
+    <footer class="bg-burgundy text-white py-12 px-6 border-t border-olive/40 text-center">
         <div class="max-w-xl mx-auto space-y-6">
-            <h2 class="font-cinzel text-gold text-xl sm:text-2xl font-bold tracking-[3px]">Blessing & Inemesit</h2>
-            <p class="text-xs text-gray-400 max-w-md mx-auto leading-relaxed">
+            <h2 class="font-cinzel text-cream text-xl sm:text-2xl font-bold tracking-[3px]">Blessing & Inemesit</h2>
+            <p class="text-xs text-gray-300 max-w-md mx-auto leading-relaxed">
                 Thank you for celebrating this spectacular chapter of our lives. From UNIUYO halls to our happily ever after!
             </p>
-            <div class="h-px bg-gold/20 w-16 mx-auto"></div>
-            <p class="text-[10px] tracking-widest text-gray-500 uppercase">
-                © 2026 Blessing & Inemesit. Handcrafted with Love.
+            
+            <!-- VISUAL COLOUR PALETTE SECTION -->
+            <div class="pt-2 pb-1">
+                <span class="font-cinzel text-[11px] text-cream tracking-[3px] uppercase block mb-3 font-semibold">Wedding Colour Palette</span>
+                <div class="flex items-center justify-center gap-4 sm:gap-6">
+                    <!-- Burgundy -->
+                    <div class="flex flex-col items-center gap-1.5 group">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#6B1D2F] border-2 border-cream/60 shadow-md group-hover:scale-110 transition-transform"></div>
+                        <span class="text-[10px] tracking-wider uppercase text-gray-300">Burgundy</span>
+                    </div>
+                    <!-- Olive Green -->
+                    <div class="flex flex-col items-center gap-1.5 group">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#556B2F] border-2 border-cream/60 shadow-md group-hover:scale-110 transition-transform"></div>
+                        <span class="text-[10px] tracking-wider uppercase text-gray-300">Olive Green</span>
+                    </div>
+                    <!-- Cream -->
+                    <div class="flex flex-col items-center gap-1.5 group">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#F9F6F0] border-2 border-cream/60 shadow-md group-hover:scale-110 transition-transform"></div>
+                        <span class="text-[10px] tracking-wider uppercase text-gray-300">Cream</span>
+                    </div>
+                    <!-- Onions -->
+                    <div class="flex flex-col items-center gap-1.5 group">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#8A3324] border-2 border-cream/60 shadow-md group-hover:scale-110 transition-transform"></div>
+                        <span class="text-[10px] tracking-wider uppercase text-gray-300">Onions</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="h-px bg-cream/20 w-16 mx-auto"></div>
+            <p class="text-[10px] tracking-widest text-gray-300 uppercase">
+                © 2026 Blessing & Inemesit. Happy to be together. All rights reserved. Designed & Developed by <a href="https://www.x.com/mazardor" target="_blank" class="text-cream hover:text-gold underline">Mazard</a>
             </p>
         </div>
     </footer>
@@ -938,7 +1132,7 @@
     <!-- ============================================== -->
     <script>
         /* --- COUNTDOWN LOGIC --- */
-        const weddingDate = new Date("Dec 12, 2026 10:00:00").getTime();
+        const weddingDate = new Date("Aug 15, 2026 10:00:00").getTime();
 
         const timer = setInterval(function() {
             const now = new Date().getTime();
@@ -960,7 +1154,7 @@
             if (distance < 0) {
                 clearInterval(timer);
                 const countdownBlock = document.querySelector(".countdown");
-                if (countdownBlock) countdownBlock.innerHTML = "<h3 class='font-cinzel text-xl text-gold'>The Celebration Has Begun!</h3>";
+                if (countdownBlock) countdownBlock.innerHTML = "<h3 class='font-cinzel text-xl text-cream'>The Celebration Has Begun!</h3>";
             }
         }, 1000);
 
@@ -979,12 +1173,12 @@
 
             const buttons = document.querySelectorAll('.nav-btn');
             buttons.forEach(btn => {
-                btn.className = "nav-btn py-2 px-3 text-gray-300 hover:text-gold border-b-2 border-transparent hover:border-gold transition-all duration-300";
+                btn.className = "nav-btn py-2 px-3 text-gray-200 hover:text-cream border-b-2 border-transparent hover:border-cream transition-all duration-300";
             });
 
             const activeBtn = document.getElementById('nav-' + tabId);
             if (activeBtn) {
-                activeBtn.className = "nav-btn py-2 px-3 text-gold border-b-2 border-gold transition-all duration-300";
+                activeBtn.className = "nav-btn py-2 px-3 text-cream border-b-2 border-cream transition-all duration-300";
             }
         }
 
@@ -1067,14 +1261,14 @@
 
             messages.forEach(msg => {
                 const card = document.createElement('div');
-                card.className = "bg-white p-6 border-l-4 border-gold shadow-md hover:shadow-lg transition-all rounded-sm flex flex-col justify-between";
+                card.className = "bg-white p-6 border-l-4 border-burgundy shadow-md hover:shadow-lg transition-all rounded-sm flex flex-col justify-between";
                 
                 card.innerHTML = `
                     <p class="text-sm italic text-gray-700 leading-relaxed mb-4">"${escapeHtml(msg.message)}"</p>
                     <div>
-                        <div class="h-px bg-gold/20 w-12 my-2"></div>
-                        <h4 class="font-cinzel text-xs font-bold text-charcoal tracking-widest uppercase">${escapeHtml(msg.name)}</h4>
-                        <span class="text-[10px] text-gold font-medium tracking-wider uppercase">${escapeHtml(msg.relation)}</span>
+                        <div class="h-px bg-burgundy/20 w-12 my-2"></div>
+                        <h4 class="font-cinzel text-xs font-bold text-burgundy tracking-widest uppercase">${escapeHtml(msg.name)}</h4>
+                        <span class="text-[10px] text-olive font-semibold tracking-wider uppercase">${escapeHtml(msg.relation)}</span>
                     </div>
                 `;
                 board.appendChild(card);
@@ -1113,7 +1307,7 @@
 
             let responseText = `Thank you ${name}! We have received your response.`;
             if (status === 'attending') {
-                responseText += ` Excited to see you plus ${guests} guest(s) on 12th Dec!`;
+                responseText += ` Excited to see you plus ${guests} guest(s) on 15th Aug!`;
             } else {
                 responseText += " We are sad you cannot attend, but cherish your warm thoughts.";
             }
@@ -1208,7 +1402,7 @@
                 title: 'The First Dance',
                 category: 'after',
                 description: 'Our very first moment as husband & wife',
-                date: 'Dec 12, 2026'
+                date: 'Aug 15, 2026'
             },
             {
                 id: 'sample-5',
@@ -1216,7 +1410,7 @@
                 title: 'Reception Bliss',
                 category: 'after',
                 description: 'Laughter shared with family & friends',
-                date: 'Dec 12, 2026'
+                date: 'Aug 15, 2026'
             },
             {
                 id: 'sample-6',
@@ -1224,7 +1418,7 @@
                 title: 'The Honeymoon Escape',
                 category: 'after',
                 description: 'Venturing together into our new forever',
-                date: 'Dec 15, 2026'
+                date: 'Aug 18, 2026'
             }
         ];
 
@@ -1317,20 +1511,20 @@
 
             photos.forEach(photo => {
                 const card = document.createElement('div');
-                card.className = "group relative bg-white p-3 border border-gold/20 shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer rounded-sm flex flex-col justify-between";
+                card.className = "group relative bg-white p-3 border border-burgundy/20 shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer rounded-sm flex flex-col justify-between";
                 card.onclick = () => window.openModal(photo);
 
                 card.innerHTML = `
-                    <div class="overflow-hidden aspect-video bg-charcoal relative">
+                    <div class="overflow-hidden aspect-video bg-burgundy relative">
                         <img src="${photo.url}" alt="${escapeHtml(photo.title)}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                         <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="text-white bg-charcoal/80 border border-gold/50 text-[10px] uppercase font-cinzel px-3 py-1 tracking-widest rounded-sm">
+                            <span class="text-white bg-burgundy/90 border border-cream/50 text-[10px] uppercase font-cinzel px-3 py-1 tracking-widest rounded-sm">
                                 View Details
                             </span>
                         </div>
                     </div>
                     <div class="mt-3">
-                        <h4 class="font-cinzel text-xs font-semibold tracking-wider text-charcoal truncate">${escapeHtml(photo.title)}</h4>
+                        <h4 class="font-cinzel text-xs font-semibold tracking-wider text-burgundy truncate">${escapeHtml(photo.title)}</h4>
                         <p class="text-[11px] text-gray-500 italic mt-0.5 line-clamp-1">${escapeHtml(photo.description)}</p>
                     </div>
                 `;
@@ -1345,10 +1539,10 @@
             });
 
             if (beforeCount === 0) {
-                beforeContainer.innerHTML = `<div class="col-span-full text-center py-8 text-gray-400 text-xs italic bg-white/50 border border-dashed border-gold/30">No photos uploaded in this section yet. Use the upload box above!</div>`;
+                beforeContainer.innerHTML = `<div class="col-span-full text-center py-8 text-gray-400 text-xs italic bg-white/50 border border-dashed border-burgundy/30">No photos uploaded in this section yet. Use the upload box above!</div>`;
             }
             if (afterCount === 0) {
-                afterContainer.innerHTML = `<div class="col-span-full text-center py-8 text-gray-400 text-xs italic bg-white/50 border border-dashed border-gold/30">No photos uploaded in this section yet. Use the upload box above!</div>`;
+                afterContainer.innerHTML = `<div class="col-span-full text-center py-8 text-gray-400 text-xs italic bg-white/50 border border-dashed border-burgundy/30">No photos uploaded in this section yet. Use the upload box above!</div>`;
             }
         }
 
