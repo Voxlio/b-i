@@ -42,7 +42,7 @@
         }
     </script>
     
-    <!-- Custom styling for transitions, lightbox, and double frames -->
+    <!-- Custom styling for transitions, lightbox, double frames, and preloader -->
     <style>
         /* Custom scrollbar matching color theme */
         ::-webkit-scrollbar {
@@ -85,9 +85,41 @@
                 transform: scale(1);
             }
         }
+
+        /* Preloader Styles */
+        #site-preloader {
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+        #site-preloader.fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
     </style>
 </head>
-<body class="bg-cream font-montserrat text-charcoal flex flex-col min-h-screen selection:bg-burgundy selection:text-white">
+<body class="bg-cream font-montserrat text-charcoal flex flex-col min-h-screen selection:bg-burgundy selection:text-white overflow-hidden" id="main-body">
+
+    <!-- PRELOADER ANIMATION SCREEN -->
+    <div id="site-preloader" class="fixed inset-0 z-50 bg-burgundy text-white flex flex-col items-center justify-center px-6">
+        <div class="text-center max-w-md w-full space-y-6">
+            <span class="text-olive font-cinzel text-xs sm:text-sm tracking-[6px] uppercase font-semibold block animate-pulse">#SWEETBLESSINGs26</span>
+            
+            <h2 class="font-cinzel text-2xl sm:text-4xl font-bold tracking-wider text-cream">
+                Guess who is getting married?
+            </h2>
+
+            <div class="space-y-2 pt-4">
+                <!-- Progress Bar -->
+                <div class="w-full bg-burgundy/60 border border-cream/30 h-2 rounded-full overflow-hidden p-0.5">
+                    <div id="loader-progress-bar" class="h-full bg-cream rounded-full w-0 transition-all duration-100 ease-out"></div>
+                </div>
+                <!-- Percentage Counter -->
+                <div class="flex justify-between items-center text-xs font-cinzel tracking-widest text-cream/80">
+                    <span>Loading Celebration</span>
+                    <span id="loader-percentage" class="font-mono font-bold text-sm text-white">0%</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- NAVIGATION BAR -->
     <header class="sticky top-0 z-40 bg-burgundy text-white shadow-lg border-b border-olive/30">
@@ -193,7 +225,7 @@
                         <div class="p-4 bg-white double-gold-frame shadow-xl max-w-sm w-full">
                             <img src="https://i.ibb.co/KjdBcKKd/IMG-3280.jpg?auto=format&fit=crop&q=80&w=800" alt="Blessing and Inemesit Portrait" class="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700 object-cover rounded-sm">
                             <p class="font-cinzel text-center text-xs text-burgundy font-semibold tracking-widest uppercase mt-4">
-                                #SWEETBLESSING26
+                                #SWEETBLESSINGS26
                             </p>
                         </div>
                     </div>
@@ -1364,6 +1396,36 @@
 
     <!-- ============================================== -->
     <script>
+        /* --- PRELOADER ANIMATION LOGIC --- */
+        window.addEventListener('DOMContentLoaded', () => {
+            let progress = 0;
+            const progressBar = document.getElementById('loader-progress-bar');
+            const progressText = document.getElementById('loader-percentage');
+            const preloader = document.getElementById('site-preloader');
+            const body = document.getElementById('main-body');
+
+            const interval = setInterval(() => {
+                progress += Math.floor(Math.random() * 8) + 3; // Random smooth incremental step
+                
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(interval);
+                    
+                    if (progressBar) progressBar.style.width = '100%';
+                    if (progressText) progressText.textContent = '100%';
+
+                    // Smooth delay before fading out
+                    setTimeout(() => {
+                        if (preloader) preloader.classList.add('fade-out');
+                        if (body) body.classList.remove('overflow-hidden');
+                    }, 500);
+                } else {
+                    if (progressBar) progressBar.style.width = progress + '%';
+                    if (progressText) progressText.textContent = progress + '%';
+                }
+            }, 50);
+        });
+
         /* --- EMAILJS CONFIGURATION KEYS --- */
         const EMAILJS_SERVICE_ID = "service_z5a6lhi";
         const EMAILJS_TEMPLATE_ID = "template_lw2x6gs";
