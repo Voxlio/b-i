@@ -13,6 +13,14 @@
     
     <!-- Tailwind CSS for modern responsive utility design -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- EmailJS SDK Integration -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init("xRy8N9NJWNJhzC1cx");
+       })();
+    </script>
     
     <script>
         tailwind.config = {
@@ -125,11 +133,11 @@
                     Blessing & Inemesit
                 </h1>
                 <p class="font-cinzel text-cream text-lg sm:text-xl tracking-[3px] mb-8 font-light italic">
-                    Are Getting Married
+                    Are Getting Married!!
                 </p>
 
                 <!-- Elegant Countdown -->
-                <div class="flex gap-4 sm:gap-8 bg-burgundy/70 p-6 sm:p-8 rounded-lg border border-olive/50 backdrop-blur-sm shadow-2xl">
+                <div class="countdown flex gap-4 sm:gap-8 bg-burgundy/70 p-6 sm:p-8 rounded-lg border border-olive/50 backdrop-blur-sm shadow-2xl">
                     <div class="flex flex-col items-center">
                         <span id="days" class="font-cinzel text-3xl sm:text-5xl font-bold text-white">00</span>
                         <span class="text-[10px] sm:text-xs tracking-widest text-cream uppercase mt-1">Days</span>
@@ -381,22 +389,22 @@
                 <!-- BRIDESMAIDS SECTION -->
                 <div class="mb-20">
                     <div class="flex items-center gap-4 mb-10">
-                        <h3 class="font-cinzel text-xl font-bold text-burgundy tracking-wider">Brides Squad</h3>
+                        <h3 class="font-cinzel text-xl font-bold text-burgundy tracking-wider">Bride's Tribe</h3>
                         <div class="flex-grow h-px bg-burgundy/30"></div>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <!-- Maid of Honor -->
                         <div class="bg-white p-6 double-gold-frame shadow-lg text-center flex flex-col items-center">
-                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy p-1 bg-cream">
-                                <img src="https://i.ibb.co/1tTxqHVv/35788af1-4fa2-4676-b049-68432417a5da.jpg?auto=format&fit=crop&q=80&w=400" alt="Unwana Etetim Etim" class="w-full h-full object-cover rounded-full">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/Q7J2YyWk/4160f816-7c11-40f3-a2d4-1473a23f75da.jpg?auto=format&fit=crop&q=80&w=400" alt="Elfreda Ben Friday" class="w-full h-full object-cover rounded-full">
                             </div>
-                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
-                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Unwana Etetim Etim</h4>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Maid of Honor</span>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Elfreda Ben Friday</h4>
                             <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
-                                <span>Student</span>
+                                <span>Banker/Financial Analyst</span>
                             </div>
-                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Bright Etim</span>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Elfreda B Friday</span>
                         </div>
 
                         <!-- Bridesmaid 1 -->
@@ -404,7 +412,6 @@
                             <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
                                 <img src="https://i.ibb.co/0yzP4FTs/dc0c4091-28a0-49af-ab9a-5e9b76025e1b.jpg?auto=format&fit=crop&q=80&w=400" alt="Chiamaka Ezeh" class="w-full h-full object-cover rounded-full">
                             </div>
-                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
                             <h4 class="font-cinzel text-lg font-bold text-burgundy">Chiamaka Ezeh</h4>
                             <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
                                 <span>Fashion Designer</span>
@@ -418,7 +425,6 @@
                             <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
                                 <img src="https://i.ibb.co/r2jKPZ0N/IMG-3341.jpg?auto=format&fit=crop&q=80&w=400" alt="Abigail Saint" class="w-full h-full object-cover rounded-full">
                             </div>
-                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
                             <h4 class="font-cinzel text-lg font-bold text-burgundy">Abigail Saint</h4>
                             <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
                                 <span>CEO OF ELEGANCE BY ABBY'S</span>
@@ -431,7 +437,6 @@
                             <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
                                 <img src="https://i.ibb.co/xtZ6Rg0H/e417a125-5f00-4d63-80e2-0111ca3b8dd9.jpg?auto=format&fit=crop&q=80&w=400" alt="Jessica Victor Anderson" class="w-full h-full object-cover rounded-full">
                             </div>
-                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
                             <h4 class="font-cinzel text-lg font-bold text-burgundy">Jessica Victor Anderson</h4>
                             <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
                                 <span>RCO, Reliance Health</span>
@@ -444,7 +449,6 @@
                             <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
                                 <img src="https://i.ibb.co/BH110Hjt/493550d1-9e4b-4192-9efd-cdfbb11b0cf2.jpg?auto=format&fit=crop&q=80&w=400" alt="Mfonabasi Umoren" class="w-full h-full object-cover rounded-full">
                             </div>
-                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
                             <h4 class="font-cinzel text-lg font-bold text-burgundy">Mfonabasi Umoren</h4>
                             <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
                                 <span>Ghostwriter/Meta Ads Specialist</span>
@@ -457,7 +461,6 @@
                             <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
                                 <img src="https://i.ibb.co/M5kRW7gK/33c2edf2-6217-44ac-8f1a-f4c25ff4b7db.jpg?auto=format&fit=crop&q=80&w=400" alt="Uyioata Adam" class="w-full h-full object-cover rounded-full">
                             </div>
-                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
                             <h4 class="font-cinzel text-lg font-bold text-burgundy">Uyioata Adam</h4>
                             <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
                                 <span>Writer and Singer</span>
@@ -468,22 +471,20 @@
                         <!-- Bridesmaid 6 -->
                         <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
                             <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
-                                <img src="https://i.ibb.co/Q7J2YyWk/4160f816-7c11-40f3-a2d4-1473a23f75da.jpg?auto=format&fit=crop&q=80&w=400" alt="Elfreda Ben Friday" class="w-full h-full object-cover rounded-full">
+                                <img src="https://i.ibb.co/1tTxqHVv/35788af1-4fa2-4676-b049-68432417a5da.jpg?auto=format&fit=crop&q=80&w=400" alt="Unwana Etetim Etim" class="w-full h-full object-cover rounded-full">
                             </div>
-                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
-                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Elfreda Ben Friday</h4>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Unwana Etetim Etim</h4>
                             <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
-                                <span>Banker/Financial Analyst</span>
+                                <span>Student</span>
                             </div>
-                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Elfreda B Friday</span>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Bright Etim</span>
                         </div>
                             
                         <!-- Bridesmaid 7 -->
                         <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
                             <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
-                                <img src="https://i.ibb.co/tPCk3RsS/5d596180-efce-4140-ae54-72db6332a2b0.jpg?auto=format&fit=crop&q=80&w=400" alt="Queeneth Williams" class="w-full h-full object-cover rounded-full">
+                                <img src="https://i.ibb.co/JjpksFMb/5d596180-efce-4140-ae54-72db6332a2b0.jpg?auto=format&fit=crop&q=80&w=400" alt="Queeneth Williams" class="w-full h-full object-cover rounded-full">
                             </div>
-                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
                             <h4 class="font-cinzel text-lg font-bold text-burgundy">Queeneth Williams</h4>
                             <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
                                 <span>Merchandiser</span>
@@ -497,7 +498,6 @@
                             <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
                                 <img src="https://i.ibb.co/sJsr1PYX/b5b2a769-8f04-4dba-8bbf-f7396bb79fed.jpg?auto=format&fit=crop&q=80&w=400" alt="Sifon Etim" class="w-full h-full object-cover rounded-full">
                             </div>
-                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
                             <h4 class="font-cinzel text-lg font-bold text-burgundy">Sifon Etim</h4>
                             <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
                                 <span>Makeup Artist</span>
@@ -510,7 +510,6 @@
                             <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
                                 <img src="https://i.ibb.co/d0jfBK2v/56e23872-aba4-407f-8f22-2671495cb8ad.jpg?auto=format&fit=crop&q=80&w=400" alt="Gift Ezeh" class="w-full h-full object-cover rounded-full">
                             </div>
-                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
                             <h4 class="font-cinzel text-lg font-bold text-burgundy">Gift Ezeh</h4>
                             <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
                                 <span>Hair Vendor</span>
@@ -521,9 +520,9 @@
                         <!--Bridesmaid 10-->
                         <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
                             <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
-                                <img src="https://i.ibb.co/PsrQXpT2/53c33f57-3660-4891-bb5d-a88a2f6160fe.jpg?auto=format&fit=crop&q=80&w=400" alt="Imaobong Sunday" class="w-full h-full object-cover rounded-full">
+                                <img src="https://i.ibb.co/PsrQXpT2/53c33f57-3660-4891-bb5d-a88a2f6160fe.jpg?auto=format&fit=crop&q=80&w=400" alt="Daramfon Monday Akpan" class="w-full h-full object-cover rounded-full">
                             </div>
-                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
+                            
                             <h4 class="font-cinzel text-lg font-bold text-burgundy">Daramfon Monday Akpan</h4>
                             <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
                                 <span>Fashion Designer</span>
@@ -534,9 +533,9 @@
                         <!--Bridesmaid 11-->
                         <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
                             <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
-                                <img src="https://i.ibb.co/wZ26vxgK/63f21249-f00f-4e1b-8e34-a8182b851b30.jpg?auto=format&fit=crop&q=80&w=400" alt="Gift Ezeh" class="w-full h-full object-cover rounded-full">
+                                <img src="https://i.ibb.co/wZ26vxgK/63f21249-f00f-4e1b-8e34-a8182b851b30.jpg?auto=format&fit=crop&q=80&w=400" alt="Favour Peter" class="w-full h-full object-cover rounded-full">
                             </div>
-                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
+                            
                             <h4 class="font-cinzel text-lg font-bold text-burgundy">Favour Peter</h4>
                             <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
                                 <span>Student</span>
@@ -547,9 +546,9 @@
                         <!-- Bridesmaid 12 -->
                         <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
                             <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
-                                <img src="https://i.ibb.co/Y7pVpr2n/3e472a1e-8bdf-4d5b-afc1-de2a3173777c.jpg?auto=format&fit=crop&q=80&w=400" alt="Chiamaka Ezeh" class="w-full h-full object-cover rounded-full">
+                                <img src="https://i.ibb.co/Y7pVpr2n/3e472a1e-8bdf-4d5b-afc1-de2a3173777c.jpg?auto=format&fit=crop&q=80&w=400" alt="Mariamo Sadiku" class="w-full h-full object-cover rounded-full">
                             </div>
-                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
+                            
                             <h4 class="font-cinzel text-lg font-bold text-burgundy">Mariamo Sadiku</h4>
                             <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
                                 <span>Fashion Designer</span>
@@ -560,9 +559,9 @@
                         <!-- Bridesmaid 13 -->
                         <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
                             <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
-                                <img src="https://i.ibb.co/sLFB1Fk/d7a13436-846d-4fac-bb57-36df30e0fcd7.jpg?auto=format&fit=crop&q=80&w=400" alt="Chiamaka Ezeh" class="w-full h-full object-cover rounded-full">
+                                <img src="https://i.ibb.co/sLFB1Fk/d7a13436-846d-4fac-bb57-36df30e0fcd7.jpg?auto=format&fit=crop&q=80&w=400" alt="Abigail Edidiong" class="w-full h-full object-cover rounded-full">
                             </div>
-                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
+                            
                             <h4 class="font-cinzel text-lg font-bold text-burgundy">Abigail Edidiong</h4>
                             <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
                                 <span>Fashion Designer</span>
@@ -573,9 +572,116 @@
                         <!-- Bridesmaid 14 -->
                         <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
                             <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/8nbfx1Zr/41788bca-e9e5-439f-941b-69214286d8ff.jpg?auto=format&fit=crop&q=80&w=400" alt="Veronica Bassey" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Veronica Bassey</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Entrepreneur</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Veronica Bassey</span>
+                        </div>
+
+                        <!-- Bridesmaid 15 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/8LVYh0Lm/7a5312d3-432e-4781-841c-ee248edee73b.jpg?auto=format&fit=crop&q=80&w=400" alt="Deborah Mfon" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Deborah Mfon</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Fabric Marchant & Educationist</span>
+                            </div>
+                        </div>  
+
+                        <!-- Bridesmaid 16 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/4gd5Qgp8/IMG-3375.jpg?auto=format&fit=crop&q=80&w=400" alt="Unyime Saviour" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Unyime Saviour</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Hair Stylist</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Tasha Bush</span>
+                        </div>
+                            
+                        <!-- Bridesmaid 17 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/qLFhQdZV/3cf8e911-cbf5-45a7-af15-c4fef7c894c5.jpg?auto=format&fit=crop&q=80&w=400" alt="Wisdom Edem Stephen" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Wisdom Edem Stephen</h4>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Wisdom Stephen</span>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Twitter: @wisdomstephen_</span>
+                        </div> 
+
+                        <!-- Bridesmaid 18 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/Xrnj7GrF/f8c853e6-ad77-4053-bcea-abf0c543d600.jpg?auto=format&fit=crop&q=80&w=400" alt="Mkpoikana Otu" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Mkpoikana Otu</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Digital Marketer</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Mkpoikana Otu</span> 
+                        </div>  
+
+                        <!-- Bridesmaid 19 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/cKT0kf9C/0f81b828-3e61-444f-8d52-9242fc5b6546.jpg?auto=format&fit=crop&q=80&w=400" alt="Ubong Joshua Udoh" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Ubong Joshua Udoh</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Graphics Designer</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Socials: Ziron Blinks</span>
+                        </div>    
+
+                        <!-- Bridesmaid 20 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/QR4JM4f/d97b3c4f-06ff-4499-8d2f-f9920b23b506.jpg?auto=format&fit=crop&q=80&w=400" alt="Samuel Richard" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Samuel Richard</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Doctor</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Contact: 08137227554</span>
+                        </div>
+
+                        <!-- Bridesmaid 21 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/XfYCs7cv/c8bcff2f-d554-436a-86cf-a5423ff67575.jpg?auto=format&fit=crop&q=80&w=400" alt="Victor Joshua Udoh" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Victor Joshua Udoh</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Crafter/Student</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Contact: 09161767003</span>
+                        </div>
+
+                        <!-- Bridesmaid 22 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/XxZJjxxb/a644a52a-6c4a-4342-b186-08603658e284.jpg?auto=format&fit=crop&q=80&w=400" alt="Saviour Joshua Udoh" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Saviour Joshua Udoh</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Student</span>
+                            </div>
+                        </div>
+
+                        <!-- Bridesmaid 23 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
                                 <img src="https://i.ibb.co/ch88pTD3/17b18d95-f71e-4df1-a029-9902cc0ee870.jpg?auto=format&fit=crop&q=80&w=400" alt="Imaobong Sunday" class="w-full h-full object-cover rounded-full">
                             </div>
-                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Bridesmaid</span>
+                            
                             <h4 class="font-cinzel text-lg font-bold text-burgundy">Imaobong Sunday</h4>
                             <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
                                 <span>Makeup Artist and Bridal Accessories Vendor</span>
@@ -597,37 +703,163 @@
                         <!-- Best Man -->
                         <div class="bg-white p-6 double-gold-frame shadow-lg text-center flex flex-col items-center">
                             <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy p-1 bg-cream">
-                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400" alt="Utibe Eyo" class="w-full h-full object-cover rounded-full">
+                                <img src="https://i.ibb.co/gFHyG5fS/73247566-4771-400f-8fa5-1b1c88960149.jpg?auto=format&fit=crop&q=80&w=400" alt="Mmedara Akpan" class="w-full h-full object-cover rounded-full">
                             </div>
                             <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Best Man</span>
-                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Utibe Eyo</h4>
-                            <p class="text-xs text-gray-500 italic mt-2 leading-relaxed">
-                                "Brother and best friend to Inemesit. The steady anchor and wise counselor through every season."
-                            </p>
-                        </div>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Mmedara Akpan</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Student</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Mexcona Akpan</span>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Tiktok: @Mexcona004</span>
+                        </div>    
 
                         <!-- Groomsman 1 -->
                         <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
                             <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
-                                <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&q=80&w=400" alt="Kufre Akpan" class="w-full h-full object-cover rounded-full">
+                                <img src="https://i.ibb.co/tTcbpMPD/33867651-b4ea-4225-a9fc-f0472d1e7196.jpg?auto=format&fit=crop&q=80&w=400" alt="Nkereumen Alfred Ime" class="w-full h-full object-cover rounded-full">
                             </div>
-                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Groomsman</span>
-                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Kufre Akpan</h4>
-                            <p class="text-xs text-gray-500 italic mt-2 leading-relaxed">
-                                "Comm Arts departmental colleague and Inemesit's wingman since day one at UNIUYO."
-                            </p>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Nkereumen Alfred Ime</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Multimedia Journalist and Content Creator</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Nkereumen Alfred Ime</span>
                         </div>
 
                         <!-- Groomsman 2 -->
                         <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
                             <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
-                                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400" alt="Edidiong Bassey" class="w-full h-full object-cover rounded-full">
+                                <img src="https://i.ibb.co/Lz9w3Lpc/8f312897-efb5-4a2e-9fab-0742c46720fb.jpg?auto=format&fit=crop&q=80&w=400" alt="Daniel Eyoh" class="w-full h-full object-cover rounded-full">
                             </div>
-                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Groomsman</span>
-                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Edidiong Bassey</h4>
-                            <p class="text-xs text-gray-500 italic mt-2 leading-relaxed">
-                                "Longtime friend and brother, always ready to celebrate milestones with endless energy."
-                            </p>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Daniel Eyoh</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span></span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Daniel Eyo</span>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Tiktok: @danieleyoh</span>
+                        </div>
+
+                        <!-- Groomsman 3 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/bjpWNkGL/2f9d8c47-8fdf-425f-8483-29115aed9f4c.jpg?auto=format&fit=crop&q=80&w=400" alt="Happiness Joshua" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Happiness Joshua</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Hairstylist</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Happiness Joshua</span>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Tiktok: @Inemkpo</span>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Phone: 09069432062</span>
+                        </div>
+
+                        <!-- Groomsman 4 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/XZQvTNXF/87f76892-708c-41a7-9f88-f2ec6f2a2cfe.jpg?auto=format&fit=crop&q=80&w=400" alt="Grace Bagadoji" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Grace Bagadoji</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Creative Director of GRIBS APPAREL, Lagos</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Grace Bagadoji</span>
+                        </div>
+
+                        <!-- Groomsman 5 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/wjx3RmL/IMG-3391.jpg?auto=format&fit=crop&q=80&w=400" alt="Idiongomfon Ukofia" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Idiongomfon Ukofia</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Interior Furnishing </span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Social Media: @Stonexrare</span>
+                        </div> 
+                        
+                        <!-- Groomsman 6 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/Ld3zwZGp/edf40300-18f1-4ebe-8947-c688d3e939a0.jpg?auto=format&fit=crop&q=80&w=400" alt="James Akpakpan" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">James Akpakpan</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Shoemaker, Feeted Empire</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Amicable Akpan</span>
+                        </div> 
+                        
+                        <!-- Groomsman 7 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/6RddYmJX/ce06bcc5-3e89-4a26-9e92-cfe5b9558bcc.jpg?auto=format&fit=crop&q=80&w=400" alt="Smart" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Smart</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Bespoke Unisex Designer/Body Ehancement Vendor</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Kocane Smart</span>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Instagram: @kocane_smart</span>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Tiktok: @kocane_smart</span>
+                        </div> 
+
+                        <!-- Groomsman 8 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/ZRFR7Bb1/53a92825-bbaa-432b-9a30-e843b671b7ea.jpg?auto=format&fit=crop&q=80&w=400" alt="Teletaiwo Victor" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Teletaiwo Victor</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Filmmaker</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Social Media: @teletaiwo</span>
+                        </div>
+                            
+                        <!-- Groomsman 9 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/TMgSXQNV/95b9d5e7-c914-42eb-88bf-50070ae41d3c.jpg?auto=format&fit=crop&q=80&w=400" alt="Uwem Asuquo" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Uwem Asuquo</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Site Management</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Uma Jnr</span>
+                        </div>  
+                            
+                        <!-- Groomsman 10 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/N2K1VpLz/074c8f45-970e-4dbb-b0ab-f0b92550f721.jpg?auto=format&fit=crop&q=80&w=400" alt="Agnes Sambo" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Agnes Sambo</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Certified Admin/Customer Support Specialist/Snr Information Officerof Ritman University</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Agnes Sambo</span>
+                        </div>
+
+                        <!-- Groomsman 11 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/sdLnk0Kw/IMG-3919.jpg?auto=format&fit=crop&q=80&w=400" alt="Ekemini Udoh" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Ekemini Udoh</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Order Fulfilment Supervisor/Content Lead</span>
+                            </div>
+                        </div>
+
+                        <!-- Groomsman 12 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/d4Hd34DB/083b567c-fe3b-478b-b1f0-acb71950a959.jpg?auto=format&fit=crop&q=80&w=400" alt="Esther Marcus" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Esther Marcus</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Chef, Baker, Buisness Dveloper</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Queen Marcus</span>
                         </div>
                     </div>
                 </div>
@@ -719,7 +951,7 @@
                             <div>
                                 <button type="submit" id="uploadBtn" class="w-full bg-burgundy hover:bg-olive text-white font-cinzel text-sm px-8 py-3 tracking-widest uppercase transition-all duration-300 border border-burgundy flex items-center justify-center gap-2">
                                     <i class="fa-solid fa-upload" id="uploadIcon"></i>
-                                    <span id="uploadBtnText">Upload to ImgBB & Add to Album</span>
+                                    <span id="uploadBtnText">Upload & Add to Album</span>
                                 </button>
                             </div>
                         </form>
@@ -834,7 +1066,7 @@
                                 </div>
                                 <div>
                                     <span class="text-[10px] text-olive font-bold uppercase tracking-widest block">Bank Transfer (Naira)</span>
-                                    <h3 class="font-cinzel text-lg font-bold text-burgundy">Joint Couple Account</h3>
+                                    <h3 class="font-cinzel text-lg font-bold text-burgundy">Groom's Account</h3>
                                 </div>
                             </div>
                             <div class="h-px bg-burgundy/20 w-full my-4"></div>
@@ -938,9 +1170,9 @@
                         </div>
 
                         <div>
-                            <button type="submit" class="w-full bg-burgundy hover:bg-olive text-white font-cinzel text-xs px-8 py-3.5 tracking-widest uppercase transition-all duration-300 border border-burgundy flex items-center justify-center gap-2">
-                                <i class="fa-solid fa-paper-plane"></i>
-                                <span>Send Gift Notification</span>
+                            <button type="submit" id="giftSubmitBtn" class="w-full bg-burgundy hover:bg-olive text-white font-cinzel text-xs px-8 py-3.5 tracking-widest uppercase transition-all duration-300 border border-burgundy flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane" id="giftIcon"></i>
+                                <span id="giftBtnText">Send Gift Notification</span>
                             </button>
                         </div>
                     </form>
@@ -957,7 +1189,7 @@
                     <h2 class="font-cinzel text-3xl sm:text-4xl font-bold tracking-wide text-burgundy mt-2">Will You Attend?</h2>
                     <div class="h-1 w-12 bg-olive mx-auto mt-4"></div>
                     <p class="text-gray-600 text-xs sm:text-sm mt-4 font-light">
-                        Please RSVP before 30th October 2026 to help us make smooth preparations.
+                        Please RSVP before 10th August 2026 to help us make smooth preparations.
                     </p>
                 </div>
 
@@ -977,11 +1209,11 @@
                             <span class="block text-xs uppercase tracking-widest text-burgundy font-semibold mb-3">Attendance Status *</span>
                             <div class="grid grid-cols-2 gap-4">
                                 <label class="flex items-center gap-3 p-3 border border-burgundy/20 bg-cream/50 cursor-pointer hover:bg-cream rounded">
-                                    <input type="radio" name="attendance" value="attending" checked class="accent-burgundy h-4 w-4">
+                                    <input type="radio" name="attendance" value="Joyfully Attending" checked class="accent-burgundy h-4 w-4">
                                     <span class="text-xs sm:text-sm">Joyfully Attending</span>
                                 </label>
                                 <label class="flex items-center gap-3 p-3 border border-burgundy/20 bg-cream/50 cursor-pointer hover:bg-cream rounded">
-                                    <input type="radio" name="attendance" value="declined" class="accent-burgundy h-4 w-4">
+                                    <input type="radio" name="attendance" value="Regretfully Decline" class="accent-burgundy h-4 w-4">
                                     <span class="text-xs sm:text-sm">Regretfully Decline</span>
                                 </label>
                             </div>
@@ -995,8 +1227,9 @@
                             </select>
                         </div>
                         <div>
-                            <button type="submit" class="w-full bg-burgundy hover:bg-olive text-white font-cinzel text-sm px-8 py-3 tracking-widest uppercase transition-all duration-300 border border-burgundy">
-                                Submit Response
+                            <button type="submit" id="rsvpSubmitBtn" class="w-full bg-burgundy hover:bg-olive text-white font-cinzel text-sm px-8 py-3 tracking-widest uppercase transition-all duration-300 border border-burgundy flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane" id="rsvpIcon"></i>
+                                <span id="rsvpBtnText">Submit Response</span>
                             </button>
                         </div>
                     </form>
@@ -1131,6 +1364,10 @@
 
     <!-- ============================================== -->
     <script>
+        /* --- EMAILJS CONFIGURATION KEYS --- */
+        const EMAILJS_SERVICE_ID = "service_z5a6lhi";
+        const EMAILJS_TEMPLATE_ID = "template_lw2x6gs";
+
         /* --- COUNTDOWN LOGIC --- */
         const weddingDate = new Date("Aug 15, 2026 10:00:00").getTime();
 
@@ -1209,6 +1446,18 @@
 
         /* --- COPY ACCOUNT NUMBER HELPER --- */
         function copyAccount(accNum, label) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(accNum).then(() => {
+                    showToast(label + " (" + accNum + ") copied to clipboard!");
+                }).catch(() => {
+                    fallbackCopy(accNum, label);
+                });
+            } else {
+                fallbackCopy(accNum, label);
+            }
+        }
+
+        function fallbackCopy(accNum, label) {
             const tempInput = document.createElement('input');
             tempInput.style.position = 'absolute';
             tempInput.style.left = '-9999px';
@@ -1220,13 +1469,40 @@
             showToast(label + " (" + accNum + ") copied to clipboard!");
         }
 
-        /* --- GIFT NOTIFICATION FORM HANDLER --- */
+        /* --- GIFT NOTIFICATION FORM HANDLER (WITH EMAILJS INTEGRATION) --- */
         document.getElementById('giftNotificationForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const name = document.getElementById('giftGiverName').value.trim();
             const type = document.getElementById('giftType').value;
-            showToast(`Thank you ${name}! We have received your gift notification (${type}). We deeply appreciate your love!`);
-            this.reset();
+            const message = document.getElementById('giftMessage').value.trim();
+
+            const btn = document.getElementById('giftSubmitBtn');
+            const icon = document.getElementById('giftIcon');
+            const text = document.getElementById('giftBtnText');
+
+            btn.disabled = true;
+            icon.className = "fa-solid fa-spinner fa-spin";
+            text.textContent = "Sending Notification...";
+
+            const templateParams = {
+                giver_name: name,
+                gift_type: type,
+                gift_message: message || "No custom message attached."
+            };
+
+            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+                .then(function(response) {
+                    showToast(`Thank you ${name}! We have received your gift notification (${type}). We deeply appreciate your love!`);
+                    document.getElementById('giftNotificationForm').reset();
+                }, function(error) {
+                    console.error("EmailJS Error:", error);
+                    showToast("Failed to send notification via email, but your response was noted!");
+                })
+                .finally(function() {
+                    btn.disabled = false;
+                    icon.className = "fa-solid fa-paper-plane";
+                    text.textContent = "Send Gift Notification";
+                });
         });
 
         /* --- PERSISTENT GUESTBOOK SYSTEM --- */
@@ -1298,31 +1574,55 @@
             showToast("Your love note has been added to the public Guestbook!");
         });
 
-        /* --- RSVP SUBMISSION HANDLER --- */
+        /* --- RSVP SUBMISSION HANDLER (WITH EMAILJS INTEGRATION) --- */
         document.getElementById('rsvpForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const name = document.getElementById('rsvpName').value.trim();
+            const email = document.getElementById('rsvpEmail').value.trim();
             const guests = document.getElementById('rsvpGuests').value;
             const status = document.querySelector('input[name="attendance"]:checked').value;
 
+            const btn = document.getElementById('rsvpSubmitBtn');
+            const icon = document.getElementById('rsvpIcon');
+            const text = document.getElementById('rsvpBtnText');
+
+            btn.disabled = true;
+            icon.className = "fa-solid fa-spinner fa-spin";
+            text.textContent = "Submitting Response...";
+
             let responseText = `Thank you ${name}! We have received your response.`;
-            if (status === 'attending') {
+            if (status.includes('Attending')) {
                 responseText += ` Excited to see you plus ${guests} guest(s) on 15th Aug!`;
             } else {
                 responseText += " We are sad you cannot attend, but cherish your warm thoughts.";
             }
 
-            document.getElementById('rsvpName').value = '';
-            document.getElementById('rsvpEmail').value = '';
+            const templateParams = {
+                giver_name: name + ` (${email})`,
+                gift_type: `RSVP Response: ${status}`,
+                gift_message: `Attendance: ${status}\nAdditional Guests: ${guests}\nEmail: ${email}`
+            };
 
-            showToast(responseText);
+            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+                .then(function(response) {
+                    showToast(responseText);
+                    document.getElementById('rsvpForm').reset();
+                }, function(error) {
+                    console.error("EmailJS Error:", error);
+                    showToast(responseText);
+                })
+                .finally(function() {
+                    btn.disabled = false;
+                    icon.className = "fa-solid fa-paper-plane";
+                    text.textContent = "Submit Response";
+                });
         });
 
         const attendanceRadios = document.querySelectorAll('input[name="attendance"]');
         const guestBlock = document.getElementById('guestSelectBlock');
         attendanceRadios.forEach(radio => {
             radio.addEventListener('change', function() {
-                if (this.value === 'declined') {
+                if (this.value.includes('Decline')) {
                     guestBlock.style.display = 'none';
                 } else {
                     guestBlock.style.display = 'block';
@@ -1338,7 +1638,7 @@
     <!-- FIREBASE MODULE FOR IMGBB UPLOAD & SHARED CLOUD ALBUM -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
         import { getFirestore, doc, collection, addDoc, deleteDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
         const IMGBB_API_KEY = "23e8da576e21e4b42f00618856f4285c";
