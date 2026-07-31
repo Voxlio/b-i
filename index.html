@@ -1058,7 +1058,7 @@
                                       class="w-full bg-cream border border-burgundy/30 px-4 py-3 text-sm focus:outline-none focus:border-burgundy focus:bg-white transition-all"></textarea>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="w-full bg-burgundy hover:bg-olive text-white font-cinzel text-sm px-8 py-3 tracking-widest uppercase transition-all duration-300 border border-burgundy">
+                            <button type="submit" id="guestbookSubmitBtn" class="w-full bg-burgundy hover:bg-olive text-white font-cinzel text-sm px-8 py-3 tracking-widest uppercase transition-all duration-300 border border-burgundy">
                                 Post to Guestbook Wall
                             </button>
                         </div>
@@ -1571,75 +1571,6 @@
                 });
         });
 
-        /* --- PERSISTENT GUESTBOOK SYSTEM --- */
-        const seedMessages = [
-            {
-                name: "Udeme Akpan",
-                relation: "Friend / Course mate",
-                message: "Seeing your beautiful union bloom from our early UNIUYO Comm Arts lecture groups makes all of us so proud! You both truly define love."
-            },
-            {
-                name: "Aniefiok Effiong",
-                relation: "Uniuyo Colleague",
-                message: "Congratulations Blessing and Inemesit! May your home be filled with continuous communication, laughter, and beautiful understanding."
-            },
-            {
-                name: "Prof. E. Benson",
-                relation: "Well Wisher",
-                message: "A stellar match made in heaven. Your department is super excited for you. Wishing you abundant joy and marital peace."
-            }
-        ];
-
-        function loadGuestbook() {
-            let messages = JSON.parse(localStorage.getItem('wedding_messages'));
-            if (!messages) {
-                messages = seedMessages;
-                localStorage.setItem('wedding_messages', JSON.stringify(messages));
-            }
-
-            const board = document.getElementById('notesBoard');
-            if (!board) return;
-            board.innerHTML = '';
-
-            messages.forEach(msg => {
-                const card = document.createElement('div');
-                card.className = "bg-white p-6 border-l-4 border-burgundy shadow-md hover:shadow-lg transition-all rounded-sm flex flex-col justify-between";
-                
-                card.innerHTML = `
-                    <p class="text-sm italic text-gray-700 leading-relaxed mb-4">"${escapeHtml(msg.message)}"</p>
-                    <div>
-                        <div class="h-px bg-burgundy/20 w-12 my-2"></div>
-                        <h4 class="font-cinzel text-xs font-bold text-burgundy tracking-widest uppercase">${escapeHtml(msg.name)}</h4>
-                        <span class="text-[10px] text-olive font-semibold tracking-wider uppercase">${escapeHtml(msg.relation)}</span>
-                    </div>
-                `;
-                board.appendChild(card);
-            });
-        }
-
-        document.getElementById('guestbookForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const nameInput = document.getElementById('authorName');
-            const relationSelect = document.getElementById('relation');
-            const messageInput = document.getElementById('loveNote');
-
-            const newEntry = {
-                name: nameInput.value.trim(),
-                relation: relationSelect.value,
-                message: messageInput.value.trim()
-            };
-
-            let messages = JSON.parse(localStorage.getItem('wedding_messages')) || [];
-            messages.unshift(newEntry);
-            localStorage.setItem('wedding_messages', JSON.stringify(messages));
-
-            nameInput.value = '';
-            messageInput.value = '';
-
-            loadGuestbook();
-            showToast("Your love note has been added to the public Guestbook!");
-        });
-
         /* --- RSVP SUBMISSION HANDLER (WITH EMAILJS INTEGRATION) --- */
         document.getElementById('rsvpForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -1695,17 +1626,13 @@
                 }
             });
         });
-
-        window.onload = function() {
-            loadGuestbook();
-        };
     </script>
 
-    <!-- FIREBASE MODULE FOR IMGBB UPLOAD & SHARED CLOUD ALBUM -->
+    <!-- FIREBASE MODULE FOR IMGBB UPLOAD, SHARED ALBUM, & FIRESTORE GUESTBOOK -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getAuth, signInAnonymously, signInWithCustomToken, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, doc, collection, addDoc, deleteDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { getFirestore, doc, collection, addDoc, deleteDoc, onSnapshot, query, orderBy } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
         const IMGBB_API_KEY = "23e8da576e21e4b42f00618856f4285c";
 
@@ -1734,6 +1661,10 @@
 
         function getPhotosCollection() {
             return collection(db, 'artifacts', appId, 'public', 'data', 'wedding_photos');
+        }
+
+        function getGuestbookCollection() {
+            return collection(db, 'artifacts', appId, 'public', 'data', 'wedding_messages');
         }
 
         // Seed photos array as fallback
@@ -1787,6 +1718,77 @@
                 date: 'Aug 18, 2026'
             }
         ];
+
+        // Seed Guestbook messages as fallback
+        const seedMessages = [
+            {
+                name: "Udeme Akpan",
+                relation: "Friend / Course mate",
+                message: "Seeing your beautiful union bloom from our early UNIUYO Comm Arts lecture groups makes all of us so proud! You both truly define love."
+            },
+            {
+                name: "Aniefiok Effiong",
+                relation: "Uniuyo Colleague",
+                message: "Congratulations Blessing and Inemesit! May your home be filled with continuous communication, laughter, and beautiful understanding."
+            },
+            {
+                name: "Prof. E. Benson",
+                relation: "Well Wisher",
+                message: "A stellar match made in heaven. Your department is super excited for you. Wishing you abundant joy and marital peace."
+            }
+        ];
+
+        /* --- FIRESTORE GUESTBOOK SYSTEM --- */
+        function renderGuestbook(messages) {
+            const board = document.getElementById('notesBoard');
+            if (!board) return;
+            board.innerHTML = '';
+
+            messages.forEach(msg => {
+                const card = document.createElement('div');
+                card.className = "bg-white p-6 border-l-4 border-burgundy shadow-md hover:shadow-lg transition-all rounded-sm flex flex-col justify-between";
+                
+                card.innerHTML = `
+                    <p class="text-sm italic text-gray-700 leading-relaxed mb-4">"${escapeHtml(msg.message)}"</p>
+                    <div>
+                        <div class="h-px bg-burgundy/20 w-12 my-2"></div>
+                        <h4 class="font-cinzel text-xs font-bold text-burgundy tracking-widest uppercase">${escapeHtml(msg.name)}</h4>
+                        <span class="text-[10px] text-olive font-semibold tracking-wider uppercase">${escapeHtml(msg.relation)}</span>
+                    </div>
+                `;
+                board.appendChild(card);
+            });
+        }
+
+        document.getElementById('guestbookForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const nameInput = document.getElementById('authorName');
+            const relationSelect = document.getElementById('relation');
+            const messageInput = document.getElementById('loveNote');
+            const submitBtn = document.getElementById('guestbookSubmitBtn');
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Publishing Wish...";
+
+            try {
+                await addDoc(getGuestbookCollection(), {
+                    name: nameInput.value.trim(),
+                    relation: relationSelect.value,
+                    message: messageInput.value.trim(),
+                    createdAt: Date.now()
+                });
+
+                nameInput.value = '';
+                messageInput.value = '';
+                showToast("Your love note has been added to the real-time public Guestbook!");
+            } catch (err) {
+                console.error("Firestore Guestbook submit error:", err);
+                showToast("Could not publish wish right now. Please try again.");
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Post to Guestbook Wall";
+            }
+        });
 
         // Toggle Upload Form vs Locked Box
         function updateUploadUI() {
@@ -1912,8 +1914,8 @@
             }
         }
 
-        // Initialize Auth and Firestore Snapshot Listener
-        async function initAuthAndGallery() {
+        // Initialize Auth and Firestore Snapshot Listeners
+        async function initAuthAndData() {
             try {
                 if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
                     await signInWithCustomToken(auth, __initial_auth_token);
@@ -1931,6 +1933,7 @@
                 updateUploadUI();
 
                 if (user) {
+                    // 1. Photos Firestore Listener
                     onSnapshot(getPhotosCollection(), (snapshot) => {
                         if (snapshot.empty) {
                             renderGallery(defaultPhotos);
@@ -1939,21 +1942,38 @@
                             snapshot.forEach(docSnap => {
                                 cloudPhotos.push({ id: docSnap.id, ...docSnap.data() });
                             });
-                            // Sort newest first
                             cloudPhotos.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
                             renderGallery(cloudPhotos);
                         }
                     }, (error) => {
-                        console.error("Firestore listener error:", error);
+                        console.error("Firestore photos listener error:", error);
                         renderGallery(defaultPhotos);
+                    });
+
+                    // 2. Guestbook Firestore Listener
+                    const guestbookQuery = query(getGuestbookCollection(), orderBy("createdAt", "desc"));
+                    onSnapshot(guestbookQuery, (snapshot) => {
+                        if (snapshot.empty) {
+                            renderGuestbook(seedMessages);
+                        } else {
+                            const messagesList = [];
+                            snapshot.forEach(docSnap => {
+                                messagesList.push({ id: docSnap.id, ...docSnap.data() });
+                            });
+                            renderGuestbook(messagesList);
+                        }
+                    }, (error) => {
+                        console.error("Firestore guestbook listener error:", error);
+                        renderGuestbook(seedMessages);
                     });
                 } else {
                     renderGallery(defaultPhotos);
+                    renderGuestbook(seedMessages);
                 }
             });
         }
 
-        initAuthAndGallery();
+        initAuthAndData();
 
         // Form Submission to ImgBB + Cloud Firestore
         document.getElementById('uploadForm').addEventListener('submit', async function(e) {
