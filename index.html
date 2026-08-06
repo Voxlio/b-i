@@ -75,6 +75,15 @@
             transform: translateY(10px);
         }
 
+        /* Program booklet page display styling */
+        .program-page {
+            transition: opacity 0.3s ease-in-out;
+        }
+        .program-page.hidden {
+            display: none;
+            opacity: 0;
+        }
+
         .modal-enter {
             animation: modalFadeIn 0.3s ease-out forwards;
         }
@@ -137,6 +146,9 @@
                 </button>
                 <button onclick="switchTab('party')" id="nav-party" class="nav-btn py-2 px-3 text-gray-200 hover:text-cream border-b-2 border-transparent hover:border-cream transition-all duration-300">
                     Wedding Party
+                </button>
+                <button onclick="switchTab('program')" id="nav-program" class="nav-btn py-2 px-3 text-gray-200 hover:text-cream border-b-2 border-transparent hover:border-cream transition-all duration-300">
+                    Program Booklet
                 </button>
                 <button onclick="switchTab('gallery')" id="nav-gallery" class="nav-btn py-2 px-3 text-gray-200 hover:text-cream border-b-2 border-transparent hover:border-cream transition-all duration-300">
                     Photo Album
@@ -725,13 +737,26 @@
                             <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Tiktok: @vinasglowatelier</span>
                             <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Instagram: @vinaspretty21</span>
                         </div>
+
+                        <!-- Bridesmaid 24 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/KpMsJykb/IMG-20260731-WA0037.jpg?auto=format&fit=crop&q=80&w=400" alt="Ekemini Joshua Udoh" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Godswill Killian</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Marketing Strategist</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Killian Godswill</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- GROOMSMEN SECTION -->
                 <div>
                     <div class="flex items-center gap-4 mb-10">
-                        <h3 class="font-cinzel text-xl font-bold text-burgundy tracking-wider">The Grooms Squad</h3>
+                        <h3 class="font-cinzel text-xl font-bold text-burgundy tracking-wider">The Groom's Squad</h3>
                         <div class="flex-grow h-px bg-burgundy/30"></div>
                     </div>
 
@@ -744,7 +769,7 @@
                             <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Best Man</span>
                             <h4 class="font-cinzel text-lg font-bold text-burgundy">Mmedara Akpan</h4>
                             <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
-                                <span>Student</span>
+                                <span>Data Analyst</span>
                             </div>
                             <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Mexcona Akpan</span>
                             <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Tiktok: @Mexcona004</span>
@@ -897,7 +922,426 @@
                             </div>
                             <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Queen Marcus</span>
                         </div>
+
+                        <!-- Groomsman 13 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/Xx2y8gVG/IMG-20260807-WA0001.jpg?auto=format&fit=crop&q=80&w=400" alt="Ekemini Joshua Udoh" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Edidiong Emmanuel</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Monitoreing and Evaluation Officer</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Edidiong Suzy Emmanuel</span>
+                        </div>
+
+                        <!-- Groomsman 14 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/3m0S3C0q/IMG-20260807-WA0002.jpg?auto=format&fit=crop&q=80&w=400" alt="Utibe Idongesit" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Utibe Idongesit</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Hair Stylist</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Tiktok: @empiremuller400</span>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Phone: 09164677076</span>
+                        </div>
+
+                        <!-- Groomsman 15 -->
+                        <div class="bg-white p-6 border border-burgundy/30 shadow-md text-center flex flex-col items-center">
+                            <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-burgundy/40 p-1 bg-cream">
+                                <img src="https://i.ibb.co/GyH77rh/IMG-20260804-WA0000.jpg?auto=format&fit=crop&q=80&w=400" alt="Ekemini Etim" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <h4 class="font-cinzel text-lg font-bold text-burgundy">Ekemini Etim</h4>
+                            <div class="flex items-center justify-center gap-1.5 my-2 text-xs text-burgundy font-semibold bg-cream px-3 py-1 rounded-full border border-burgundy/20">
+                                <span>Eletrical/ Eletronics Consultant</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Facebook: Mhizta Lêçtürër</span>
+                            <span class="text-[10px] font-bold text-olive uppercase tracking-[3px] mb-1">Phone: 08130815919</span>
+                            </div>
+                        </div>
                     </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- VIEW 1E: PROGRAM BOOKLET SECTION -->
+        <div id="view-program" class="page-view hidden">
+            <section class="py-16 px-4 sm:px-6 max-w-4xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="text-olive font-cinzel text-xs sm:text-sm tracking-[5px] uppercase font-semibold">Wedding Celebration</span>
+                    <h2 class="font-cinzel text-3xl sm:text-4xl font-bold tracking-wide text-burgundy mt-2">Program Booklet</h2>
+                    <div class="h-1 w-12 bg-olive mx-auto mt-4"></div>
+                    <p class="text-gray-600 text-xs sm:text-sm mt-4 font-light">
+                        Use the page buttons below to navigate through the Cover Page, Order of Service, Hymns, Photograph Schedule, and Reception.
+                    </p>
+                </div>
+
+                <!-- PAGE SELECTION BUTTONS -->
+                <div class="flex flex-wrap justify-center items-center gap-2 sm:gap-3 mb-8">
+                    <button onclick="goToProgramPage(1)" id="prog-btn-1" class="prog-nav-btn px-4 py-2 text-xs sm:text-sm font-cinzel uppercase tracking-wider font-semibold border border-burgundy bg-burgundy text-white transition-all duration-300">
+                        Page 01 (Title & Ministers)
+                    </button>
+                    <button onclick="goToProgramPage(2)" id="prog-btn-2" class="prog-nav-btn px-4 py-2 text-xs sm:text-sm font-cinzel uppercase tracking-wider font-semibold border border-burgundy bg-white text-burgundy hover:bg-burgundy hover:text-white transition-all duration-300">
+                        Page 02 (Order of Service)
+                    </button>
+                    <button onclick="goToProgramPage(3)" id="prog-btn-3" class="prog-nav-btn px-4 py-2 text-xs sm:text-sm font-cinzel uppercase tracking-wider font-semibold border border-burgundy bg-white text-burgundy hover:bg-burgundy hover:text-white transition-all duration-300">
+                        Page 03 (Opening Hymn)
+                    </button>
+                    <button onclick="goToProgramPage(4)" id="prog-btn-4" class="prog-nav-btn px-4 py-2 text-xs sm:text-sm font-cinzel uppercase tracking-wider font-semibold border border-burgundy bg-white text-burgundy hover:bg-burgundy hover:text-white transition-all duration-300">
+                        Page 04 (Closing Hymn)
+                    </button>
+                    <button onclick="goToProgramPage(5)" id="prog-btn-5" class="prog-nav-btn px-4 py-2 text-xs sm:text-sm font-cinzel uppercase tracking-wider font-semibold border border-burgundy bg-white text-burgundy hover:bg-burgundy hover:text-white transition-all duration-300">
+                        Page 05 (Order of Photographs)
+                    </button>
+                    <button onclick="goToProgramPage(6)" id="prog-btn-6" class="prog-nav-btn px-4 py-2 text-xs sm:text-sm font-cinzel uppercase tracking-wider font-semibold border border-burgundy bg-white text-burgundy hover:bg-burgundy hover:text-white transition-all duration-300">
+                        Page 06 (Reception)
+                    </button>
+                </div>
+
+                <!-- BOOKLET CONTAINER -->
+                <div class="bg-white double-gold-frame p-6 sm:p-10 shadow-2xl rounded-sm relative">
+                    
+                    <!-- PAGE 01: PROGRAMME COVER & OFFICIATING MINISTERS -->
+                    <div id="prog-page-1" class="program-page">
+                        <div class="mb-6 flex justify-between items-center border-b border-burgundy/20 pb-4">
+                            <span class="inline-block bg-olive text-white font-cinzel text-xs uppercase tracking-widest px-4 py-1.5 rounded-sm font-semibold">
+                                Solemnization Cover
+                            </span>
+                            <span class="font-cinzel text-xs text-burgundy font-bold tracking-widest uppercase">Page 01</span>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                            <!-- Left: Full Height Portrait -->
+                            <div class="md:col-span-5 flex justify-center">
+                                <div class="p-3 bg-cream border border-burgundy/30 shadow-md max-w-xs w-full">
+                                    <img src="https://i.ibb.co/d1L5L3b/DF9-A2479-Original.jpg?auto=format&fit=crop&q=80&w=800" alt="Blessing and Inemesit" class="w-full h-auto object-cover rounded-sm">
+                                </div>
+                            </div>
+
+                            <!-- Right: Program Details & Officiating Ministers -->
+                            <div class="md:col-span-7 space-y-5 text-center md:text-left">
+                                <div class="border-2 border-burgundy/30 px-4 py-1 rounded-full inline-block bg-cream mb-1">
+                                    <span class="font-cinzel font-bold text-burgundy text-sm tracking-widest">B&I</span>
+                                </div>
+
+                                <div>
+                                    <span class="font-cinzel text-xs uppercase tracking-[3px] text-gray-500 font-semibold block">Programme For The</span>
+                                    <h3 class="font-cinzel text-2xl sm:text-3xl font-bold text-burgundy tracking-wide mt-1">
+                                        Solemnization of Holy Matrimony
+                                    </h3>
+                                </div>
+
+                                <div class="inline-block bg-olive text-white font-cinzel text-[10px] uppercase tracking-widest px-3 py-1 rounded-sm font-semibold">
+                                    Between
+                                </div>
+
+                                <div class="space-y-1">
+                                    <h4 class="font-cinzel text-lg sm:text-xl font-bold text-charcoal">BLESSING JOSHUA UDOH</h4>
+                                    <span class="font-cinzel text-burgundy text-xs italic font-semibold block">&</span>
+                                    <h4 class="font-cinzel text-lg sm:text-xl font-bold text-charcoal">INEMESIT ASUQUO EYO</h4>
+                                </div>
+
+                                <div class="space-y-1 pt-1">
+                                    <span class="inline-block bg-olive text-white font-cinzel text-[10px] uppercase tracking-widest px-2.5 py-0.5 rounded-sm font-semibold">On</span>
+                                    <p class="font-cinzel text-xs sm:text-sm font-bold text-burgundy tracking-wider">
+                                        SATURDAY, <span class="text-base">15TH AUGUST, 2026</span>
+                                    </p>
+                                </div>
+
+                                <div class="space-y-1 pt-1">
+                                    <span class="inline-block bg-olive text-white font-cinzel text-[10px] uppercase tracking-widest px-2.5 py-0.5 rounded-sm font-semibold">At</span>
+                                    <p class="font-cinzel text-xs sm:text-sm font-bold text-charcoal tracking-wide leading-relaxed">
+                                        THE APOSTOLIC CHURCH NIGERIA, OKU ASSEMBLY.<br>
+                                        <span class="text-xs text-gray-600 font-normal">NO. 18 OKU STREET, UYO. AKWA IBOM STATE.</span>
+                                    </p>
+                                </div>
+
+                                <!-- Officiating Ministers Section -->
+                                <div class="pt-4 border-t border-burgundy/20">
+                                    <span class="inline-block bg-olive text-white font-cinzel text-xs uppercase tracking-widest px-4 py-1 rounded-sm font-semibold mb-3">
+                                        Officiating Ministers
+                                    </span>
+                                    <ul class="space-y-1.5 text-xs text-gray-800 font-medium text-left">
+                                        <li class="flex items-center gap-2"><i class="fa-solid fa-cross text-burgundy text-[10px]"></i><span>Apostle Prof. I. N. George — <span class="text-burgundy font-semibold">Uyo Area Supt.</span></span></li>
+                                        <li class="flex items-center gap-2"><i class="fa-solid fa-cross text-burgundy text-[10px]"></i><span>Pastor J. E. Okon — <span class="text-burgundy font-semibold">Nsit District</span></span></li>
+                                        <li class="flex items-center gap-2"><i class="fa-solid fa-cross text-burgundy text-[10px]"></i><span>Pastor L. O. Effiong — <span class="text-burgundy font-semibold">Host</span></span></li>
+                                        <li class="flex items-center gap-2"><i class="fa-solid fa-cross text-burgundy text-[10px]"></i><span>Pastor Stanley Orji — <span class="text-burgundy font-semibold">PFM, Uyo</span></span></li>
+                                        <li class="flex items-center gap-2"><i class="fa-solid fa-cross text-burgundy text-[10px]"></i><span>Assistant Pastor M. I. Okokon</span></li>
+                                        <li class="flex items-center gap-2 italic text-gray-500 pl-4"><span>& other Ministers of the Gospel</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PAGE 02: ORDER OF SERVICE -->
+                    <div id="prog-page-2" class="program-page hidden">
+                        <div class="mb-6 flex justify-between items-center border-b border-burgundy/20 pb-4">
+                            <span class="inline-block bg-olive text-white font-cinzel text-xs uppercase tracking-widest px-4 py-1.5 rounded-sm font-semibold">
+                                Order of Service
+                            </span>
+                            <span class="font-cinzel text-xs text-burgundy font-bold tracking-widest uppercase">Page 02</span>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                            <div class="md:col-span-7">
+                                <ol class="space-y-2 text-xs sm:text-sm text-gray-800 leading-relaxed font-medium">
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">1.</span><span>Arrival of Guests / Dignitaries</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">2.</span><span>Arrival of Groom / Groom's Squad</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">3.</span><span>Arrival of Bride / Bride's Tribe</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">4.</span><span>Choruses</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">5.</span><span>Opening Hymn (O Lord of Heaven, pg -)</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">6.</span><span>Opening Prayer</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">7.</span><span>Song by the Choir</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">8.</span><span>Scripture Reading</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">9.</span><span>General Offering</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">10.</span><span>Song by the Choir</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">11.</span><span>Solemnization of Marriage</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">12.</span><span>Prayer for the Couple</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">13.</span><span>Signing of Marriage Register</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">14.</span><span>Song by the Choir</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">15.</span><span>Exhortation</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">16.</span><span>Nuptial Dance</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">17.</span><span>Presentation of Certificate</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">18.</span><span>Announcements</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">19.</span><span>Closing Hymn (Blessed Assurance)</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">20.</span><span>Benediction / Recession</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">21.</span><span>Photographs</span></li>
+                                </ol>
+                            </div>
+
+                            <div class="md:col-span-5 flex flex-col items-center justify-center text-center space-y-4">
+                                <div class="p-3 bg-cream border border-burgundy/30 shadow-md">
+                                    <img src="https://i.ibb.co/BVtzcnXS/1002812333.jpg?auto=format&fit=crop&q=80&w=800" alt="Blessing and Inemesit" class="w-full h-auto object-cover rounded-sm">
+                                </div>
+                                <div class="border-2 border-burgundy/40 px-6 py-2 rounded-full inline-block bg-cream">
+                                    <span class="font-cinzel font-bold text-burgundy text-lg tracking-widest">B&I</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PAGE 03: OPENING HYMN -->
+                    <div id="prog-page-3" class="program-page hidden">
+                        <div class="mb-6 flex justify-between items-center border-b border-burgundy/20 pb-4">
+                            <span class="inline-block bg-olive text-white font-cinzel text-xs uppercase tracking-widest px-4 py-1.5 rounded-sm font-semibold">
+                                Opening Hymn
+                            </span>
+                            <span class="font-cinzel text-xs text-burgundy font-bold tracking-widest uppercase">Page 03</span>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                            <div class="md:col-span-7 space-y-4 text-xs sm:text-sm text-gray-800 leading-relaxed font-medium">
+                                <h3 class="font-cinzel text-lg sm:text-xl font-bold text-burgundy">O Lord of Heaven</h3>
+                                
+                                <p>
+                                    O Lord of heaven and earth and sea,<br>
+                                    To Thee all praise and glory be;<br>
+                                    How shall we show our love to Thee,<br>
+                                    Who givest all?
+                                </p>
+
+                                <div class="pl-4 border-l-2 border-olive py-1 my-2 italic">
+                                    <p class="font-semibold text-burgundy">Refrain:</p>
+                                    <p>Who givest all (4×)</p>
+                                    <p>How shall we show our love to Thee</p>
+                                    <p>Who givest all (2×)</p>
+                                </div>
+
+                                <p>
+                                    The golden sunshine, vernal air,<br>
+                                    Sweet flowers and fruits Thy love declare;<br>
+                                    Where harvests ripen, Thou art there,<br>
+                                    Who givest all! [Refrain]
+                                </p>
+
+                                <p>
+                                    For peaceful homes, and healthful days,<br>
+                                    For all the blessings earth displays,<br>
+                                    We owe Thee thankfulness and praise,<br>
+                                    Who givest all![Refrain]
+                                </p>
+
+                                <p>
+                                    Thou didst not spare Thine only Son,<br>
+                                    But gavest Him for us undone,<br>
+                                    And ever with Him freely one<br>
+                                    Who givest all! [Refrain]
+                                </p>
+
+                                <div class="pt-4 text-burgundy text-2xl">
+                                    <i class="fa-solid fa-music"></i> <i class="fa-solid fa-notes-medical"></i>
+                                </div>
+                            </div>
+
+                            <div class="md:col-span-5 flex flex-col items-center justify-center space-y-4">
+                                <div class="p-3 bg-cream border border-burgundy/30 shadow-md">
+                                    <img src="https://i.ibb.co/KjdBcKKd/IMG-3280.jpg?auto=format&fit=crop&q=80&w=800" alt="Couple" class="w-full h-auto object-cover rounded-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PAGE 04: CLOSING HYMN -->
+                    <div id="prog-page-4" class="program-page hidden">
+                        <div class="mb-6 flex justify-between items-center border-b border-burgundy/20 pb-4">
+                            <span class="inline-block bg-olive text-white font-cinzel text-xs uppercase tracking-widest px-4 py-1.5 rounded-sm font-semibold">
+                                Closing Hymn
+                            </span>
+                            <span class="font-cinzel text-xs text-burgundy font-bold tracking-widest uppercase">Page 04</span>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                            <div class="md:col-span-7 space-y-4 text-xs sm:text-sm text-gray-800 leading-relaxed font-medium">
+                                <h3 class="font-cinzel text-lg sm:text-xl font-bold text-burgundy">Blessed Assurance</h3>
+
+                                <p>
+                                    Blessed assurance, Jesus is mine!<br>
+                                    O, what a foretaste of glory divine!<br>
+                                    Heir of salvation, purchase of God,<br>
+                                    born of His Spirit, washed in His blood.
+                                </p>
+
+                                <div class="pl-4 border-l-2 border-olive py-1 my-2 italic">
+                                    <p class="font-semibold text-burgundy">Refrain:</p>
+                                    <p>This is my story, this is my song,</p>
+                                    <p>praising my Savior all the day long;</p>
+                                    <p>this is my story, this is my song,</p>
+                                    <p>praising my Savior all the day long.</p>
+                                </div>
+
+                                <p>
+                                    Perfect submission, perfect delight,<br>
+                                    visions of rapture now burst on my sight;<br>
+                                    angels descending, bring from above<br>
+                                    echoes of mercy, whispers of love. [Refrain]
+                                </p>
+
+                                <p>
+                                    Perfect submission, all is at rest,<br>
+                                    I in my Savior am happy and blest;<br>
+                                    watching and waiting, looking above,<br>
+                                    filled with His goodness, lost in His love. [Refrain]
+                                </p>
+                            </div>
+
+                            <div class="md:col-span-5 flex flex-col items-center justify-center">
+                                <div class="p-3 bg-cream border border-burgundy/30 shadow-md">
+                                    <img src="https://i.ibb.co/5gwxz0MT/IMG-3283.jpg?auto=format&fit=crop&q=80&w=800" alt="Couple" class="w-full h-auto object-cover rounded-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PAGE 05: ORDER OF PHOTOGRAPH -->
+                    <div id="prog-page-5" class="program-page hidden">
+                        <div class="mb-6 flex justify-between items-center border-b border-burgundy/20 pb-4">
+                            <span class="inline-block bg-olive text-white font-cinzel text-xs uppercase tracking-widest px-4 py-1.5 rounded-sm font-semibold">
+                                Order of Photograph
+                            </span>
+                            <span class="font-cinzel text-xs text-burgundy font-bold tracking-widest uppercase">Page 05</span>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                            <div class="md:col-span-7">
+                                <h4 class="font-cinzel text-base font-bold text-burgundy mb-3">Couple With:</h4>
+                                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-gray-800 leading-relaxed font-medium">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-olive text-xs"></i><span>Officiating Ministers</span></li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-olive text-xs"></i><span>Officers of the church</span></li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-olive text-xs"></i><span>Eka Assembly Choir</span></li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-olive text-xs"></i><span>Oku Assembly Choir</span></li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-olive text-xs"></i><span>Udo Assembly Choir</span></li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-olive text-xs"></i><span>Youth Choir</span></li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-olive text-xs"></i><span>Nsit Women Choir</span></li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-olive text-xs"></i><span>Prime Faith Ministries</span></li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-olive text-xs"></i><span>Gold Impact Fellowship</span></li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-olive text-xs"></i><span>Media Unit</span></li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-olive text-xs"></i><span>Groom's Parents</span></li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-olive text-xs"></i><span>Groom's Family</span></li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-olive text-xs"></i><span>Bride's Parents</span></li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-olive text-xs"></i><span>Bride's Family</span></li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-olive text-xs"></i><span>Both Families</span></li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-olive text-xs"></i><span>Planning Committee</span></li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-olive text-xs"></i><span>Little Bride & Little Groom</span></li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-olive text-xs"></i><span>Bridesmaids</span></li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-olive text-xs"></i><span>Asoebi Squad</span></li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-olive text-xs"></i><span>Groomsmen</span></li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-olive text-xs"></i><span>Special Ladies</span></li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-olive text-xs"></i><span>Uniuyo ACAS 014</span></li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-olive text-xs"></i><span>Uniuyo ACAS 015</span></li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-olive text-xs"></i><span>Uniuyo Faculty of Comm.</span></li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-olive text-xs"></i><span>Uniuyo POGRASU</span></li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-olive text-xs"></i><span>FGC Ikot Ekpene Alumni</span></li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-olive text-xs"></i><span>Ex-Gracelanders</span></li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-olive text-xs"></i><span>Ex-Nichen Students</span></li>
+                                </ul>
+                            </div>
+
+                            <div class="md:col-span-5 flex flex-col items-center justify-center">
+                                <div class="p-3 bg-cream border border-burgundy/30 shadow-md">
+                                    <img src="https://i.ibb.co/svcXz5TR/IMG-3287.jpg?auto=format&fit=crop&q=80&w=800" alt="Couple" class="w-full h-auto object-cover rounded-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PAGE 06: ORDER OF RECEPTION -->
+                    <div id="prog-page-6" class="program-page hidden">
+                        <div class="mb-6 flex justify-between items-center border-b border-burgundy/20 pb-4">
+                            <span class="inline-block bg-olive text-white font-cinzel text-xs uppercase tracking-widest px-4 py-1.5 rounded-sm font-semibold">
+                                Order of Reception
+                            </span>
+                            <span class="font-cinzel text-xs text-burgundy font-bold tracking-widest uppercase">Page 06</span>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                            <div class="md:col-span-7">
+                                <ol class="space-y-2.5 text-xs sm:text-sm text-gray-800 leading-relaxed font-medium">
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">1.</span><span>Arrival of Guests</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">2.</span><span>Opening Prayer</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">3.</span><span>Recognition of Dignitaries</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">4.</span><span>Chairman's Welcome Address</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">5.</span><span>Entrance of the Couple</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">6.</span><span>Let's Dine!</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">7.</span><span>Cutting of the Cake</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">8.</span><span>Toast to the Couple</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">9.</span><span>Games</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">10.</span><span>Onto the Dance Floor</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">11.</span><span>Presentation of Gifts</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">12.</span><span>Vote of Thanks</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">13.</span><span>Closing Prayer</span></li>
+                                    <li class="flex items-start gap-2"><span class="font-bold text-burgundy min-w-[24px]">14.</span><span>Departure</span></li>
+                                </ol>
+
+                                <p class="font-cinzel italic font-bold text-burgundy text-sm sm:text-base mt-6">
+                                    Thank you for celebrating with us.
+                                </p>
+                            </div>
+
+                            <div class="md:col-span-5 flex flex-col items-center justify-center">
+                                <div class="p-3 bg-cream border border-burgundy/30 shadow-md">
+                                    <img src="https://i.ibb.co/YFzQPrFc/IMG-3276.jpg?auto=format&fit=crop&q=80&w=800" alt="Couple" class="w-full h-auto object-cover rounded-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FOOTER CONTROLS FOR PROGRAM BOOKLET -->
+                    <div class="mt-10 pt-6 border-t border-burgundy/20 flex justify-between items-center">
+                        <button onclick="prevProgramPage()" id="prevProgBtn" disabled class="bg-white hover:bg-burgundy text-burgundy hover:text-white font-cinzel text-xs px-5 py-2.5 uppercase tracking-widest border border-burgundy transition-all duration-300 disabled:opacity-40 disabled:pointer-events-none">
+                            ← Previous Page
+                        </button>
+                        <span id="progPageIndicator" class="font-cinzel text-xs font-bold text-burgundy tracking-widest">
+                            Page 01 of 06
+                        </span>
+                        <button onclick="nextProgramPage()" id="nextProgBtn" class="bg-burgundy hover:bg-olive text-white font-cinzel text-xs px-5 py-2.5 uppercase tracking-widest border border-burgundy transition-all duration-300">
+                            Next Page →
+                        </button>
+                    </div>
+
                 </div>
             </section>
         </div>
@@ -1393,7 +1837,7 @@
 
             <div class="h-px bg-cream/20 w-16 mx-auto"></div>
             <p class="text-[10px] tracking-widest text-gray-300 uppercase">
-                © 2026 Blessing & Inemesit. Happy to be together. All rights reserved. Designed & Developed by <a href="https://www.x.com/mazardor" target="_blank" class="text-cream hover:text-gold underline">Mazard</a>
+                © 2026 Blessing & Inemesit. Designed & Developed by <a href="https://www.x.com/mazardor" target="_blank" class="text-cream hover:text-gold underline">Mazard</a>
             </p>
         </div>
     </footer>
@@ -1482,6 +1926,58 @@
             const activeBtn = document.getElementById('nav-' + tabId);
             if (activeBtn) {
                 activeBtn.className = "nav-btn py-2 px-3 text-cream border-b-2 border-cream transition-all duration-300";
+            }
+        }
+
+        /* --- PROGRAM BOOKLET PAGE SWITCHING LOGIC --- */
+        let currentProgramPage = 1;
+        const totalProgramPages = 6;
+
+        function goToProgramPage(pageNum) {
+            if (pageNum < 1 || pageNum > totalProgramPages) return;
+            currentProgramPage = pageNum;
+
+            const pages = document.querySelectorAll('.program-page');
+            pages.forEach(pg => pg.classList.add('hidden'));
+
+            const targetPage = document.getElementById('prog-page-' + pageNum);
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+            }
+
+            // Update Nav Buttons
+            const buttons = document.querySelectorAll('.prog-nav-btn');
+            buttons.forEach(btn => {
+                btn.className = "prog-nav-btn px-4 py-2 text-xs sm:text-sm font-cinzel uppercase tracking-wider font-semibold border border-burgundy bg-white text-burgundy hover:bg-burgundy hover:text-white transition-all duration-300";
+            });
+
+            const activeBtn = document.getElementById('prog-btn-' + pageNum);
+            if (activeBtn) {
+                activeBtn.className = "prog-nav-btn px-4 py-2 text-xs sm:text-sm font-cinzel uppercase tracking-wider font-semibold border border-burgundy bg-burgundy text-white transition-all duration-300";
+            }
+
+            // Update Indicator and Prev/Next state
+            const indicator = document.getElementById('progPageIndicator');
+            if (indicator) {
+                indicator.textContent = `Page 0${pageNum} of 0${totalProgramPages}`;
+            }
+
+            const prevBtn = document.getElementById('prevProgBtn');
+            const nextBtn = document.getElementById('nextProgBtn');
+
+            if (prevBtn) prevBtn.disabled = (pageNum === 1);
+            if (nextBtn) nextBtn.disabled = (pageNum === totalProgramPages);
+        }
+
+        function prevProgramPage() {
+            if (currentProgramPage > 1) {
+                goToProgramPage(currentProgramPage - 1);
+            }
+        }
+
+        function nextProgramPage() {
+            if (currentProgramPage < totalProgramPages) {
+                goToProgramPage(currentProgramPage + 1);
             }
         }
 
@@ -2001,7 +2497,7 @@
 
             uploadBtn.disabled = true;
             uploadIcon.className = "fa-solid fa-spinner fa-spin";
-            uploadBtnText.textContent = "Uploading to ImgBB & Firebase...";
+            uploadBtnText.textContent = "Uploading & Adding to Album...";
 
             try {
                 const formData = new FormData();
@@ -2030,7 +2526,7 @@
                     });
 
                     document.getElementById('uploadForm').reset();
-                    showToast("Photo uploaded to ImgBB & published to shared cloud album!");
+                    showToast("Photo uploaded & published to album!");
                 } else {
                     showToast("ImgBB upload failed: " + (data.error ? data.error.message : "Unknown error"));
                 }
@@ -2040,7 +2536,7 @@
             } finally {
                 uploadBtn.disabled = false;
                 uploadIcon.className = "fa-solid fa-upload";
-                uploadBtnText.textContent = "Upload to ImgBB & Add to Album";
+                uploadBtnText.textContent = "Upload & Add to Album";
             }
         });
 
