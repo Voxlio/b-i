@@ -1800,6 +1800,18 @@
         <p id="toastText" class="text-xs sm:text-sm text-gray-200 font-light"></p>
     </div>
 
+    <!-- BACKGROUND AUDIO ELEMENT & FLOATING TOGGLE BUTTON -->
+    <audio id="weddingAudio" loop preload="auto">
+        <!-- Relative path for your GitHub hosted audio file -->
+        <source src="bnimusic.mp4" type="audio/mpeg">
+        <source src="./bnimusic.mp4" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <button id="musicToggleBtn" onclick="toggleAudio()" title="Toggle Background Music (Chiké ft. Flavour - Hard to Find)" class="fixed bottom-6 left-6 z-50 bg-burgundy text-white w-12 h-12 rounded-full border-2 border-cream shadow-2xl flex items-center justify-center hover:bg-olive transition-all duration-300 cursor-pointer">
+        <i class="fa-solid fa-music text-cream text-lg" id="musicIcon"></i>
+    </button>
+
     <!-- FOOTER WITH VISUAL WEDDING COLOUR PALETTE -->
     <footer class="bg-burgundy text-white py-12 px-6 border-t border-olive/40 text-center">
         <div class="max-w-xl mx-auto space-y-6">
@@ -1844,6 +1856,40 @@
 
     <!-- ============================================== -->
     <script>
+        /* --- BACKGROUND MUSIC PLAYER LOGIC --- */
+        const weddingAudio = document.getElementById('weddingAudio');
+        const musicIcon = document.getElementById('musicIcon');
+        let hasUserInteracted = false;
+
+        function startAudioOnInteraction() {
+            if (!hasUserInteracted) {
+                weddingAudio.play().then(() => {
+                    hasUserInteracted = true;
+                    if (musicIcon) musicIcon.className = "fa-solid fa-volume-high text-cream text-lg animate-pulse";
+                }).catch(err => {
+                    console.log("Audio waiting for first user click:", err);
+                });
+                document.removeEventListener('click', startAudioOnInteraction);
+                document.removeEventListener('touchstart', startAudioOnInteraction);
+            }
+        }
+
+        document.addEventListener('click', startAudioOnInteraction);
+        document.addEventListener('touchstart', startAudioOnInteraction);
+
+        function toggleAudio() {
+            hasUserInteracted = true;
+            if (weddingAudio.paused) {
+                weddingAudio.play();
+                if (musicIcon) musicIcon.className = "fa-solid fa-volume-high text-cream text-lg animate-pulse";
+                showToast("Now Playing: Chiké ft. Flavour - Hard to Find 🎵");
+            } else {
+                weddingAudio.pause();
+                if (musicIcon) musicIcon.className = "fa-solid fa-volume-xmark text-cream text-lg";
+                showToast("Background music paused 🔇");
+            }
+        }
+        
         /* --- PRELOADER ANIMATION LOGIC --- */
         window.addEventListener('DOMContentLoaded', () => {
             let progress = 0;
